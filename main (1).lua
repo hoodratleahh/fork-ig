@@ -2051,6 +2051,42 @@ ah.UIElements.Main,
 
 })
 
+if ag=="Popup"and af then
+local aq=ab("Frame",{
+Size=UDim2.new(0,0,0,0),
+AutomaticSize="XY",
+Position=UDim2.new(0.5,0,0.5,0),
+AnchorPoint=Vector2.new(0.5,0.5),
+BackgroundTransparency=1,
+Visible=false,
+Parent=ae.Parent,
+ZIndex=9998,
+},{
+ab("UICorner",{CornerRadius=UDim.new(0,ah.UICorner)}),
+ab("UIStroke",{
+Thickness=2,
+ApplyStrokeMode="Border",
+Color=Color3.new(1,1,1),
+Transparency=0,
+},{
+ab("UIGradient",{
+Color=ColorSequence.new{
+ColorSequenceKeypoint.new(0,Color3.fromHex"#40c9ff"),
+ColorSequenceKeypoint.new(0.33,Color3.fromHex"#e81cff"),
+ColorSequenceKeypoint.new(0.66,Color3.fromHex"#ff0080"),
+ColorSequenceKeypoint.new(1,Color3.fromHex"#40c9ff")
+},
+Rotation=90,
+})
+})
+})
+ah.UIElements.MainContainer.Parent=aq
+ah.UIElements.MainContainer.Position=UDim2.new(0.5,0,0.5,0)
+ah.UIElements.MainContainer.AnchorPoint=Vector2.new(0.5,0.5)
+ah.UIElements.PopupWrapper=aq
+ah.UIElements.PopupGradient=aq.UIStroke:FindFirstChildOfClass("UIGradient")
+end
+
 function ah.Open(ai)
 if not af then
 ah.UIElements.FullScreen.Visible=true
@@ -2058,6 +2094,7 @@ ah.UIElements.FullScreen.Active=true
 end
 
 task.spawn(function()
+if ah.UIElements.PopupWrapper then ah.UIElements.PopupWrapper.Visible=true end
 ah.UIElements.MainContainer.Visible=true
 
 if not af then
@@ -2065,6 +2102,15 @@ ac(ah.UIElements.FullScreen,0.1,{BackgroundTransparency=.3}):Play()
 end
 ac(ah.UIElements.MainContainer,0.1,{ImageTransparency=0}):Play()
 
+if ah.UIElements.PopupGradient then
+task.spawn(function()
+local ar=ah.UIElements.PopupGradient
+while ar and ar.Parent and ar.Parent.Parent do
+ac(ar,3,{Rotation=ar.Rotation+360},Enum.EasingStyle.Linear,Enum.EasingDirection.InOut):Play()
+task.wait(3)
+end
+end)
+end
 
 task.spawn(function()
 task.wait(0.05)
@@ -2091,6 +2137,8 @@ task.spawn(function()
 task.wait(.1)
 if not af then
 ah.UIElements.FullScreen:Destroy()
+elseif ah.UIElements.PopupWrapper then
+ah.UIElements.PopupWrapper:Destroy()
 else
 ah.UIElements.MainContainer:Destroy()
 end
