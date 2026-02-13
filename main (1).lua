@@ -2064,10 +2064,10 @@ ZIndex=9998,
 },{
 ab("UICorner",{CornerRadius=UDim.new(0,ah.UICorner)}),
 ab("UIStroke",{
-Thickness=12,
+Thickness=4,
 ApplyStrokeMode="Border",
 Color=Color3.new(1,1,1),
-Transparency=0,
+Transparency=0.55,
 },{
 ab("UIGradient",{
 Color=ColorSequence.new{
@@ -11134,10 +11134,10 @@ Transparency=1,
 },{
 al("UIGradient",{
 Color=ColorSequence.new{
-ColorSequenceKeypoint.new(0,Color3.fromHex"#40c9ff"),
-ColorSequenceKeypoint.new(0.33,Color3.fromHex"#e81cff"),
-ColorSequenceKeypoint.new(0.66,Color3.fromHex"#ff0080"),
-ColorSequenceKeypoint.new(1,Color3.fromHex"#40c9ff")
+ColorSequenceKeypoint.new(0,Color3.fromHex"#60d9ff"),
+ColorSequenceKeypoint.new(0.33,Color3.fromHex"#f02cff"),
+ColorSequenceKeypoint.new(0.66,Color3.fromHex"#ff30a0"),
+ColorSequenceKeypoint.new(1,Color3.fromHex"#60d9ff")
 },
 Rotation=90,
 })
