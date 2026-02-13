@@ -11230,17 +11230,16 @@ if au.Topbar.ButtonsType~="Default"then
 l=l+m+au.UIPadding-4
 end
 
-
-
+local tagOffset=(au.Topbar and au.Topbar.TagOffset or 0)/as.WindUI.UIScale
 au.UIElements.Main.Main.Topbar.Center.Position=UDim2.new(
 0,
-l+(au.UIPadding/as.WindUI.UIScale),
+l+(au.UIPadding/as.WindUI.UIScale)+tagOffset,
 0.5,
 0
 )
 au.UIElements.Main.Main.Topbar.Center.Size=UDim2.new(
 1,
--l-m-((au.UIPadding*2)/as.WindUI.UIScale),
+-l-m-((au.UIPadding*2)/as.WindUI.UIScale)-tagOffset,
 1,
 0
 )
