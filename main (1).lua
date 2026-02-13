@@ -2064,10 +2064,10 @@ ZIndex=9998,
 },{
 ab("UICorner",{CornerRadius=UDim.new(0,ah.UICorner)}),
 ab("UIStroke",{
-Thickness=4,
+Thickness=2,
 ApplyStrokeMode="Border",
 Color=Color3.new(1,1,1),
-Transparency=0.55,
+Transparency=0.7,
 },{
 ab("UIGradient",{
 Color=ColorSequence.new{
