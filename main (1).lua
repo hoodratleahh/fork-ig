@@ -2064,7 +2064,7 @@ ZIndex=9998,
 },{
 ab("UICorner",{CornerRadius=UDim.new(0,ah.UICorner)}),
 ab("UIStroke",{
-Thickness=2,
+Thickness=4,
 ApplyStrokeMode="Border",
 Color=Color3.new(1,1,1),
 Transparency=0,
@@ -11127,7 +11127,7 @@ TextColor3="WindowTopbarTitle"
 })
 
 local UIStroke=al("UIStroke",{
-Thickness=2,
+Thickness=4,
 ApplyStrokeMode="Border",
 Color=Color3.new(1,1,1),
 Transparency=1,
