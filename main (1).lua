@@ -11126,6 +11126,22 @@ TextColor3="WindowTopbarTitle"
 }
 })
 
+local UIStroke=al("UIStroke",{
+Thickness=2,
+ApplyStrokeMode="Border",
+Color=Color3.new(1,1,1),
+Transparency=1,
+},{
+al("UIGradient",{
+Color=ColorSequence.new{
+ColorSequenceKeypoint.new(0,Color3.fromHex"#40c9ff"),
+ColorSequenceKeypoint.new(0.33,Color3.fromHex"#e81cff"),
+ColorSequenceKeypoint.new(0.66,Color3.fromHex"#ff0080"),
+ColorSequenceKeypoint.new(1,Color3.fromHex"#40c9ff")
+},
+Rotation=90,
+})
+})
 au.UIElements.Main=al("Frame",{
 Size=au.Size,
 Position=au.Position,
@@ -11155,6 +11171,7 @@ ax,
 
 
 }),
+al("UICorner",{CornerRadius=UDim.new(0,au.UICorner)}),
 UIStroke,
 aw,
 ay,
@@ -11671,6 +11688,13 @@ end
 am(aA,0.25,{ImageTransparency=au.ShadowTransparency},Enum.EasingStyle.Quint,Enum.EasingDirection.Out):Play()
 if UIStroke then
 am(UIStroke,0.25,{Transparency=.8},Enum.EasingStyle.Quint,Enum.EasingDirection.Out):Play()
+task.spawn(function()
+local aT=UIStroke:FindFirstChildOfClass("UIGradient")
+while aT and aT.Parent and au.UIElements.Main and au.UIElements.Main.Parent do
+am(aT,3,{Rotation=aT.Rotation+360},Enum.EasingStyle.Linear,Enum.EasingDirection.InOut):Play()
+task.wait(3)
+end
+end)
 end
 
 task.spawn(function()
