@@ -3971,6 +3971,23 @@ ElementBackground=Color3.fromHex"#312643",
 ElementBackgroundTransparency=0,
 },
 
+Easter={
+Name="Easter",
+
+Accent=Color3.fromHex"#a855f7",
+Dialog=Color3.fromHex"#2d1b4e",
+
+Text=Color3.fromHex"#f5f0ff",
+Placeholder=Color3.fromHex"#9b8fc0",
+Background=Color3.fromHex"#1a0d2e",
+Button=Color3.fromHex"#7c3aed",
+Icon=Color3.fromHex"#e879f9",
+Outline=Color3.fromHex"#dda0dd",
+
+ElementBackground=Color3.fromHex"#2e1a4a",
+ElementBackgroundTransparency=0,
+},
+
 Mellowsi={
 Name="Mellowsi",
 
