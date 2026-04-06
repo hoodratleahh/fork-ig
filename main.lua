@@ -12294,6 +12294,11 @@ ImageColor3="WindowBackground",
 g,
 l,
 ax,
+am("Frame",{
+Size=UDim2.new(1,0,1,0),
+BackgroundTransparency=1,
+Name="GradientBorder",
+},{
 am("UICorner",{CornerRadius=UDim.new(0,au.UICorner)}),
 am("UIStroke",{
 Thickness=2,
@@ -12309,6 +12314,7 @@ ColorSequenceKeypoint.new(0.5,Color3.fromHex"#b400ff"),
 ColorSequenceKeypoint.new(1,Color3.fromHex"#ff69b4"),
 })
 })
+}),
 }),
 }),
 
@@ -12458,7 +12464,8 @@ end
 
 task.spawn(function()
 local _bg=au.UIElements.Main:FindFirstChild("Background")
-local _s=_bg and _bg:FindFirstChildOfClass"UIStroke"
+local _gb=_bg and _bg:FindFirstChild("GradientBorder")
+local _s=_gb and _gb:FindFirstChildOfClass"UIStroke"
 local _g=_s and _s:FindFirstChildOfClass"UIGradient"
 if not _g then return end
 au.UIElements.WindowGradient=_g
