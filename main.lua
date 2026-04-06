@@ -12304,7 +12304,7 @@ Name="GradientBorder",
 },{
 am("UICorner",{CornerRadius=UDim.new(0,au.UICorner+6)}),
 am("UIStroke",{
-Thickness=2,
+Thickness=6,
 ApplyStrokeMode=Enum.ApplyStrokeMode.Border,
 Color=Color3.new(1,1,1),
 Transparency=0,
