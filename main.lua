@@ -12294,9 +12294,22 @@ ImageColor3="WindowBackground",
 g,
 l,
 ax,
-
-
-
+am("UICorner",{CornerRadius=UDim.new(0,au.UICorner)}),
+am("UIStroke",{
+Thickness=2,
+ApplyStrokeMode=Enum.ApplyStrokeMode.Border,
+Color=Color3.new(1,1,1),
+Transparency=0,
+},{
+am("UIGradient",{
+Color=(at.OpenButton and at.OpenButton.Color)
+or ColorSequence.new({
+ColorSequenceKeypoint.new(0,Color3.fromHex"#ff69b4"),
+ColorSequenceKeypoint.new(0.5,Color3.fromHex"#b400ff"),
+ColorSequenceKeypoint.new(1,Color3.fromHex"#ff69b4"),
+})
+})
+}),
 }),
 
 aw,
@@ -12443,6 +12456,19 @@ au.UIElements.Main.Main.Topbar.Left.Position=UDim2.new(
 end)
 end
 
+task.spawn(function()
+local _bg=au.UIElements.Main:FindFirstChild("Background")
+local _s=_bg and _bg:FindFirstChildOfClass"UIStroke"
+local _g=_s and _s:FindFirstChildOfClass"UIGradient"
+if not _g then return end
+au.UIElements.WindowGradient=_g
+au.UIElements.WindowStroke=_s
+local _ts=game:GetService"TweenService"
+while _bg and _bg.Parent do
+_ts:Create(_g,TweenInfo.new(3,Enum.EasingStyle.Linear,Enum.EasingDirection.InOut),{Rotation=_g.Rotation+360}):Play()
+task.wait(3)
+end
+end)
 function au.SetBorderGradient(v,colorSeq,thickness)
 if au._BorderFrame then au._BorderFrame:Destroy() au._BorderFrame=nil end
 if not colorSeq then return end
