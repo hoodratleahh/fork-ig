@@ -12232,16 +12232,6 @@ Parent=at.Parent,
 AnchorPoint=Vector2.new(0.5,0.5),
 Active=true,
 },{
-am("UICorner",{CornerRadius=UDim.new(0,au.UICorner)}),
-am("UIStroke",{Thickness=2,ApplyStrokeMode=Enum.ApplyStrokeMode.Border},{
-am("UIGradient",{
-Color=ColorSequence.new({
-ColorSequenceKeypoint.new(0,Color3.fromHex"#ff69b4"),
-ColorSequenceKeypoint.new(0.5,Color3.fromHex"#b400ff"),
-ColorSequenceKeypoint.new(1,Color3.fromHex"#ff69b4"),
-})
-})
-}),
 at.WindUI.UIScaleObj,
 au.AcrylicPaint and au.AcrylicPaint.Frame or nil,
 aA,
@@ -12267,6 +12257,22 @@ ax,
 aw,
 ay,
 az,
+am("Frame",{
+Size=UDim2.new(1,0,1,0),
+BackgroundTransparency=1,
+ZIndex=9999,
+},{
+am("UICorner",{CornerRadius=UDim.new(0,au.UICorner)}),
+am("UIStroke",{Thickness=2,ApplyStrokeMode=Enum.ApplyStrokeMode.Border},{
+am("UIGradient",{
+Color=ColorSequence.new({
+ColorSequenceKeypoint.new(0,Color3.fromHex"#ff69b4"),
+ColorSequenceKeypoint.new(0.5,Color3.fromHex"#b400ff"),
+ColorSequenceKeypoint.new(1,Color3.fromHex"#ff69b4"),
+})
+})
+})
+}),
 am("Frame",{
 Size=UDim2.new(1,0,1,0),
 BackgroundTransparency=1,
@@ -12409,7 +12415,8 @@ end)
 end
 
 task.spawn(function()
-local _s=au.UIElements.Main:FindFirstChildOfClass"UIStroke"
+local _f=au.UIElements.Main:FindFirstChild("Frame")
+local _s=_f and _f:FindFirstChildOfClass"UIStroke"
 local _g=_s and _s:FindFirstChildOfClass"UIGradient"
 if not _g then return end
 while au.UIElements.Main.Parent do
