@@ -2574,12 +2574,6 @@ aj.UIElements.Main,
 
 })
 
-if not ae then
-local _es=ab("UIScale",{Scale=0})
-_es.Parent=aj.UIElements.MainContainer
-aj.UIElements.EntryScale=_es
-end
-
 function aj.Open(ak)
 if not ae then
 aj.UIElements.FullScreen.Visible=true
@@ -2590,27 +2584,9 @@ task.spawn(function()
 aj.UIElements.MainContainer.Visible=true
 
 if not ae then
-ac(aj.UIElements.FullScreen,0.12,{BackgroundTransparency=0.35}):Play()
-
-local _ts=game:GetService"TweenService"
-local _mc=aj.UIElements.MainContainer
-local _es=aj.UIElements.EntryScale
-
-_mc.ImageTransparency=1
-_mc.Rotation=-12
-
--- Phase 1: flash + slam in fast with spin
-_ts:Create(_mc,TweenInfo.new(0.06,Enum.EasingStyle.Linear),{ImageTransparency=0}):Play()
-_ts:Create(_es,TweenInfo.new(0.22,Enum.EasingStyle.Back,Enum.EasingDirection.Out,0,false,0),{Scale=1.08}):Play()
-_ts:Create(_mc,TweenInfo.new(0.22,Enum.EasingStyle.Back,Enum.EasingDirection.Out),{Rotation=3}):Play()
-task.wait(0.22)
-
--- Phase 2: snap to final position
-_ts:Create(_es,TweenInfo.new(0.1,Enum.EasingStyle.Quint,Enum.EasingDirection.Out),{Scale=1}):Play()
-_ts:Create(_mc,TweenInfo.new(0.1,Enum.EasingStyle.Quint,Enum.EasingDirection.Out),{Rotation=0}):Play()
-else
-ac(aj.UIElements.MainContainer,0.1,{ImageTransparency=0}):Play()
+ac(aj.UIElements.FullScreen,0.1,{BackgroundTransparency=0.3}):Play()
 end
+ac(aj.UIElements.MainContainer,0.1,{ImageTransparency=0}):Play()
 
 if aj.UIElements.PopupGradient then
 task.spawn(function()
