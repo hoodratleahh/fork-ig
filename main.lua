@@ -2512,6 +2512,23 @@ PaddingBottom=UDim.new(0,aj.UIPadding),
 }),
 })
 
+local _popupStroke=ab("UIStroke",{
+Thickness=2,
+ApplyStrokeMode=Enum.ApplyStrokeMode.Border,
+Color=Color3.new(1,1,1),
+Transparency=0.7,
+})
+local _popupGrad=ab("UIGradient",{
+Color=ColorSequence.new{
+ColorSequenceKeypoint.new(0,Color3.fromHex"#40c9ff"),
+ColorSequenceKeypoint.new(0.33,Color3.fromHex"#e81cff"),
+ColorSequenceKeypoint.new(0.66,Color3.fromHex"#ff0080"),
+ColorSequenceKeypoint.new(1,Color3.fromHex"#40c9ff"),
+},
+Rotation=90,
+Parent=_popupStroke,
+})
+aj.UIElements.PopupGradient=_popupGrad
 aj.UIElements.MainContainer=aa.NewRoundFrame(aj.UICorner,"Squircle",{
 Visible=false,
 
@@ -2530,6 +2547,7 @@ aa.NewRoundFrame(aj.UICorner,"Glass-1",{
 ImageTransparency=0.89,
 Size=UDim2.new(1,0,1,0)
 }),
+_popupStroke,
 aj.UIElements.Main,
 
 
@@ -2566,6 +2584,16 @@ if not ae then
 ac(aj.UIElements.FullScreen,0.1,{BackgroundTransparency=0.3}):Play()
 end
 ac(aj.UIElements.MainContainer,0.1,{ImageTransparency=0}):Play()
+
+if aj.UIElements.PopupGradient then
+task.spawn(function()
+local ar=aj.UIElements.PopupGradient
+while ar and ar.Parent and ar.Parent.Parent do
+ac(ar,3,{Rotation=ar.Rotation+360},Enum.EasingStyle.Linear,Enum.EasingDirection.InOut):Play()
+task.wait(3)
+end
+end)
+end
 
 
 task.spawn(function()
