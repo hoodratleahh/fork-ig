@@ -12260,23 +12260,6 @@ az,
 am("Frame",{
 Size=UDim2.new(1,0,1,0),
 BackgroundTransparency=1,
-ZIndex=9999,
-Name="WindBorder",
-},{
-am("UICorner",{CornerRadius=UDim.new(0,au.UICorner)}),
-am("UIStroke",{Thickness=2,ApplyStrokeMode=Enum.ApplyStrokeMode.Border},{
-am("UIGradient",{
-Color=at.BorderColor or ColorSequence.new({
-ColorSequenceKeypoint.new(0,Color3.fromHex"#ff69b4"),
-ColorSequenceKeypoint.new(0.5,Color3.fromHex"#b400ff"),
-ColorSequenceKeypoint.new(1,Color3.fromHex"#ff69b4"),
-})
-})
-})
-}),
-am("Frame",{
-Size=UDim2.new(1,0,1,0),
-BackgroundTransparency=1,
 Name="Main",
 
 Visible=false,
@@ -12416,19 +12399,40 @@ end)
 end
 
 task.spawn(function()
-local _f=au.UIElements.Main:FindFirstChild("WindBorder")
-local _s=_f and _f:FindFirstChildOfClass"UIStroke"
-local _g=_s and _s:FindFirstChildOfClass"UIGradient"
-if not _g then return end
-au.UIElements.BorderGradient=_g
-au.UIElements.BorderStroke=_s
-while au.UIElements.Main.Parent do
-for i=0,358,2 do
-if not au.UIElements.Main.Parent then return end
-_g.Rotation=i
-task.wait(0.016)
-end
-end
+local _m=au.UIElements.Main
+local _p=_m.Parent
+if not _p then return end
+local _border=Instance.new("Frame")
+_border.BackgroundTransparency=1
+_border.ZIndex=(_m.ZIndex or 1)+1
+_border.Parent=_p
+local _corner=Instance.new("UICorner")
+_corner.CornerRadius=UDim.new(0,au.UICorner)
+_corner.Parent=_border
+local _stroke=Instance.new("UIStroke")
+_stroke.Thickness=2
+_stroke.ApplyStrokeMode=Enum.ApplyStrokeMode.Border
+_stroke.Parent=_border
+local _grad=Instance.new("UIGradient")
+_grad.Color=at.BorderColor or ColorSequence.new({
+ColorSequenceKeypoint.new(0,Color3.fromHex"#ff69b4"),
+ColorSequenceKeypoint.new(0.5,Color3.fromHex"#b400ff"),
+ColorSequenceKeypoint.new(1,Color3.fromHex"#ff69b4"),
+})
+_grad.Parent=_stroke
+au.UIElements.BorderGradient=_grad
+au.UIElements.BorderStroke=_stroke
+local _rs=game:GetService("RunService")
+local _rot=0
+_rs.RenderStepped:Connect(function()
+_border.Visible=_m.Visible
+local _pos=_m.AbsolutePosition
+local _size=_m.AbsoluteSize
+_border.Position=UDim2.fromOffset(_pos.X,_pos.Y)
+_border.Size=UDim2.fromOffset(_size.X,_size.Y)
+_rot=(_rot+2)%360
+_grad.Rotation=_rot
+end)
 end)
 function au.CreateTopbarButton(u,v,x,z,A,B,C,F)
 local G=al.Image(
