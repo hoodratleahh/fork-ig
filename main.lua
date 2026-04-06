@@ -12261,6 +12261,7 @@ am("Frame",{
 Size=UDim2.new(1,0,1,0),
 BackgroundTransparency=1,
 ZIndex=9999,
+Name="WindBorder",
 },{
 am("UICorner",{CornerRadius=UDim.new(0,au.UICorner)}),
 am("UIStroke",{Thickness=2,ApplyStrokeMode=Enum.ApplyStrokeMode.Border},{
@@ -12415,10 +12416,12 @@ end)
 end
 
 task.spawn(function()
-local _f=au.UIElements.Main:FindFirstChild("Frame")
+local _f=au.UIElements.Main:FindFirstChild("WindBorder")
 local _s=_f and _f:FindFirstChildOfClass"UIStroke"
 local _g=_s and _s:FindFirstChildOfClass"UIGradient"
 if not _g then return end
+au.UIElements.BorderGradient=_g
+au.UIElements.BorderStroke=_s
 while au.UIElements.Main.Parent do
 for i=0,358,2 do
 if not au.UIElements.Main.Parent then return end
