@@ -12268,6 +12268,27 @@ ZIndex=97,
 am("UICorner",{
 CornerRadius=UDim.new(0,au.UICorner),
 }),
+(function()
+local _s=am("UIStroke",{Thickness=2,ApplyStrokeMode=Enum.ApplyStrokeMode.Border})
+local _g=am("UIGradient",{
+Color=ColorSequence.new({
+ColorSequenceKeypoint.new(0,Color3.fromHex"#ff69b4"),
+ColorSequenceKeypoint.new(0.5,Color3.fromHex"#b400ff"),
+ColorSequenceKeypoint.new(1,Color3.fromHex"#ff69b4"),
+}),
+Parent=_s,
+})
+task.spawn(function()
+while _s and _s.Parent do
+for i=0,358,2 do
+if not(_s and _s.Parent)then return end
+_g.Rotation=i
+task.wait(0.016)
+end
+end
+end)
+return _s
+end)(),
 au.UIElements.SideBarContainer,
 au.UIElements.MainBar,
 
