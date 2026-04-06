@@ -12398,42 +12398,39 @@ au.UIElements.Main.Main.Topbar.Left.Position=UDim2.new(
 end)
 end
 
-task.spawn(function()
+function au.SetBorderGradient(v,colorSeq,thickness)
+if au._BorderFrame then au._BorderFrame:Destroy() au._BorderFrame=nil end
+if not colorSeq then return end
 local _m=au.UIElements.Main
 local _p=_m.Parent
 if not _p then return end
-local _border=Instance.new("Frame")
-_border.BackgroundTransparency=1
-_border.ZIndex=(_m.ZIndex or 1)+1
-_border.Parent=_p
-local _corner=Instance.new("UICorner")
-_corner.CornerRadius=UDim.new(0,au.UICorner)
-_corner.Parent=_border
-local _stroke=Instance.new("UIStroke")
-_stroke.Thickness=2
-_stroke.ApplyStrokeMode=Enum.ApplyStrokeMode.Border
-_stroke.Parent=_border
-local _grad=Instance.new("UIGradient")
-_grad.Color=at.BorderColor or ColorSequence.new({
-ColorSequenceKeypoint.new(0,Color3.fromHex"#ff69b4"),
-ColorSequenceKeypoint.new(0.5,Color3.fromHex"#b400ff"),
-ColorSequenceKeypoint.new(1,Color3.fromHex"#ff69b4"),
-})
-_grad.Parent=_stroke
-au.UIElements.BorderGradient=_grad
-au.UIElements.BorderStroke=_stroke
-local _rs=game:GetService("RunService")
+local _f=Instance.new("Frame")
+_f.BackgroundTransparency=1
+_f.Parent=_p
+local _c=Instance.new("UICorner")
+_c.CornerRadius=UDim.new(0,au.UICorner)
+_c.Parent=_f
+local _s=Instance.new("UIStroke")
+_s.Thickness=thickness or 2
+_s.ApplyStrokeMode=Enum.ApplyStrokeMode.Border
+_s.Parent=_f
+local _g=Instance.new("UIGradient")
+_g.Color=colorSeq
+_g.Parent=_s
+au._BorderFrame=_f
+au.UIElements.BorderGradient=_g
 local _rot=0
-_rs.RenderStepped:Connect(function()
-_border.Visible=_m.Visible
+game:GetService("RunService").RenderStepped:Connect(function()
+if not _f.Parent then return end
+_f.Visible=_m.Visible
 local _pos=_m.AbsolutePosition
-local _size=_m.AbsoluteSize
-_border.Position=UDim2.fromOffset(_pos.X,_pos.Y)
-_border.Size=UDim2.fromOffset(_size.X,_size.Y)
+local _sz=_m.AbsoluteSize
+_f.Position=UDim2.fromOffset(_pos.X,_pos.Y)
+_f.Size=UDim2.fromOffset(_sz.X,_sz.Y)
 _rot=(_rot+2)%360
-_grad.Rotation=_rot
+_g.Rotation=_rot
 end)
-end)
+end
 function au.CreateTopbarButton(u,v,x,z,A,B,C,F)
 local G=al.Image(
 x,
