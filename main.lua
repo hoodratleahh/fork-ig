@@ -12266,7 +12266,7 @@ Name="WindBorder",
 am("UICorner",{CornerRadius=UDim.new(0,au.UICorner)}),
 am("UIStroke",{Thickness=2,ApplyStrokeMode=Enum.ApplyStrokeMode.Border},{
 am("UIGradient",{
-Color=ColorSequence.new({
+Color=at.BorderColor or ColorSequence.new({
 ColorSequenceKeypoint.new(0,Color3.fromHex"#ff69b4"),
 ColorSequenceKeypoint.new(0.5,Color3.fromHex"#b400ff"),
 ColorSequenceKeypoint.new(1,Color3.fromHex"#ff69b4"),
