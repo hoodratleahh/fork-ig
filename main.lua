@@ -2512,13 +2512,15 @@ PaddingBottom=UDim.new(0,aj.UIPadding),
 }),
 })
 
-local _popupStroke=ab("UIStroke",{
+local _popupStroke,_popupGrad
+if not ae then
+_popupStroke=ab("UIStroke",{
 Thickness=2,
 ApplyStrokeMode=Enum.ApplyStrokeMode.Border,
 Color=Color3.new(1,1,1),
 Transparency=0.7,
 })
-local _popupGrad=ab("UIGradient",{
+_popupGrad=ab("UIGradient",{
 Color=ColorSequence.new{
 ColorSequenceKeypoint.new(0,Color3.fromHex"#40c9ff"),
 ColorSequenceKeypoint.new(0.33,Color3.fromHex"#e81cff"),
@@ -2529,6 +2531,7 @@ Rotation=90,
 Parent=_popupStroke,
 })
 aj.UIElements.PopupGradient=_popupGrad
+end
 aj.UIElements.MainContainer=aa.NewRoundFrame(aj.UICorner,"Squircle",{
 Visible=false,
 
@@ -2547,7 +2550,7 @@ aa.NewRoundFrame(aj.UICorner,"Glass-1",{
 ImageTransparency=0.89,
 Size=UDim2.new(1,0,1,0)
 }),
-_popupStroke,
+_popupStroke or nil,
 aj.UIElements.Main,
 
 
@@ -12299,7 +12302,7 @@ Size=UDim2.new(1,0,1,0),
 BackgroundTransparency=1,
 Name="GradientBorder",
 },{
-am("UICorner",{CornerRadius=UDim.new(0,au.UICorner)}),
+am("UICorner",{CornerRadius=UDim.new(0,au.UICorner+6)}),
 am("UIStroke",{
 Thickness=2,
 ApplyStrokeMode=Enum.ApplyStrokeMode.Border,
