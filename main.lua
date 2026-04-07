@@ -2585,8 +2585,26 @@ aj.UIElements.MainContainer.Visible=true
 
 if not ae then
 ac(aj.UIElements.FullScreen,0.1,{BackgroundTransparency=0.3}):Play()
+
+local _mc=aj.UIElements.MainContainer
+local _ts=game:GetService"TweenService"
+local _es=_mc:FindFirstChildOfClass"UIScale"
+if not _es then
+_es=Instance.new("UIScale")
+_es.Parent=_mc
 end
+_mc.ImageTransparency=1
+_mc.Rotation=-10
+_es.Scale=0.05
+_ts:Create(_mc,TweenInfo.new(0.04,Enum.EasingStyle.Linear),{ImageTransparency=0}):Play()
+_ts:Create(_es,TweenInfo.new(0.25,Enum.EasingStyle.Back,Enum.EasingDirection.Out),{Scale=1.06}):Play()
+_ts:Create(_mc,TweenInfo.new(0.25,Enum.EasingStyle.Back,Enum.EasingDirection.Out),{Rotation=2}):Play()
+task.wait(0.25)
+_ts:Create(_es,TweenInfo.new(0.12,Enum.EasingStyle.Quint,Enum.EasingDirection.Out),{Scale=1}):Play()
+_ts:Create(_mc,TweenInfo.new(0.12,Enum.EasingStyle.Quint,Enum.EasingDirection.Out),{Rotation=0}):Play()
+else
 ac(aj.UIElements.MainContainer,0.1,{ImageTransparency=0}):Play()
+end
 
 if aj.UIElements.PopupGradient then
 task.spawn(function()
