@@ -12312,22 +12312,36 @@ Name="Frame",
 })
 
 function createAuthor(m)
-return am("TextLabel",{
+local _lbl=am("TextLabel",{
 Text=m,
 FontFace=Font.new(al.Font,Enum.FontWeight.Medium),
 BackgroundTransparency=1,
-TextTransparency=0.35,
+TextTransparency=0,
 AutomaticSize="XY",
-RichText=true,
 Parent=au.UIElements.Main and au.UIElements.Main.Main.Topbar.Left.Title,
 TextXAlignment="Left",
 TextSize=13,
 LayoutOrder=2,
-ThemeTag={
-TextColor3="WindowTopbarAuthor",
-},
 Name="Author",
 })
+local _ag=am("UIGradient",{
+Color=ColorSequence.new{
+ColorSequenceKeypoint.new(0,Color3.fromHex"#342a1e"),
+ColorSequenceKeypoint.new(0.5,Color3.fromHex"#c9b79c"),
+ColorSequenceKeypoint.new(1,Color3.fromHex"#342a1e"),
+},
+Rotation=0,
+Parent=_lbl,
+})
+au.UIElements.AuthorGradient=_ag
+task.spawn(function()
+local _ts=game:GetService"TweenService"
+while _lbl and _lbl.Parent do
+_ts:Create(_ag,TweenInfo.new(3,Enum.EasingStyle.Linear,Enum.EasingDirection.InOut),{Rotation=_ag.Rotation+360}):Play()
+task.wait(3)
+end
+end)
+return _lbl
 end
 
 local m
