@@ -2512,25 +2512,33 @@ PaddingBottom=UDim.new(0,aj.UIPadding),
 }),
 })
 
-local _popupStroke,_popupGrad
+local _popupBorder,_popupStroke,_popupGrad
 if ae then
+_popupBorder=ab("Frame",{
+Size=UDim2.new(1,0,1,0),
+BackgroundTransparency=1,
+ZIndex=99998,
+},{
+ab("UICorner",{CornerRadius=UDim.new(0,aj.UICorner)}),
+})
 _popupStroke=ab("UIStroke",{
 Thickness=2,
 ApplyStrokeMode=Enum.ApplyStrokeMode.Border,
 Color=Color3.new(1,1,1),
-Transparency=0.7,
+Transparency=0.15,
+Parent=_popupBorder,
 })
 _popupGrad=ab("UIGradient",{
 Color=ColorSequence.new{
-ColorSequenceKeypoint.new(0,Color3.fromHex"#40c9ff"),
-ColorSequenceKeypoint.new(0.33,Color3.fromHex"#e81cff"),
-ColorSequenceKeypoint.new(0.66,Color3.fromHex"#ff0080"),
-ColorSequenceKeypoint.new(1,Color3.fromHex"#40c9ff"),
+ColorSequenceKeypoint.new(0,Color3.fromHex"#342a1e"),
+ColorSequenceKeypoint.new(0.5,Color3.fromHex"#c9b79c"),
+ColorSequenceKeypoint.new(1,Color3.fromHex"#342a1e"),
 },
 Rotation=90,
 Parent=_popupStroke,
 })
 aj.UIElements.PopupGradient=_popupGrad
+aj.UIElements.PopupBorder=_popupBorder
 end
 aj.AnimDuration=0.6
 aj.UIElements.MainContainer=aa.NewRoundFrame(aj.UICorner,"Squircle",{
@@ -2551,7 +2559,7 @@ aa.NewRoundFrame(aj.UICorner,"Glass-1",{
 ImageTransparency=0.89,
 Size=UDim2.new(1,0,1,0)
 }),
-_popupStroke or nil,
+_popupBorder or nil,
 aj.UIElements.Main,
 
 
@@ -2606,24 +2614,32 @@ _ts:Create(_mc,TweenInfo.new(0.12,Enum.EasingStyle.Quint,Enum.EasingDirection.Ou
 else
 local _mc=aj.UIElements.MainContainer
 local _ts=game:GetService"TweenService"
-local _dur=aj.AnimDuration or 0.6
 local _es=_mc:FindFirstChildOfClass"UIScale"
 if not _es then _es=Instance.new("UIScale") _es.Parent=_mc end
-_es.Scale=1.06
+_es.Scale=0.88
 _mc.ImageTransparency=0
-local _fb=Instance.new("Frame")
-_fb.Size=UDim2.new(1,0,1,0)
-_fb.BackgroundColor3=Color3.new(1,1,1)
-_fb.BackgroundTransparency=0
-_fb.BorderSizePixel=0
-_fb.ZIndex=99999
-local _fbc=Instance.new("UICorner")
-_fbc.CornerRadius=UDim.new(0,aj.UICorner or 28)
-_fbc.Parent=_fb
-_fb.Parent=_mc
-_ts:Create(_fb,TweenInfo.new(0.18,Enum.EasingStyle.Quint,Enum.EasingDirection.Out),{BackgroundTransparency=1}):Play()
-_ts:Create(_es,TweenInfo.new(_dur,Enum.EasingStyle.Quint,Enum.EasingDirection.Out),{Scale=1}):Play()
-task.delay(0.2,function() if _fb and _fb.Parent then _fb:Destroy() end end)
+_mc.Position=UDim2.new(0.5,0,0.5,-28)
+_ts:Create(_es,TweenInfo.new(0.28,Enum.EasingStyle.Back,Enum.EasingDirection.Out),{Scale=1.04}):Play()
+_ts:Create(_mc,TweenInfo.new(0.28,Enum.EasingStyle.Quint,Enum.EasingDirection.Out),{Position=UDim2.new(0.5,0,0.5,3)}):Play()
+task.wait(0.28)
+_ts:Create(_mc,TweenInfo.new(0.04,Enum.EasingStyle.Linear),{Position=UDim2.new(0.5,4,0.5,3)}):Play()
+task.wait(0.04)
+_ts:Create(_mc,TweenInfo.new(0.04,Enum.EasingStyle.Linear),{Position=UDim2.new(0.5,-4,0.5,3)}):Play()
+task.wait(0.04)
+_ts:Create(_mc,TweenInfo.new(0.04,Enum.EasingStyle.Linear),{Position=UDim2.new(0.5,2,0.5,3)}):Play()
+task.wait(0.04)
+_ts:Create(_es,TweenInfo.new(0.15,Enum.EasingStyle.Quint,Enum.EasingDirection.Out),{Scale=1}):Play()
+_ts:Create(_mc,TweenInfo.new(0.15,Enum.EasingStyle.Quint,Enum.EasingDirection.Out),{Position=UDim2.new(0.5,0,0.5,0)}):Play()
+task.wait(0.15)
+task.spawn(function()
+while _mc and _mc.Parent do
+_ts:Create(_mc,TweenInfo.new(1.4,Enum.EasingStyle.Sine,Enum.EasingDirection.InOut),{Position=UDim2.new(0.5,0,0.5,5)}):Play()
+task.wait(1.4)
+if not(_mc and _mc.Parent)then break end
+_ts:Create(_mc,TweenInfo.new(1.4,Enum.EasingStyle.Sine,Enum.EasingDirection.InOut),{Position=UDim2.new(0.5,0,0.5,-5)}):Play()
+task.wait(1.4)
+end
+end)
 end
 
 if aj.UIElements.PopupGradient then
@@ -3554,6 +3570,9 @@ IconSize=22,
 local ah=a.load'n'
 local ai=ah.Create(true,"Popup",ae.WindUI.Window,ae.WindUI,af)
 ai.AnimDuration=ae.AnimDuration or 0.6
+if ae.GradientColor and ai.UIElements.PopupGradient then
+ai.UIElements.PopupGradient.Color=ae.GradientColor
+end
 
 local aj=200
 
