@@ -2616,28 +2616,48 @@ local _mc=aj.UIElements.MainContainer
 local _ts=game:GetService"TweenService"
 local _es=_mc:FindFirstChildOfClass"UIScale"
 if not _es then _es=Instance.new("UIScale") _es.Parent=_mc end
-_es.Scale=0.88
-_mc.ImageTransparency=0
-_mc.Position=UDim2.new(0.5,0,0.5,-28)
-_ts:Create(_es,TweenInfo.new(0.28,Enum.EasingStyle.Back,Enum.EasingDirection.Out),{Scale=1.04}):Play()
-_ts:Create(_mc,TweenInfo.new(0.28,Enum.EasingStyle.Quint,Enum.EasingDirection.Out),{Position=UDim2.new(0.5,0,0.5,3)}):Play()
-task.wait(0.28)
-_ts:Create(_mc,TweenInfo.new(0.04,Enum.EasingStyle.Linear),{Position=UDim2.new(0.5,4,0.5,3)}):Play()
-task.wait(0.04)
-_ts:Create(_mc,TweenInfo.new(0.04,Enum.EasingStyle.Linear),{Position=UDim2.new(0.5,-4,0.5,3)}):Play()
-task.wait(0.04)
-_ts:Create(_mc,TweenInfo.new(0.04,Enum.EasingStyle.Linear),{Position=UDim2.new(0.5,2,0.5,3)}):Play()
-task.wait(0.04)
-_ts:Create(_es,TweenInfo.new(0.15,Enum.EasingStyle.Quint,Enum.EasingDirection.Out),{Scale=1}):Play()
-_ts:Create(_mc,TweenInfo.new(0.15,Enum.EasingStyle.Quint,Enum.EasingDirection.Out),{Position=UDim2.new(0.5,0,0.5,0)}):Play()
-task.wait(0.15)
+_es.Scale=0.82
+_mc.ImageTransparency=0.45
+_mc.Position=UDim2.new(0.5,0,0.5,-32)
+_mc.Rotation=-1.5
+_ts:Create(_es,TweenInfo.new(0.38,Enum.EasingStyle.Quint,Enum.EasingDirection.Out),{Scale=1.05}):Play()
+_ts:Create(_mc,TweenInfo.new(0.38,Enum.EasingStyle.Quint,Enum.EasingDirection.Out),{Position=UDim2.new(0.5,0,0.5,4),Rotation=0.5,ImageTransparency=0}):Play()
+task.wait(0.38)
+_ts:Create(_mc,TweenInfo.new(0.045,Enum.EasingStyle.Linear),{Position=UDim2.new(0.5,4,0.5,4)}):Play()
+task.wait(0.045)
+_ts:Create(_mc,TweenInfo.new(0.045,Enum.EasingStyle.Linear),{Position=UDim2.new(0.5,-3,0.5,4)}):Play()
+task.wait(0.045)
+_ts:Create(_mc,TweenInfo.new(0.045,Enum.EasingStyle.Linear),{Position=UDim2.new(0.5,1,0.5,4)}):Play()
+task.wait(0.045)
+_ts:Create(_es,TweenInfo.new(0.2,Enum.EasingStyle.Quint,Enum.EasingDirection.Out),{Scale=1}):Play()
+_ts:Create(_mc,TweenInfo.new(0.2,Enum.EasingStyle.Quint,Enum.EasingDirection.Out),{Position=UDim2.new(0.5,0,0.5,0),Rotation=0}):Play()
+task.wait(0.22)
 task.spawn(function()
+task.delay(0.6,function()
 while _mc and _mc.Parent do
-_ts:Create(_mc,TweenInfo.new(1.4,Enum.EasingStyle.Sine,Enum.EasingDirection.InOut),{Position=UDim2.new(0.5,0,0.5,5)}):Play()
-task.wait(1.4)
+_ts:Create(_mc,TweenInfo.new(2.4,Enum.EasingStyle.Sine,Enum.EasingDirection.InOut),{Rotation=0.5}):Play()
+task.wait(2.4)
 if not(_mc and _mc.Parent)then break end
-_ts:Create(_mc,TweenInfo.new(1.4,Enum.EasingStyle.Sine,Enum.EasingDirection.InOut),{Position=UDim2.new(0.5,0,0.5,-5)}):Play()
-task.wait(1.4)
+_ts:Create(_mc,TweenInfo.new(2.4,Enum.EasingStyle.Sine,Enum.EasingDirection.InOut),{Rotation=-0.5}):Play()
+task.wait(2.4)
+end
+end)
+while _mc and _mc.Parent do
+_ts:Create(_mc,TweenInfo.new(1.8,Enum.EasingStyle.Quart,Enum.EasingDirection.InOut),{Position=UDim2.new(0.5,0,0.5,-7)}):Play()
+task.wait(1.8)
+if not(_mc and _mc.Parent)then break end
+_ts:Create(_mc,TweenInfo.new(1.3,Enum.EasingStyle.Quart,Enum.EasingDirection.InOut),{Position=UDim2.new(0.5,0,0.5,7)}):Play()
+task.wait(1.3)
+end
+end)
+task.spawn(function()
+task.wait(0.4)
+while _es and _es.Parent do
+_ts:Create(_es,TweenInfo.new(3.8,Enum.EasingStyle.Sine,Enum.EasingDirection.InOut),{Scale=1.004}):Play()
+task.wait(3.8)
+if not(_es and _es.Parent)then break end
+_ts:Create(_es,TweenInfo.new(3.8,Enum.EasingStyle.Sine,Enum.EasingDirection.InOut),{Scale=0.996}):Play()
+task.wait(3.8)
 end
 end)
 end
