@@ -2609,10 +2609,21 @@ local _ts=game:GetService"TweenService"
 local _dur=aj.AnimDuration or 0.6
 local _es=_mc:FindFirstChildOfClass"UIScale"
 if not _es then _es=Instance.new("UIScale") _es.Parent=_mc end
-_es.Scale=0.93
-_mc.ImageTransparency=1
-_ts:Create(_mc,TweenInfo.new(_dur,Enum.EasingStyle.Quint,Enum.EasingDirection.Out),{ImageTransparency=0}):Play()
+_es.Scale=1.06
+_mc.ImageTransparency=0
+local _fb=Instance.new("Frame")
+_fb.Size=UDim2.new(1,0,1,0)
+_fb.BackgroundColor3=Color3.new(1,1,1)
+_fb.BackgroundTransparency=0
+_fb.BorderSizePixel=0
+_fb.ZIndex=99999
+local _fbc=Instance.new("UICorner")
+_fbc.CornerRadius=UDim.new(0,aj.UICorner or 28)
+_fbc.Parent=_fb
+_fb.Parent=_mc
+_ts:Create(_fb,TweenInfo.new(0.18,Enum.EasingStyle.Quint,Enum.EasingDirection.Out),{BackgroundTransparency=1}):Play()
 _ts:Create(_es,TweenInfo.new(_dur,Enum.EasingStyle.Quint,Enum.EasingDirection.Out),{Scale=1}):Play()
+task.delay(0.2,function() if _fb and _fb.Parent then _fb:Destroy() end end)
 end
 
 if aj.UIElements.PopupGradient then
