@@ -2513,7 +2513,7 @@ PaddingBottom=UDim.new(0,aj.UIPadding),
 })
 
 local _popupStroke,_popupGrad
-if not ae then
+if ae then
 _popupStroke=ab("UIStroke",{
 Thickness=2,
 ApplyStrokeMode=Enum.ApplyStrokeMode.Border,
@@ -2532,6 +2532,7 @@ Parent=_popupStroke,
 })
 aj.UIElements.PopupGradient=_popupGrad
 end
+aj.AnimDuration=0.6
 aj.UIElements.MainContainer=aa.NewRoundFrame(aj.UICorner,"Squircle",{
 Visible=false,
 
@@ -2603,7 +2604,15 @@ task.wait(0.25)
 _ts:Create(_es,TweenInfo.new(0.12,Enum.EasingStyle.Quint,Enum.EasingDirection.Out),{Scale=1}):Play()
 _ts:Create(_mc,TweenInfo.new(0.12,Enum.EasingStyle.Quint,Enum.EasingDirection.Out),{Rotation=0}):Play()
 else
-ac(aj.UIElements.MainContainer,0.1,{ImageTransparency=0}):Play()
+local _mc=aj.UIElements.MainContainer
+local _ts=game:GetService"TweenService"
+local _dur=aj.AnimDuration or 0.6
+local _es=_mc:FindFirstChildOfClass"UIScale"
+if not _es then _es=Instance.new("UIScale") _es.Parent=_mc end
+_es.Scale=0.93
+_mc.ImageTransparency=1
+_ts:Create(_mc,TweenInfo.new(_dur,Enum.EasingStyle.Quint,Enum.EasingDirection.Out),{ImageTransparency=0}):Play()
+_ts:Create(_es,TweenInfo.new(_dur,Enum.EasingStyle.Quint,Enum.EasingDirection.Out),{Scale=1}):Play()
 end
 
 if aj.UIElements.PopupGradient then
@@ -3533,6 +3542,7 @@ IconSize=22,
 
 local ah=a.load'n'
 local ai=ah.Create(true,"Popup",ae.WindUI.Window,ae.WindUI,af)
+ai.AnimDuration=ae.AnimDuration or 0.6
 
 local aj=200
 
