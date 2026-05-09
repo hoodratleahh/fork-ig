@@ -9809,39 +9809,6 @@ end
 end)
 
 return al.__type,al
-
-function al.Disable(at)
-if ar:FindFirstChild("DisabledOverlay")then return end
-local au=ae("Frame",{
-Name="DisabledOverlay",
-Size=UDim2.new(1,0,1,0),
-Position=UDim2.new(0,0,0,0),
-BackgroundColor3=Color3.new(0,0,0),
-BackgroundTransparency=0.5,
-BorderSizePixel=0,
-ZIndex=999,
-Parent=ar,
-})
-for av,aw in next,al.Elements do
-if aw.ElementFrame then
-aw.ElementFrame.Visible=false
-end
-end
-if ar.Top then ar.Top.Active=false end
-ar.Content.Active=false
-end
-
-function al.Enable(at)
-local au=ar:FindFirstChild("DisabledOverlay")
-if au then au:Destroy()end
-for av,aw in next,al.Elements do
-if aw.ElementFrame then
-aw.ElementFrame.Visible=true
-end
-end
-if ar.Top then ar.Top.Active=true end
-ar.Content.Active=true
-end
 end
 
 return ah end function a.S()
