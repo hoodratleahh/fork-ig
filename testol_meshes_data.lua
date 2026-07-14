@@ -44171,6 +44171,3492 @@ local MESHES_FULL =
 },
 },
     },
+    ["SilverSugar"] = {
+        Complete = true,
+        Model =
+        {
+            Class = "Part",
+            Id = 1,
+            Name = "GunDisplay",
+            Tags = { "WeaponDisplay" },
+            Props = {
+                Reflectance = 0,
+                CanCollide = false,
+                Color = Color3.fromRGB(196, 40, 28),
+                RelCF = CFrame.new(0, 0, 0, 1, -2.98e-08, 0, -2.98e-08, 1, 5.96e-08, 0, 5.96e-08, 1),
+                Transparency = 0,
+                Shape = Enum.PartType.Block,
+                Material = Enum.Material.Plastic,
+                CastShadow = true,
+                Size = Vector3.new(1.4, 1.4, 3.111),
+            },
+            Children = {
+                {
+                    Class = "SpecialMesh",
+                    Id = 2,
+                    Name = "Mesh",
+                    Props = {
+                        Offset = Vector3.new(0, 0, 0),
+                        VertexColor = Vector3.new(1, 1, 1),
+                        MeshType = Enum.MeshType.FileMesh,
+                        Scale = Vector3.new(0.5, 0.5, 0.5),
+                        MeshId = "http://www.roblox.com/asset/?id=101086719",
+                        TextureId = "http://www.roblox.com/asset/?id=11450871742",
+                    },
+                },
+                {
+                    Class = "Attachment",
+                    Id = 3,
+                    Name = "CustomAttachment",
+                    Props = {
+                        RelCF = CFrame.new(-0.09999, 0.2823, 0.3072, -1, 2.98e-08, -2.98e-08, 2.98e-08, -0.08713, -0.9962, 0, -0.9962, 0.08713),
+                    },
+                },
+            },
+        },
+        Meta = {
+            ItemName = "Silver Sugar",
+            ItemType = "Gun",
+            Rarity = "Unique",
+        },
+    },
+    ["Sorry"] = {
+        Complete = true,
+        Model =
+        {
+            Class = "Part",
+            Id = 1,
+            Name = "KnifeDisplay",
+            Tags = { "WeaponDisplay" },
+            Props = {
+                Reflectance = 0.01,
+                CanCollide = false,
+                Color = Color3.fromRGB(17, 17, 17),
+                RelCF = CFrame.new(0, 0, 0, 1, -2.98e-08, 0, -2.98e-08, 1, -5.96e-08, 0, -5.96e-08, 1),
+                Transparency = 0,
+                Shape = Enum.PartType.Block,
+                Material = Enum.Material.DiamondPlate,
+                CastShadow = true,
+                Size = Vector3.new(0.4, 3, 0.7),
+            },
+            Children = {
+                {
+                    Class = "SpecialMesh",
+                    Id = 2,
+                    Name = "Mesh",
+                    Props = {
+                        Offset = Vector3.new(0, 0, 0),
+                        VertexColor = Vector3.new(1, 1, 1),
+                        MeshType = Enum.MeshType.FileMesh,
+                        Scale = Vector3.new(1, 1, 1),
+                        MeshId = "http://www.roblox.com/asset/?id=121944778  ",
+                        TextureId = "http://www.roblox.com/asset/?id=162016526",
+                    },
+                },
+                {
+                    Class = "Attachment",
+                    Id = 3,
+                    Name = "Attachment",
+                    Props = {
+                        RelCF = CFrame.new(0, 0, 0, 1, -2.98e-08, 0, -2.98e-08, 1, -5.96e-08, 0, -5.96e-08, 1),
+                    },
+                },
+            },
+        },
+        Meta = {
+            ItemName = "Corrupt",
+            ItemType = "Knife",
+            Rarity = "Unique",
+        },
+    },
+    ["BronzeIceblaster"] = {
+        Complete = true,
+        Model =
+        {
+            Class = "MeshPart",
+            Id = 1,
+            Name = "GunDisplay",
+            Tags = { "WeaponDisplay" },
+            Props = {
+                Reflectance = 0,
+                CanCollide = false,
+                Color = Color3.fromRGB(17, 17, 17),
+                MeshId = "rbxassetid://6125828567",
+                RelCF = CFrame.new(0, 0, 0, 1, 0, 0, 0, 1, -3.725e-08, 0, -3.725e-08, 1),
+                Transparency = 0,
+                TextureID = "rbxassetid://6246948951",
+                Material = Enum.Material.Brick,
+                CastShadow = true,
+                Size = Vector3.new(0.4432, 1.93, 1.024),
+            },
+            Children = {
+                {
+                    Class = "Attachment",
+                    Id = 2,
+                    Name = "Forward",
+                    Props = {
+                        RelCF = CFrame.new(3.815e-06, 1, 1.526e-05, 1, 0, 0, 0, 1, -3.725e-08, 0, -3.725e-08, 1),
+                    },
+                },
+                {
+                    Class = "Attachment",
+                    Id = 3,
+                    Name = "Up",
+                    Props = {
+                        RelCF = CFrame.new(1.907e-06, -3.052e-05, 1, 1, 0, 0, 0, 1, -3.725e-08, 0, -3.725e-08, 1),
+                    },
+                },
+                {
+                    Class = "Attachment",
+                    Id = 4,
+                    Name = "Attachment",
+                    Props = {
+                        RelCF = CFrame.new(0, 0, 0, 1, 0, 0, 0, 1, -3.725e-08, 0, -3.725e-08, 1),
+                    },
+                },
+            },
+        },
+        Meta = {
+            ItemName = "Bronze Iceblaster",
+            ItemType = "Gun",
+            Rarity = "Unique",
+        },
+    },
+    ["SilverHallow"] = {
+        Complete = true,
+        Model =
+        {
+            Class = "Part",
+            Id = 1,
+            Name = "KnifeDisplay",
+            Tags = { "WeaponDisplay" },
+            Props = {
+                Reflectance = 0,
+                CanCollide = false,
+                Color = Color3.fromRGB(163, 162, 165),
+                RelCF = CFrame.new(0, 0, 0, 1, -2.98e-08, 2.98e-08, -2.98e-08, 1, -4.47e-08, 2.98e-08, -4.47e-08, 1),
+                Transparency = 0,
+                Shape = Enum.PartType.Block,
+                Material = Enum.Material.Plastic,
+                CastShadow = true,
+                Size = Vector3.new(0.4, 3, 0.7),
+            },
+            Children = {
+                {
+                    Class = "SpecialMesh",
+                    Id = 2,
+                    Name = "Mesh",
+                    Props = {
+                        Offset = Vector3.new(0, 0, 0),
+                        VertexColor = Vector3.new(1, 1, 1),
+                        MeshType = Enum.MeshType.FileMesh,
+                        Scale = Vector3.new(0.55, 0.55, 0.55),
+                        MeshId = "http://www.roblox.com/asset?id=179155055",
+                        TextureId = "rbxassetid://2518149164",
+                    },
+                },
+                {
+                    Class = "Attachment",
+                    Id = 3,
+                    Name = "Attachment",
+                    Props = {
+                        RelCF = CFrame.new(0, 0, 0, 1, -2.98e-08, 2.98e-08, -2.98e-08, 1, -4.47e-08, 2.98e-08, -4.47e-08, 1),
+                    },
+                },
+            },
+        },
+        Meta = {
+            ItemName = "Silver Hallow",
+            ItemType = "Knife",
+            Rarity = "Unique",
+        },
+    },
+    ["ElderwoodGunSilver"] = {
+        Complete = true,
+        Model =
+        {
+            Class = "MeshPart",
+            Id = 1,
+            Name = "GunDisplay",
+            Tags = { "WeaponDisplay" },
+            Props = {
+                Reflectance = 0,
+                CanCollide = false,
+                Color = Color3.fromRGB(17, 17, 17),
+                MeshId = "rbxassetid://4210029922",
+                RelCF = CFrame.new(0, 0, 0, 1, 0, 0, 0, 1, -2.98e-08, 0, -2.98e-08, 1),
+                Transparency = 0,
+                TextureID = "rbxassetid://5357372620",
+                Material = Enum.Material.Brick,
+                CastShadow = true,
+                Size = Vector3.new(1.49, 1.132, 0.3587),
+            },
+            Children = {
+                {
+                    Class = "Attachment",
+                    Id = 2,
+                    Name = "CustomAttachment",
+                    Props = {
+                        RelCF = CFrame.new(-0.2299, 0.09818, 0.1, 6.273e-06, 0.9848, -0.1736, -5.513e-06, 0.1736, 0.9848, 1, -5.23e-06, 6.467e-06),
+                    },
+                },
+            },
+        },
+        Meta = {
+            ItemName = "Silver Elderwood",
+            ItemType = "Gun",
+            Rarity = "Unique",
+        },
+    },
+    ["BronzeVampiresEdge"] = {
+        Complete = true,
+        Model =
+        {
+            Class = "MeshPart",
+            Id = 1,
+            Name = "KnifeDisplay",
+            Tags = { "WeaponDisplay" },
+            Props = {
+                Reflectance = 0,
+                CanCollide = false,
+                Color = Color3.fromRGB(17, 17, 17),
+                MeshId = "rbxassetid://5841895234",
+                RelCF = CFrame.new(0, 0, 0, 1, -2.98e-08, -2.98e-08, -2.98e-08, 1, -2.98e-08, -2.98e-08, -2.98e-08, 1),
+                Transparency = 0,
+                TextureID = "http://www.roblox.com/asset/?id=114300824868978",
+                Material = Enum.Material.Brick,
+                CastShadow = true,
+                Size = Vector3.new(0.3955, 3.351, 1.014),
+            },
+            Children = {
+                {
+                    Class = "Attachment",
+                    Id = 2,
+                    Name = "Attachment",
+                    Props = {
+                        RelCF = CFrame.new(0, 0, 0, 1, -2.98e-08, -2.98e-08, -2.98e-08, 1, -2.98e-08, -2.98e-08, -2.98e-08, 1),
+                    },
+                },
+            },
+        },
+        Meta = {
+            ItemName = "Bronze Vamp's Edge",
+            ItemType = "Knife",
+            Rarity = "Unique",
+        },
+    },
+    ["BronzeCandy"] = {
+        Complete = true,
+        Model =
+        {
+            Class = "Part",
+            Id = 1,
+            Name = "KnifeDisplay",
+            Tags = { "WeaponDisplay" },
+            Props = {
+                Reflectance = 0.01,
+                CanCollide = false,
+                Color = Color3.fromRGB(17, 17, 17),
+                RelCF = CFrame.new(0, 0, 0, 1, -2.98e-08, -2.98e-08, -2.98e-08, 1, 0, -2.98e-08, 0, 1),
+                Transparency = 0,
+                Shape = Enum.PartType.Block,
+                Material = Enum.Material.DiamondPlate,
+                CastShadow = true,
+                Size = Vector3.new(0.4, 4, 0.8),
+            },
+            Children = {
+                {
+                    Class = "SpecialMesh",
+                    Id = 2,
+                    Name = "Mesh",
+                    Props = {
+                        Offset = Vector3.new(0, 0, 0),
+                        VertexColor = Vector3.new(1, 1, 1),
+                        MeshType = Enum.MeshType.FileMesh,
+                        Scale = Vector3.new(1.1, 1.4, 1.1),
+                        MeshId = "http://www.roblox.com/asset/?id=19040337",
+                        TextureId = "rbxassetid://2551862095",
+                    },
+                },
+                {
+                    Class = "Attachment",
+                    Id = 3,
+                    Name = "Attachment",
+                    Props = {
+                        RelCF = CFrame.new(0, 0, 0, 1, -2.98e-08, -2.98e-08, -2.98e-08, 1, 0, -2.98e-08, 0, 1),
+                    },
+                },
+            },
+        },
+        Meta = {
+            ItemName = "Bronze Candy",
+            ItemType = "Knife",
+            Rarity = "Unique",
+        },
+    },
+    ["Constellation_Bronze"] = {
+        Complete = true,
+        Model =
+        {
+            Class = "MeshPart",
+            Id = 1,
+            Name = "GunDisplay",
+            Tags = { "WeaponDisplay" },
+            Props = {
+                Reflectance = 0,
+                CanCollide = false,
+                Color = Color3.fromRGB(163, 162, 165),
+                MeshId = "rbxassetid://124598402927958",
+                RelCF = CFrame.new(0, 0, 0, 1, 5.96e-08, -2.98e-08, 5.96e-08, 1, 1.49e-08, -2.98e-08, 1.49e-08, 1),
+                Transparency = 0,
+                TextureID = "rbxassetid://116950420635007",
+                Material = Enum.Material.Plastic,
+                CastShadow = true,
+                Size = Vector3.new(0.5372, 1.583, 2.367),
+            },
+            Children = {
+                {
+                    Class = "Attachment",
+                    Id = 2,
+                    Name = "CustomAttachment",
+                    Props = {
+                        RelCF = CFrame.new(0, -0.2, 0.0899, 1, 2.98e-08, 2.98e-08, 5.96e-08, 0.6428, 0.7661, -2.98e-08, -0.7661, 0.6428),
+                    },
+                },
+            },
+        },
+        Meta = {
+            ItemName = "Bronze Constellation",
+            ItemType = "Gun",
+            Rarity = "Unique",
+        },
+    },
+    ["Synthwave_Bronze"] = {
+        Complete = true,
+        Model =
+        {
+            Class = "Part",
+            Id = 1,
+            Name = "KnifeDisplay",
+            Tags = { "WeaponDisplay" },
+            Props = {
+                Reflectance = 0,
+                CanCollide = false,
+                Color = Color3.fromRGB(163, 162, 165),
+                RelCF = CFrame.new(0, 0, 0, 1, 0, -2.98e-08, 0, 1, -5.96e-08, -2.98e-08, -5.96e-08, 1),
+                Transparency = 0,
+                Shape = Enum.PartType.Block,
+                Material = Enum.Material.Glass,
+                CastShadow = true,
+                Size = Vector3.new(0.8, 4.2, 3.6),
+            },
+            Children = {
+                {
+                    Class = "SpecialMesh",
+                    Id = 2,
+                    Name = "Mesh",
+                    Props = {
+                        Offset = Vector3.new(0, 0, 0),
+                        VertexColor = Vector3.new(1, 1, 1),
+                        MeshType = Enum.MeshType.FileMesh,
+                        Scale = Vector3.new(0.08539, 0.08539, 0.08539),
+                        MeshId = "rbxassetid://108638551470204",
+                        TextureId = "rbxassetid://119403042253272",
+                    },
+                },
+                {
+                    Class = "Part",
+                    Id = 3,
+                    Name = "Detailing",
+                    Props = {
+                        Reflectance = 0,
+                        CanCollide = false,
+                        Color = Color3.fromRGB(163, 162, 165),
+                        RelCF = CFrame.new(-0.01026, -1.526e-05, 0.146, 1, 0, -2.98e-08, 0, 1, -5.96e-08, -2.98e-08, -5.96e-08, 1),
+                        Transparency = 0,
+                        Shape = Enum.PartType.Block,
+                        Material = Enum.Material.Plastic,
+                        CastShadow = true,
+                        Size = Vector3.new(0.8, 4.2, 3.6),
+                    },
+                    Children = {
+                        {
+                            Class = "SpecialMesh",
+                            Id = 4,
+                            Name = "Mesh",
+                            Props = {
+                                Offset = Vector3.new(0, 0, 0),
+                                VertexColor = Vector3.new(1, 1, 1),
+                                MeshType = Enum.MeshType.FileMesh,
+                                Scale = Vector3.new(0.08539, 0.08539, 0.08539),
+                                MeshId = "rbxassetid://81344146777937",
+                                TextureId = "rbxassetid://119403042253272",
+                            },
+                        },
+                        {
+                            Class = "Decal",
+                            Id = 5,
+                            Name = "Pink",
+                            Props = {
+                                Transparency = 1,
+                                Face = Enum.NormalId.Left,
+                                Color3 = Color3.fromRGB(1002, 0, 2555),
+                                Texture = "rbxassetid://74726114882932",
+                            },
+                        },
+                        {
+                            Class = "Decal",
+                            Id = 6,
+                            Name = "Cyan",
+                            Props = {
+                                Transparency = 1,
+                                Face = Enum.NormalId.Left,
+                                Color3 = Color3.fromRGB(0, 17444, 25555),
+                                Texture = "rbxassetid://104477416334286",
+                            },
+                        },
+                    },
+                },
+                {
+                    Class = "Attachment",
+                    Id = 7,
+                    Name = "Attachment",
+                    Props = {
+                        RelCF = CFrame.new(0, 0, 0, 1, 0, -2.98e-08, 0, 1, -5.96e-08, -2.98e-08, -5.96e-08, 1),
+                    },
+                },
+            },
+        },
+        Meta = {
+            ItemName = "Bronze Synthwave",
+            ItemType = "Knife",
+            Rarity = "Unique",
+        },
+    },
+    ["SwirlyAxeBronze"] = {
+        Complete = true,
+        Model =
+        {
+            Class = "Part",
+            Id = 1,
+            Name = "KnifeDisplay",
+            Tags = { "WeaponDisplay" },
+            Props = {
+                Reflectance = 0,
+                CanCollide = false,
+                Color = Color3.fromRGB(248, 248, 248),
+                RelCF = CFrame.new(0, 0, 0, 1, 2.98e-08, -2.98e-08, 2.98e-08, 1, -1.49e-08, -2.98e-08, -1.49e-08, 1),
+                Transparency = 0,
+                Shape = Enum.PartType.Block,
+                Material = Enum.Material.Plastic,
+                CastShadow = true,
+                Size = Vector3.new(4, 1, 2),
+            },
+            Children = {
+                {
+                    Class = "SpecialMesh",
+                    Id = 2,
+                    Name = "Mesh",
+                    Props = {
+                        Offset = Vector3.new(0, 0, 0),
+                        VertexColor = Vector3.new(1, 1, 1),
+                        MeshType = Enum.MeshType.FileMesh,
+                        Scale = Vector3.new(0.055, 0.055, 0.055),
+                        MeshId = "rbxassetid://8293463844",
+                        TextureId = "rbxassetid://10784761280",
+                    },
+                },
+                {
+                    Class = "Attachment",
+                    Id = 3,
+                    Name = "Attachment",
+                    Props = {
+                        RelCF = CFrame.new(0, 0, 0, 1, 2.98e-08, -2.98e-08, 2.98e-08, 1, -1.49e-08, -2.98e-08, -1.49e-08, 1),
+                    },
+                },
+            },
+        },
+        Meta = {
+            ItemName = "Bronze Swirly",
+            ItemType = "Knife",
+            Rarity = "Unique",
+        },
+    },
+    ["Gingerscope_Silver"] = {
+        Complete = true,
+        Model =
+        {
+            Class = "Part",
+            Id = 1,
+            Name = "GunDisplay",
+            Tags = { "WeaponDisplay" },
+            Props = {
+                Reflectance = 0,
+                CanCollide = false,
+                Color = Color3.fromRGB(163, 162, 165),
+                RelCF = CFrame.new(0, 0, 0, 1, 2.98e-08, -2.98e-08, 2.98e-08, 1, 1.49e-08, -2.98e-08, 1.49e-08, 1),
+                Transparency = 0,
+                Shape = Enum.PartType.Block,
+                Material = Enum.Material.Plastic,
+                CastShadow = true,
+                Size = Vector3.new(0.04401, 0.09837, 0.3517),
+            },
+            Children = {
+                {
+                    Class = "SpecialMesh",
+                    Id = 2,
+                    Name = "Mesh",
+                    Props = {
+                        Offset = Vector3.new(0, 0, 0),
+                        VertexColor = Vector3.new(1, 1, 1),
+                        MeshType = Enum.MeshType.FileMesh,
+                        Scale = Vector3.new(0.07549, 0.07549, 0.07549),
+                        MeshId = "rbxassetid://15374602183",
+                        TextureId = "http://www.roblox.com/asset/?id=71836860512422",
+                    },
+                },
+                {
+                    Class = "Beam",
+                    Id = 3,
+                    Name = "CustomBeam",
+                    Props = {
+                        FaceCamera = false,
+                        Width0 = 0.07549,
+                        CurveSize1 = 0,
+                        Color = ColorSequence.new({ ColorSequenceKeypoint.new(0, Color3.fromRGB(255, 255, 255)), ColorSequenceKeypoint.new(1, Color3.fromRGB(255, 255, 255)) }),
+                        TextureSpeed = 1,
+                        ZOffset = 0,
+                        Transparency = NumberSequence.new({ NumberSequenceKeypoint.new(0, 0.5, 0), NumberSequenceKeypoint.new(1, 0.5, 0) }),
+                        LightInfluence = 1,
+                        CurveSize0 = 0,
+                        Segments = 10,
+                        Width1 = 0.07549,
+                        LightEmission = 1,
+                        TextureLength = 0.1,
+                        TextureMode = Enum.TextureMode.Static,
+                        Texture = "http://www.roblox.com/asset/?id=101749052665692",
+                    },
+                },
+                {
+                    Class = "Attachment",
+                    Id = 4,
+                    Name = "Attachment",
+                    Props = {
+                        RelCF = CFrame.new(0, 0, 0, 1, 2.98e-08, -2.98e-08, 2.98e-08, 1, 1.49e-08, -2.98e-08, 1.49e-08, 1),
+                    },
+                },
+            },
+        },
+        Meta = {
+            ItemName = "Silver Gingerscope",
+            ItemType = "Gun",
+            Rarity = "Unique",
+        },
+    },
+    ["VampireAxe_Gold"] = {
+        Complete = true,
+        Model =
+        {
+            Class = "MeshPart",
+            Id = 1,
+            Name = "KnifeDisplay",
+            Tags = { "WeaponDisplay" },
+            Props = {
+                Reflectance = 0,
+                CanCollide = false,
+                Color = Color3.fromRGB(163, 162, 165),
+                MeshId = "rbxassetid://92263601594064",
+                RelCF = CFrame.new(0, 0, 0, 1, -2.98e-08, -2.98e-08, -2.98e-08, 1, -2.98e-08, -2.98e-08, -2.98e-08, 1),
+                Transparency = 0,
+                TextureID = "rbxassetid://73466956491442",
+                Material = Enum.Material.Slate,
+                CastShadow = true,
+                Size = Vector3.new(0.312, 3.627, 1.923),
+            },
+            Children = {
+                {
+                    Class = "Attachment",
+                    Id = 2,
+                    Name = "Attachment",
+                    Props = {
+                        RelCF = CFrame.new(0, 0, 0, 1, -2.98e-08, -2.98e-08, -2.98e-08, 1, -2.98e-08, -2.98e-08, -2.98e-08, 1),
+                    },
+                },
+            },
+        },
+        Meta = {
+            ItemName = "Vampire's Axe",
+            ItemType = "Knife",
+            Rarity = "Unique",
+        },
+    },
+    ["ElderwoodGunBlue"] = {
+        Complete = true,
+        Model =
+        {
+            Class = "MeshPart",
+            Id = 1,
+            Name = "GunDisplay",
+            Tags = { "WeaponDisplay" },
+            Props = {
+                Reflectance = 0,
+                CanCollide = false,
+                Color = Color3.fromRGB(17, 17, 17),
+                MeshId = "rbxassetid://4210029922",
+                RelCF = CFrame.new(0, 0, 0, 1, 1.49e-08, 1.49e-08, 1.49e-08, 1, -5.96e-08, 1.49e-08, -5.96e-08, 1),
+                Transparency = 0,
+                TextureID = "rbxassetid://5827160585",
+                Material = Enum.Material.Brick,
+                CastShadow = true,
+                Size = Vector3.new(1.49, 1.132, 0.3587),
+            },
+            Children = {
+                {
+                    Class = "Attachment",
+                    Id = 2,
+                    Name = "CustomAttachment",
+                    Props = {
+                        RelCF = CFrame.new(-0.2299, 0.09824, 0.1, 6.273e-06, 0.9848, -0.1736, -5.543e-06, 0.1736, 0.9848, 1, -5.215e-06, 6.437e-06),
+                    },
+                },
+            },
+        },
+        Meta = {
+            ItemName = "Blue Elderwood",
+            ItemType = "Gun",
+            Rarity = "Unique",
+        },
+    },
+    ["LogchopperSilver"] = {
+        Complete = true,
+        Model =
+        {
+            Class = "Part",
+            Id = 1,
+            Name = "KnifeDisplay",
+            Tags = { "WeaponDisplay" },
+            Props = {
+                Reflectance = 0,
+                CanCollide = false,
+                Color = Color3.fromRGB(163, 162, 165),
+                RelCF = CFrame.new(0, 0, 0, 1, 2.98e-08, 2.98e-08, 2.98e-08, 1, 0, 2.98e-08, 0, 1),
+                Transparency = 0,
+                Shape = Enum.PartType.Block,
+                Material = Enum.Material.Plastic,
+                CastShadow = true,
+                Size = Vector3.new(0.4, 3, 0.7),
+            },
+            Children = {
+                {
+                    Class = "SpecialMesh",
+                    Id = 2,
+                    Name = "Mesh",
+                    Props = {
+                        Offset = Vector3.new(0, 0, 0),
+                        VertexColor = Vector3.new(1, 1, 1),
+                        MeshType = Enum.MeshType.FileMesh,
+                        Scale = Vector3.new(0.96, 0.96, 0.96),
+                        MeshId = "http://www.roblox.com/asset?id=4535643726",
+                        TextureId = "rbxassetid://9346155546",
+                    },
+                },
+                {
+                    Class = "Attachment",
+                    Id = 3,
+                    Name = "Attachment",
+                    Props = {
+                        RelCF = CFrame.new(0, 0, 0, 1, 2.98e-08, 2.98e-08, 2.98e-08, 1, 0, 2.98e-08, 0, 1),
+                    },
+                },
+            },
+        },
+        Meta = {
+            ItemName = "Silver Logchopper",
+            ItemType = "Knife",
+            Rarity = "Unique",
+        },
+    },
+    ["GoldIcebreaker"] = {
+        Complete = true,
+        Model =
+        {
+            Class = "MeshPart",
+            Id = 1,
+            Name = "KnifeDisplay",
+            Tags = { "WeaponDisplay" },
+            Props = {
+                Reflectance = 0,
+                CanCollide = false,
+                Color = Color3.fromRGB(17, 17, 17),
+                MeshId = "rbxassetid://6124173614",
+                RelCF = CFrame.new(0, 0, 0, 1, 0, 0, 0, 1, -1.49e-08, 0, -1.49e-08, 1),
+                Transparency = 0,
+                TextureID = "rbxassetid://6237993632",
+                Material = Enum.Material.Brick,
+                CastShadow = true,
+                Size = Vector3.new(0.4106, 3.074, 1.955),
+            },
+            Children = {
+                {
+                    Class = "Attachment",
+                    Id = 2,
+                    Name = "Attachment",
+                    Props = {
+                        RelCF = CFrame.new(0, 0, 0, 1, 0, 0, 0, 1, -1.49e-08, 0, -1.49e-08, 1),
+                    },
+                },
+            },
+        },
+        Meta = {
+            ItemName = "Gold Icebreaker",
+            ItemType = "Knife",
+            Rarity = "Unique",
+        },
+    },
+    ["LogchopperGold"] = {
+        Complete = true,
+        Model =
+        {
+            Class = "Part",
+            Id = 1,
+            Name = "KnifeDisplay",
+            Tags = { "WeaponDisplay" },
+            Props = {
+                Reflectance = 0,
+                CanCollide = false,
+                Color = Color3.fromRGB(163, 162, 165),
+                RelCF = CFrame.new(0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1),
+                Transparency = 0,
+                Shape = Enum.PartType.Block,
+                Material = Enum.Material.Plastic,
+                CastShadow = true,
+                Size = Vector3.new(0.4, 3, 0.7),
+            },
+            Children = {
+                {
+                    Class = "SpecialMesh",
+                    Id = 2,
+                    Name = "Mesh",
+                    Props = {
+                        Offset = Vector3.new(0, 0, 0),
+                        VertexColor = Vector3.new(1, 1, 1),
+                        MeshType = Enum.MeshType.FileMesh,
+                        Scale = Vector3.new(0.96, 0.96, 0.96),
+                        MeshId = "http://www.roblox.com/asset?id=4535643726",
+                        TextureId = "rbxassetid://9479742799",
+                    },
+                },
+                {
+                    Class = "Attachment",
+                    Id = 3,
+                    Name = "Attachment",
+                    Props = {
+                        RelCF = CFrame.new(0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1),
+                    },
+                },
+            },
+        },
+        Meta = {
+            ItemName = "Gold Logchopper",
+            ItemType = "Knife",
+            Rarity = "Unique",
+        },
+    },
+    ["MintyBronze"] = {
+        Complete = true,
+        Model =
+        {
+            Class = "MeshPart",
+            Id = 1,
+            Name = "GunDisplay",
+            Tags = { "WeaponDisplay" },
+            Props = {
+                Reflectance = 0,
+                CanCollide = false,
+                Color = Color3.fromRGB(17, 17, 17),
+                MeshId = "rbxassetid://4528424409",
+                RelCF = CFrame.new(0, 0, 0, 1, 0, 0, 0, 1, 2.235e-08, 0, 2.235e-08, 1),
+                Transparency = 0,
+                TextureID = "rbxassetid://108884241261095",
+                Material = Enum.Material.Brick,
+                CastShadow = true,
+                Size = Vector3.new(0.3335, 1.35, 1.88),
+            },
+            Children = {
+                {
+                    Class = "Attachment",
+                    Id = 2,
+                    Name = "CustomAttachment",
+                    Props = {
+                        RelCF = CFrame.new(-0.05, -0.07257, 0.2392, -1, 0, 0, 0, -2.235e-08, -1, 0, -1, -2.235e-08),
+                    },
+                },
+            },
+        },
+        Meta = {
+            ItemName = "Bronze Minty",
+            ItemType = "Gun",
+            Rarity = "Unique",
+        },
+    },
+    ["Synthwave_Silver"] = {
+        Complete = true,
+        Model =
+        {
+            Class = "Part",
+            Id = 1,
+            Name = "KnifeDisplay",
+            Tags = { "WeaponDisplay" },
+            Props = {
+                Reflectance = 0,
+                CanCollide = false,
+                Color = Color3.fromRGB(163, 162, 165),
+                RelCF = CFrame.new(0, 0, 0, 1, -2.98e-08, 0, -2.98e-08, 1, -5.96e-08, 0, -5.96e-08, 1),
+                Transparency = 0,
+                Shape = Enum.PartType.Block,
+                Material = Enum.Material.Glass,
+                CastShadow = true,
+                Size = Vector3.new(0.8, 4.2, 3.6),
+            },
+            Children = {
+                {
+                    Class = "SpecialMesh",
+                    Id = 2,
+                    Name = "Mesh",
+                    Props = {
+                        Offset = Vector3.new(0, 0, 0),
+                        VertexColor = Vector3.new(1, 1, 1),
+                        MeshType = Enum.MeshType.FileMesh,
+                        Scale = Vector3.new(0.08539, 0.08539, 0.08539),
+                        MeshId = "rbxassetid://108638551470204",
+                        TextureId = "rbxassetid://75641650687860",
+                    },
+                },
+                {
+                    Class = "Part",
+                    Id = 3,
+                    Name = "Detailing",
+                    Props = {
+                        Reflectance = 0,
+                        CanCollide = false,
+                        Color = Color3.fromRGB(163, 162, 165),
+                        RelCF = CFrame.new(-0.01025, 0, 0.146, 1, -2.98e-08, 0, -2.98e-08, 1, -5.96e-08, 0, -5.96e-08, 1),
+                        Transparency = 0,
+                        Shape = Enum.PartType.Block,
+                        Material = Enum.Material.Plastic,
+                        CastShadow = true,
+                        Size = Vector3.new(0.8, 4.2, 3.6),
+                    },
+                    Children = {
+                        {
+                            Class = "SpecialMesh",
+                            Id = 4,
+                            Name = "Mesh",
+                            Props = {
+                                Offset = Vector3.new(0, 0, 0),
+                                VertexColor = Vector3.new(1, 1, 1),
+                                MeshType = Enum.MeshType.FileMesh,
+                                Scale = Vector3.new(0.08539, 0.08539, 0.08539),
+                                MeshId = "rbxassetid://81344146777937",
+                                TextureId = "rbxassetid://75641650687860",
+                            },
+                        },
+                        {
+                            Class = "Decal",
+                            Id = 5,
+                            Name = "Pink",
+                            Props = {
+                                Transparency = 1,
+                                Face = Enum.NormalId.Left,
+                                Color3 = Color3.fromRGB(1002, 0, 2555),
+                                Texture = "rbxassetid://74726114882932",
+                            },
+                        },
+                        {
+                            Class = "Decal",
+                            Id = 6,
+                            Name = "Cyan",
+                            Props = {
+                                Transparency = 1,
+                                Face = Enum.NormalId.Left,
+                                Color3 = Color3.fromRGB(0, 17444, 25555),
+                                Texture = "rbxassetid://104477416334286",
+                            },
+                        },
+                    },
+                },
+                {
+                    Class = "Attachment",
+                    Id = 7,
+                    Name = "Attachment",
+                    Props = {
+                        RelCF = CFrame.new(0, 0, 0, 1, -2.98e-08, 0, -2.98e-08, 1, -5.96e-08, 0, -5.96e-08, 1),
+                    },
+                },
+            },
+        },
+        Meta = {
+            ItemName = "Silver Synthwave",
+            ItemType = "Knife",
+            Rarity = "Unique",
+        },
+    },
+    ["BronzeIcebreaker"] = {
+        Complete = true,
+        Model =
+        {
+            Class = "MeshPart",
+            Id = 1,
+            Name = "KnifeDisplay",
+            Tags = { "WeaponDisplay" },
+            Props = {
+                Reflectance = 0,
+                CanCollide = false,
+                Color = Color3.fromRGB(17, 17, 17),
+                MeshId = "rbxassetid://6124173614",
+                RelCF = CFrame.new(0, 0, 0, 1, -2.98e-08, 0, -2.98e-08, 1, -7.451e-08, 0, -7.451e-08, 1),
+                Transparency = 0,
+                TextureID = "rbxassetid://6237991982",
+                Material = Enum.Material.Brick,
+                CastShadow = true,
+                Size = Vector3.new(0.4106, 3.074, 1.955),
+            },
+            Children = {
+                {
+                    Class = "Attachment",
+                    Id = 2,
+                    Name = "Attachment",
+                    Props = {
+                        RelCF = CFrame.new(0, 0, 0, 1, -2.98e-08, 0, -2.98e-08, 1, -7.451e-08, 0, -7.451e-08, 1),
+                    },
+                },
+            },
+        },
+        Meta = {
+            ItemName = "Bronze Icebreaker",
+            ItemType = "Knife",
+            Rarity = "Unique",
+        },
+    },
+    ["ElderwoodKnifeBlue"] = {
+        Complete = true,
+        Model =
+        {
+            Class = "Part",
+            Id = 1,
+            Name = "KnifeDisplay",
+            Tags = { "WeaponDisplay" },
+            Props = {
+                Reflectance = 0,
+                CanCollide = false,
+                Color = Color3.fromRGB(163, 162, 165),
+                RelCF = CFrame.new(0, 0, 0, 1, -1.49e-07, -5.96e-08, -1.49e-07, 1, -4.47e-08, -5.96e-08, -4.47e-08, 1),
+                Transparency = 0,
+                Shape = Enum.PartType.Block,
+                Material = Enum.Material.Plastic,
+                CastShadow = true,
+                Size = Vector3.new(0.276, 3.531, 1.041),
+            },
+            Children = {
+                {
+                    Class = "SpecialMesh",
+                    Id = 2,
+                    Name = "Mesh",
+                    Props = {
+                        Offset = Vector3.new(0, 0, 0),
+                        VertexColor = Vector3.new(1, 1, 1),
+                        MeshType = Enum.MeshType.FileMesh,
+                        Scale = Vector3.new(0.07, 0.07, 0.07),
+                        MeshId = "rbxassetid://11238166013",
+                        TextureId = "rbxassetid://15166755616",
+                    },
+                },
+                {
+                    Class = "Attachment",
+                    Id = 3,
+                    Name = "Attachment",
+                    Props = {
+                        RelCF = CFrame.new(0, 0, 0, 1, -1.49e-07, -5.96e-08, -1.49e-07, 1, -4.47e-08, -5.96e-08, -4.47e-08, 1),
+                    },
+                },
+            },
+        },
+        Meta = {
+            ItemName = "Blue Elderwood",
+            ItemType = "Knife",
+            Rarity = "Unique",
+        },
+    },
+    ["GoldHallow"] = {
+        Complete = true,
+        Model =
+        {
+            Class = "Part",
+            Id = 1,
+            Name = "KnifeDisplay",
+            Tags = { "WeaponDisplay" },
+            Props = {
+                Reflectance = 0,
+                CanCollide = false,
+                Color = Color3.fromRGB(163, 162, 165),
+                RelCF = CFrame.new(0, 0, 0, 1, 0, -2.98e-08, 0, 1, -1.192e-07, -2.98e-08, -1.192e-07, 1),
+                Transparency = 0,
+                Shape = Enum.PartType.Block,
+                Material = Enum.Material.Plastic,
+                CastShadow = true,
+                Size = Vector3.new(0.4, 3, 0.7),
+            },
+            Children = {
+                {
+                    Class = "SpecialMesh",
+                    Id = 2,
+                    Name = "Mesh",
+                    Props = {
+                        Offset = Vector3.new(0, 0, 0),
+                        VertexColor = Vector3.new(1, 1, 1),
+                        MeshType = Enum.MeshType.FileMesh,
+                        Scale = Vector3.new(0.55, 0.55, 0.55),
+                        MeshId = "http://www.roblox.com/asset?id=179155055",
+                        TextureId = "rbxassetid://2518160276",
+                    },
+                },
+                {
+                    Class = "Attachment",
+                    Id = 3,
+                    Name = "Attachment",
+                    Props = {
+                        RelCF = CFrame.new(0, 0, 0, 1, 0, -2.98e-08, 0, 1, -1.192e-07, -2.98e-08, -1.192e-07, 1),
+                    },
+                },
+            },
+        },
+        Meta = {
+            ItemName = "Gold Hallow",
+            ItemType = "Knife",
+            Rarity = "Unique",
+        },
+    },
+    ["IcepiercerGold"] = {
+        Complete = true,
+        Model =
+        {
+            Class = "MeshPart",
+            Id = 1,
+            Name = "GunDisplay",
+            Tags = { "WeaponDisplay" },
+            Props = {
+                Reflectance = 0,
+                CanCollide = false,
+                Color = Color3.fromRGB(163, 162, 165),
+                MeshId = "rbxassetid://11868991644",
+                RelCF = CFrame.new(0, 0, 0, 1, 2.98e-08, 2.98e-08, 2.98e-08, 1, -5.96e-08, 2.98e-08, -5.96e-08, 1),
+                Transparency = 0,
+                TextureID = "rbxassetid://14782349406",
+                Material = Enum.Material.Plastic,
+                CastShadow = true,
+                Size = Vector3.new(2.469, 0.7526, 2.738),
+            },
+            Children = {
+                {
+                    Class = "Beam",
+                    Id = 2,
+                    Name = "CustomBeam",
+                    Props = {
+                        FaceCamera = false,
+                        Width0 = 0.2,
+                        CurveSize1 = 0,
+                        Color = ColorSequence.new({ ColorSequenceKeypoint.new(0, Color3.fromRGB(0, 229, 255)), ColorSequenceKeypoint.new(1, Color3.fromRGB(0, 229, 255)) }),
+                        TextureSpeed = 1,
+                        ZOffset = 0,
+                        Transparency = NumberSequence.new({ NumberSequenceKeypoint.new(0, 0.5, 0), NumberSequenceKeypoint.new(1, 0.5, 0) }),
+                        LightInfluence = 0,
+                        CurveSize0 = 0,
+                        Segments = 10,
+                        Width1 = 0.2,
+                        LightEmission = 0.5,
+                        TextureLength = 1,
+                        TextureMode = Enum.TextureMode.Stretch,
+                        Texture = "",
+                    },
+                },
+                {
+                    Class = "Attachment",
+                    Id = 3,
+                    Name = "CustomAttachment",
+                    Props = {
+                        RelCF = CFrame.new(0.1299, 1.907e-06, 0.07501, 2.059e-05, -0.5, -0.866, 1, -4.046e-05, 4.715e-05, -5.868e-05, -0.866, 0.5),
+                    },
+                },
+            },
+        },
+        Meta = {
+            ItemName = "Gold Icepiercer",
+            ItemType = "Gun",
+            Rarity = "Unique",
+        },
+    },
+    ["IceHammerRed"] = {
+        Complete = true,
+        Model =
+        {
+            Class = "MeshPart",
+            Id = 1,
+            Name = "KnifeDisplay",
+            Tags = { "WeaponDisplay" },
+            Props = {
+                Reflectance = 0,
+                CanCollide = false,
+                Color = Color3.fromRGB(163, 162, 165),
+                MeshId = "rbxassetid://11848711686",
+                RelCF = CFrame.new(0, 0, 0, 1, 8.941e-08, 5.96e-08, 8.941e-08, 1, -1.043e-07, 5.96e-08, -1.043e-07, 1),
+                Transparency = 0,
+                TextureID = "rbxassetid://14782441394",
+                Material = Enum.Material.Plastic,
+                CastShadow = false,
+                Size = Vector3.new(1.025, 3.681, 2.41),
+            },
+            Children = {
+                {
+                    Class = "Attachment",
+                    Id = 2,
+                    Name = "Attachment",
+                    Props = {
+                        RelCF = CFrame.new(0, 0, 0, 1, 8.941e-08, 5.96e-08, 8.941e-08, 1, -1.043e-07, 5.96e-08, -1.043e-07, 1),
+                    },
+                },
+            },
+        },
+        Meta = {
+            ItemName = "Red Icecrusher",
+            ItemType = "Knife",
+            Rarity = "Unique",
+        },
+    },
+    ["RedIcebreaker"] = {
+        Complete = true,
+        Model =
+        {
+            Class = "MeshPart",
+            Id = 1,
+            Name = "KnifeDisplay",
+            Tags = { "WeaponDisplay" },
+            Props = {
+                Reflectance = 0,
+                CanCollide = false,
+                Color = Color3.fromRGB(17, 17, 17),
+                MeshId = "rbxassetid://6124173614",
+                RelCF = CFrame.new(0, 0, 0, 1, 2.98e-08, 2.98e-08, 2.98e-08, 1, -4.47e-08, 2.98e-08, -4.47e-08, 1),
+                Transparency = 0,
+                TextureID = "rbxassetid://6237994207",
+                Material = Enum.Material.Brick,
+                CastShadow = true,
+                Size = Vector3.new(0.4106, 3.074, 1.955),
+            },
+            Children = {
+                {
+                    Class = "Attachment",
+                    Id = 2,
+                    Name = "Attachment",
+                    Props = {
+                        RelCF = CFrame.new(0, 0, 0, 1, 2.98e-08, 2.98e-08, 2.98e-08, 1, -4.47e-08, 2.98e-08, -4.47e-08, 1),
+                    },
+                },
+            },
+        },
+        Meta = {
+            ItemName = "Red Icebreaker",
+            ItemType = "Knife",
+            Rarity = "Unique",
+        },
+    },
+    ["Dartbringer"] = {
+        Complete = true,
+        Model =
+        {
+            Class = "MeshPart",
+            Id = 1,
+            Name = "GunDisplay",
+            Tags = { "WeaponDisplay" },
+            Props = {
+                Reflectance = 0,
+                CanCollide = false,
+                Color = Color3.fromRGB(17, 17, 17),
+                MeshId = "rbxassetid://8624544930",
+                RelCF = CFrame.new(0, 0, 0, 1, -5.96e-08, -2.98e-08, -5.96e-08, 1, -8.941e-08, -2.98e-08, -8.941e-08, 1),
+                Transparency = 0,
+                TextureID = "rbxassetid://8624545129",
+                Material = Enum.Material.Brick,
+                CastShadow = true,
+                Size = Vector3.new(0.6809, 1.552, 1.933),
+            },
+            Children = {
+                {
+                    Class = "Attachment",
+                    Id = 2,
+                    Name = "CustomAttachment",
+                    Props = {
+                        RelCF = CFrame.new(0, -0.1397, 0.0899, 1, 1.49e-08, -5.96e-08, -5.96e-08, 0.1736, 0.9848, -2.98e-08, -0.9848, 0.1736),
+                    },
+                },
+            },
+        },
+        Meta = {
+            ItemName = "Dartbringer",
+            ItemType = "Gun",
+            Rarity = "Unique",
+        },
+    },
+    ["VampireAxe_Purple"] = {
+        Complete = true,
+        Model =
+        {
+            Class = "MeshPart",
+            Id = 1,
+            Name = "KnifeDisplay",
+            Tags = { "WeaponDisplay" },
+            Props = {
+                Reflectance = 0,
+                CanCollide = false,
+                Color = Color3.fromRGB(163, 162, 165),
+                MeshId = "rbxassetid://92263601594064",
+                RelCF = CFrame.new(0, 0, 0, 1, -2.98e-08, 0, -2.98e-08, 1, 0, 0, 0, 1),
+                Transparency = 0,
+                TextureID = "rbxassetid://97523731921072",
+                Material = Enum.Material.Slate,
+                CastShadow = true,
+                Size = Vector3.new(0.312, 3.627, 1.923),
+            },
+            Children = {
+                {
+                    Class = "Attachment",
+                    Id = 2,
+                    Name = "Attachment",
+                    Props = {
+                        RelCF = CFrame.new(0, 0, 0, 1, -2.98e-08, 0, -2.98e-08, 1, 0, 0, 0, 1),
+                    },
+                },
+            },
+        },
+        Meta = {
+            ItemName = "Vampire's Axe",
+            ItemType = "Knife",
+            Rarity = "Unique",
+        },
+    },
+    ["LogchopperBronze"] = {
+        Complete = true,
+        Model =
+        {
+            Class = "Part",
+            Id = 1,
+            Name = "KnifeDisplay",
+            Tags = { "WeaponDisplay" },
+            Props = {
+                Reflectance = 0,
+                CanCollide = false,
+                Color = Color3.fromRGB(163, 162, 165),
+                RelCF = CFrame.new(0, 0, 0, 1, -5.96e-08, 2.98e-08, -5.96e-08, 1, -8.941e-08, 2.98e-08, -8.941e-08, 1),
+                Transparency = 0,
+                Shape = Enum.PartType.Block,
+                Material = Enum.Material.Plastic,
+                CastShadow = true,
+                Size = Vector3.new(0.4, 3, 0.7),
+            },
+            Children = {
+                {
+                    Class = "SpecialMesh",
+                    Id = 2,
+                    Name = "Mesh",
+                    Props = {
+                        Offset = Vector3.new(0, 0, 0),
+                        VertexColor = Vector3.new(1, 1, 1),
+                        MeshType = Enum.MeshType.FileMesh,
+                        Scale = Vector3.new(0.96, 0.96, 0.96),
+                        MeshId = "http://www.roblox.com/asset?id=4535643726",
+                        TextureId = "rbxassetid://7572081485",
+                    },
+                },
+                {
+                    Class = "Attachment",
+                    Id = 3,
+                    Name = "Attachment",
+                    Props = {
+                        RelCF = CFrame.new(0, 0, 0, 1, -5.96e-08, 2.98e-08, -5.96e-08, 1, -8.941e-08, 2.98e-08, -8.941e-08, 1),
+                    },
+                },
+            },
+        },
+        Meta = {
+            ItemName = "Bronze Logchopper",
+            ItemType = "Knife",
+            Rarity = "Unique",
+        },
+    },
+    ["IceHammerBronze"] = {
+        Complete = true,
+        Model =
+        {
+            Class = "MeshPart",
+            Id = 1,
+            Name = "KnifeDisplay",
+            Tags = { "WeaponDisplay" },
+            Props = {
+                Reflectance = 0,
+                CanCollide = false,
+                Color = Color3.fromRGB(163, 162, 165),
+                MeshId = "rbxassetid://11848711686",
+                RelCF = CFrame.new(0, 0, 0, 1, -8.941e-08, -2.98e-08, -8.941e-08, 1, 4.47e-08, -2.98e-08, 4.47e-08, 1),
+                Transparency = 0,
+                TextureID = "rbxassetid://14782408302",
+                Material = Enum.Material.Plastic,
+                CastShadow = false,
+                Size = Vector3.new(1.025, 3.681, 2.41),
+            },
+            Children = {
+                {
+                    Class = "Attachment",
+                    Id = 2,
+                    Name = "Attachment",
+                    Props = {
+                        RelCF = CFrame.new(0, 0, 0, 1, -8.941e-08, -2.98e-08, -8.941e-08, 1, 4.47e-08, -2.98e-08, 4.47e-08, 1),
+                    },
+                },
+            },
+        },
+        Meta = {
+            ItemName = "Bronze Icecrusher",
+            ItemType = "Knife",
+            Rarity = "Unique",
+        },
+    },
+    ["Gingerscythe_Bronze"] = {
+        Complete = true,
+        Model =
+        {
+            Class = "MeshPart",
+            Id = 1,
+            Name = "KnifeDisplay",
+            Tags = { "WeaponDisplay" },
+            Props = {
+                Reflectance = 0,
+                CanCollide = false,
+                Color = Color3.fromRGB(143, 34, 34),
+                MeshId = "rbxassetid://15397282571",
+                RelCF = CFrame.new(0, 0, 0, 1, 5.96e-08, 0, 5.96e-08, 1, 7.451e-08, 0, 7.451e-08, 1),
+                Transparency = 0,
+                TextureID = "rbxassetid://94302913285936",
+                Material = Enum.Material.Brick,
+                CastShadow = true,
+                Size = Vector3.new(0.2018, 3.482, 0.8914),
+            },
+            Children = {
+                {
+                    Class = "Attachment",
+                    Id = 2,
+                    Name = "Attachment",
+                    Props = {
+                        RelCF = CFrame.new(0, 0, 0, 1, 5.96e-08, 0, 5.96e-08, 1, 7.451e-08, 0, 7.451e-08, 1),
+                    },
+                },
+            },
+        },
+        Meta = {
+            ItemName = "Bronze Gingerscythe",
+            ItemType = "Knife",
+            Rarity = "Unique",
+        },
+    },
+    ["IcepiercerRed"] = {
+        Complete = true,
+        Model =
+        {
+            Class = "MeshPart",
+            Id = 1,
+            Name = "GunDisplay",
+            Tags = { "WeaponDisplay" },
+            Props = {
+                Reflectance = 0,
+                CanCollide = false,
+                Color = Color3.fromRGB(163, 162, 165),
+                MeshId = "rbxassetid://11868991644",
+                RelCF = CFrame.new(0, 0, 0, 1, 2.98e-08, -4.47e-08, 2.98e-08, 1, -5.96e-08, -4.47e-08, -5.96e-08, 1),
+                Transparency = 0,
+                TextureID = "rbxassetid://14782438603",
+                Material = Enum.Material.Plastic,
+                CastShadow = true,
+                Size = Vector3.new(2.469, 0.7526, 2.738),
+            },
+            Children = {
+                {
+                    Class = "Beam",
+                    Id = 2,
+                    Name = "CustomBeam",
+                    Props = {
+                        FaceCamera = false,
+                        Width0 = 0.2,
+                        CurveSize1 = 0,
+                        Color = ColorSequence.new({ ColorSequenceKeypoint.new(0, Color3.fromRGB(0, 229, 255)), ColorSequenceKeypoint.new(1, Color3.fromRGB(0, 229, 255)) }),
+                        TextureSpeed = 1,
+                        ZOffset = 0,
+                        Transparency = NumberSequence.new({ NumberSequenceKeypoint.new(0, 0.5, 0), NumberSequenceKeypoint.new(1, 0.5, 0) }),
+                        LightInfluence = 0,
+                        CurveSize0 = 0,
+                        Segments = 10,
+                        Width1 = 0.2,
+                        LightEmission = 0.5,
+                        TextureLength = 1,
+                        TextureMode = Enum.TextureMode.Stretch,
+                        Texture = "",
+                    },
+                },
+                {
+                    Class = "Attachment",
+                    Id = 3,
+                    Name = "CustomAttachment",
+                    Props = {
+                        RelCF = CFrame.new(0.1299, 1.907e-06, 0.07504, 2.053e-05, -0.5, -0.866, 1, -4.046e-05, 4.709e-05, -5.865e-05, -0.866, 0.5),
+                    },
+                },
+            },
+        },
+        Meta = {
+            ItemName = "Red Icepiercer",
+            ItemType = "Gun",
+            Rarity = "Unique",
+        },
+    },
+    ["SwirlyAxeSilver"] = {
+        Complete = true,
+        Model =
+        {
+            Class = "MeshPart",
+            Id = 1,
+            Name = "KnifeDisplay",
+            Tags = { "WeaponDisplay" },
+            Props = {
+                Reflectance = 0,
+                CanCollide = false,
+                Color = Color3.fromRGB(17, 17, 17),
+                MeshId = "rbxassetid://8293463844",
+                RelCF = CFrame.new(0, 0, 0, 1, 0, -2.98e-08, 0, 1, 4.47e-08, -2.98e-08, 4.47e-08, 1),
+                Transparency = 0,
+                TextureID = "rbxassetid://10784766569",
+                Material = Enum.Material.Brick,
+                CastShadow = true,
+                Size = Vector3.new(0.5135, 2.896, 2.66),
+            },
+            Children = {
+                {
+                    Class = "Attachment",
+                    Id = 2,
+                    Name = "Attachment",
+                    Props = {
+                        RelCF = CFrame.new(0, 0, 0, 1, 0, -2.98e-08, 0, 1, 4.47e-08, -2.98e-08, 4.47e-08, 1),
+                    },
+                },
+            },
+        },
+        Meta = {
+            ItemName = "Silver Swirly",
+            ItemType = "Knife",
+            Rarity = "Unique",
+        },
+    },
+    ["Celestial_Silver"] = {
+        Complete = true,
+        Model =
+        {
+            Class = "MeshPart",
+            Id = 1,
+            Name = "KnifeDisplay",
+            Tags = { "WeaponDisplay" },
+            Props = {
+                Reflectance = 0,
+                CanCollide = false,
+                Color = Color3.fromRGB(163, 162, 165),
+                MeshId = "rbxassetid://109711282082830",
+                RelCF = CFrame.new(0, 0, 0, 1, -5.96e-08, -2.98e-08, -5.96e-08, 1, 0, -2.98e-08, 0, 1),
+                Transparency = 0,
+                TextureID = "http://www.roblox.com/asset/?id=89910267690769",
+                Material = Enum.Material.Plastic,
+                CastShadow = true,
+                Size = Vector3.new(0.3976, 2.665, 2.364),
+            },
+            Children = {
+                {
+                    Class = "Attachment",
+                    Id = 2,
+                    Name = "Attachment",
+                    Props = {
+                        RelCF = CFrame.new(0, 0, 0, 1, -5.96e-08, -2.98e-08, -5.96e-08, 1, 0, -2.98e-08, 0, 1),
+                    },
+                },
+            },
+        },
+        Meta = {
+            ItemName = "Silver Celestial",
+            ItemType = "Knife",
+            Rarity = "Unique",
+        },
+    },
+    ["Constellation_Gold"] = {
+        Complete = true,
+        Model =
+        {
+            Class = "MeshPart",
+            Id = 1,
+            Name = "GunDisplay",
+            Tags = { "WeaponDisplay" },
+            Props = {
+                Reflectance = 0,
+                CanCollide = false,
+                Color = Color3.fromRGB(163, 162, 165),
+                MeshId = "rbxassetid://124598402927958",
+                RelCF = CFrame.new(0, 0, 0, 1, 2.98e-08, 2.98e-08, 2.98e-08, 1, -5.96e-08, 2.98e-08, -5.96e-08, 1),
+                Transparency = 0,
+                TextureID = "rbxassetid://109749899277035",
+                Material = Enum.Material.Plastic,
+                CastShadow = true,
+                Size = Vector3.new(0.5372, 1.583, 2.367),
+            },
+            Children = {
+                {
+                    Class = "Attachment",
+                    Id = 2,
+                    Name = "CustomAttachment",
+                    Props = {
+                        RelCF = CFrame.new(0, -0.2, 0.08994, 1, -2.98e-08, 5.96e-08, 2.98e-08, 0.6428, 0.7661, 2.98e-08, -0.7661, 0.6428),
+                    },
+                },
+            },
+        },
+        Meta = {
+            ItemName = "Gold Constellation",
+            ItemType = "Gun",
+            Rarity = "Unique",
+        },
+    },
+    ["VampireAxe_Silver"] = {
+        Complete = true,
+        Model =
+        {
+            Class = "MeshPart",
+            Id = 1,
+            Name = "KnifeDisplay",
+            Tags = { "WeaponDisplay" },
+            Props = {
+                Reflectance = 0,
+                CanCollide = false,
+                Color = Color3.fromRGB(163, 162, 165),
+                MeshId = "rbxassetid://92263601594064",
+                RelCF = CFrame.new(0, 0, 0, 1, 2.98e-08, -2.98e-08, 2.98e-08, 1, -1.49e-08, -2.98e-08, -1.49e-08, 1),
+                Transparency = 0,
+                TextureID = "rbxassetid://110530406011705",
+                Material = Enum.Material.Slate,
+                CastShadow = true,
+                Size = Vector3.new(0.312, 3.627, 1.923),
+            },
+            Children = {
+                {
+                    Class = "Attachment",
+                    Id = 2,
+                    Name = "Attachment",
+                    Props = {
+                        RelCF = CFrame.new(0, 0, 0, 1, 2.98e-08, -2.98e-08, 2.98e-08, 1, -1.49e-08, -2.98e-08, -1.49e-08, 1),
+                    },
+                },
+            },
+        },
+        Meta = {
+            ItemName = "Vampire's Axe",
+            ItemType = "Knife",
+            Rarity = "Unique",
+        },
+    },
+    ["IceHammerSilver"] = {
+        Complete = true,
+        Model =
+        {
+            Class = "MeshPart",
+            Id = 1,
+            Name = "KnifeDisplay",
+            Tags = { "WeaponDisplay" },
+            Props = {
+                Reflectance = 0,
+                CanCollide = false,
+                Color = Color3.fromRGB(163, 162, 165),
+                MeshId = "rbxassetid://11848711686",
+                RelCF = CFrame.new(0, 0, 0, 1, -5.96e-08, -2.98e-08, -5.96e-08, 1, -8.941e-08, -2.98e-08, -8.941e-08, 1),
+                Transparency = 0,
+                TextureID = "rbxassetid://14782383511",
+                Material = Enum.Material.Plastic,
+                CastShadow = false,
+                Size = Vector3.new(1.025, 3.681, 2.41),
+            },
+            Children = {
+                {
+                    Class = "Attachment",
+                    Id = 2,
+                    Name = "Attachment",
+                    Props = {
+                        RelCF = CFrame.new(0, 0, 0, 1, -5.96e-08, -2.98e-08, -5.96e-08, 1, -8.941e-08, -2.98e-08, -8.941e-08, 1),
+                    },
+                },
+            },
+        },
+        Meta = {
+            ItemName = "Silver Icecrusher",
+            ItemType = "Knife",
+            Rarity = "Unique",
+        },
+    },
+    ["LogchopperBlue"] = {
+        Complete = true,
+        Model =
+        {
+            Class = "Part",
+            Id = 1,
+            Name = "KnifeDisplay",
+            Tags = { "WeaponDisplay" },
+            Props = {
+                Reflectance = 0,
+                CanCollide = false,
+                Color = Color3.fromRGB(163, 162, 165),
+                RelCF = CFrame.new(0, 0, 0, 1, 2.98e-08, 2.98e-08, 2.98e-08, 1, -5.96e-08, 2.98e-08, -5.96e-08, 1),
+                Transparency = 0,
+                Shape = Enum.PartType.Block,
+                Material = Enum.Material.Plastic,
+                CastShadow = true,
+                Size = Vector3.new(0.4, 3, 0.7),
+            },
+            Children = {
+                {
+                    Class = "SpecialMesh",
+                    Id = 2,
+                    Name = "Mesh",
+                    Props = {
+                        Offset = Vector3.new(0, 0, 0),
+                        VertexColor = Vector3.new(1, 1, 1),
+                        MeshType = Enum.MeshType.FileMesh,
+                        Scale = Vector3.new(0.96, 0.96, 0.96),
+                        MeshId = "http://www.roblox.com/asset?id=4535643726",
+                        TextureId = "rbxassetid://4753303501",
+                    },
+                },
+                {
+                    Class = "Attachment",
+                    Id = 3,
+                    Name = "Attachment",
+                    Props = {
+                        RelCF = CFrame.new(0, 0, 0, 1, 2.98e-08, 2.98e-08, 2.98e-08, 1, -5.96e-08, 2.98e-08, -5.96e-08, 1),
+                    },
+                },
+            },
+        },
+        Meta = {
+            ItemName = "Blue Logchopper",
+            ItemType = "Knife",
+            Rarity = "Unique",
+        },
+    },
+    ["Gingerscope_Gold"] = {
+        Complete = true,
+        Model =
+        {
+            Class = "Part",
+            Id = 1,
+            Name = "GunDisplay",
+            Tags = { "WeaponDisplay" },
+            Props = {
+                Reflectance = 0,
+                CanCollide = false,
+                Color = Color3.fromRGB(163, 162, 165),
+                RelCF = CFrame.new(0, 0, 0, 1, -1.49e-08, 2.98e-08, -1.49e-08, 1, -4.47e-08, 2.98e-08, -4.47e-08, 1),
+                Transparency = 0,
+                Shape = Enum.PartType.Block,
+                Material = Enum.Material.Plastic,
+                CastShadow = true,
+                Size = Vector3.new(0.04401, 0.09837, 0.3517),
+            },
+            Children = {
+                {
+                    Class = "SpecialMesh",
+                    Id = 2,
+                    Name = "Mesh",
+                    Props = {
+                        Offset = Vector3.new(0, 0, 0),
+                        VertexColor = Vector3.new(1, 1, 1),
+                        MeshType = Enum.MeshType.FileMesh,
+                        Scale = Vector3.new(0.07549, 0.07549, 0.07549),
+                        MeshId = "rbxassetid://15374602183",
+                        TextureId = "rbxassetid://97455413823910",
+                    },
+                },
+                {
+                    Class = "Beam",
+                    Id = 3,
+                    Name = "CustomBeam",
+                    Props = {
+                        FaceCamera = false,
+                        Width0 = 0.07549,
+                        CurveSize1 = 0,
+                        Color = ColorSequence.new({ ColorSequenceKeypoint.new(0, Color3.fromRGB(255, 202, 43)), ColorSequenceKeypoint.new(1, Color3.fromRGB(255, 202, 43)) }),
+                        TextureSpeed = 1,
+                        ZOffset = 0,
+                        Transparency = NumberSequence.new({ NumberSequenceKeypoint.new(0, 0.5, 0), NumberSequenceKeypoint.new(1, 0.5, 0) }),
+                        LightInfluence = 1,
+                        CurveSize0 = 0,
+                        Segments = 10,
+                        Width1 = 0.07549,
+                        LightEmission = 1,
+                        TextureLength = 0.1,
+                        TextureMode = Enum.TextureMode.Static,
+                        Texture = "http://www.roblox.com/asset/?id=101749052665692",
+                    },
+                },
+                {
+                    Class = "Attachment",
+                    Id = 4,
+                    Name = "Attachment",
+                    Props = {
+                        RelCF = CFrame.new(0, 0, 0, 1, -1.49e-08, 2.98e-08, -1.49e-08, 1, -4.47e-08, 2.98e-08, -4.47e-08, 1),
+                    },
+                },
+            },
+        },
+        Meta = {
+            ItemName = "Gold Gingerscope",
+            ItemType = "Gun",
+            Rarity = "Unique",
+        },
+    },
+    ["Gingerscope_Bronze"] = {
+        Complete = true,
+        Model =
+        {
+            Class = "MeshPart",
+            Id = 1,
+            Name = "GunDisplay",
+            Tags = { "WeaponDisplay" },
+            Props = {
+                Reflectance = 0,
+                CanCollide = false,
+                Color = Color3.fromRGB(143, 34, 34),
+                MeshId = "rbxassetid://15374602183",
+                RelCF = CFrame.new(0, 0, 0, 1, 1.49e-08, 0, 1.49e-08, 1, -2.98e-08, 0, -2.98e-08, 1),
+                Transparency = 0,
+                TextureID = "http://www.roblox.com/asset/?id=93684911189915",
+                Material = Enum.Material.Brick,
+                CastShadow = true,
+                Size = Vector3.new(0.2697, 1.258, 4.209),
+            },
+            Children = {
+                {
+                    Class = "Attachment",
+                    Id = 2,
+                    Name = "CustomAttachment",
+                    Props = {
+                        RelCF = CFrame.new(0.1299, 3.052e-05, 0.075, 1, 1.49e-08, 0, 1.49e-08, 0.7071, 0.7071, 0, -0.7071, 0.7071),
+                    },
+                },
+                {
+                    Class = "Beam",
+                    Id = 3,
+                    Name = "CustomBeam",
+                    Props = {
+                        FaceCamera = false,
+                        Width0 = 1,
+                        CurveSize1 = 0,
+                        Color = ColorSequence.new({ ColorSequenceKeypoint.new(0, Color3.fromRGB(255, 255, 255)), ColorSequenceKeypoint.new(1, Color3.fromRGB(255, 255, 255)) }),
+                        TextureSpeed = 0,
+                        ZOffset = 0,
+                        Transparency = NumberSequence.new({ NumberSequenceKeypoint.new(0, 0, 0), NumberSequenceKeypoint.new(1, 0, 0) }),
+                        LightInfluence = 0,
+                        CurveSize0 = 0,
+                        Segments = 10,
+                        Width1 = 1,
+                        LightEmission = 1,
+                        TextureLength = 1.5,
+                        TextureMode = Enum.TextureMode.Wrap,
+                        Texture = "rbxassetid://15374653796",
+                    },
+                },
+                {
+                    Class = "MeshPart",
+                    Id = 4,
+                    Name = "Scope",
+                    Props = {
+                        Reflectance = 1,
+                        CanCollide = false,
+                        Color = Color3.fromRGB(129, 181, 204),
+                        MeshId = "rbxassetid://15374679651",
+                        RelCF = CFrame.new(-1.907e-06, 0.4832, 0.2072, 1, 1.49e-08, 0, 1.49e-08, 1, -2.98e-08, 0, -2.98e-08, 1),
+                        Transparency = 0.35,
+                        TextureID = "",
+                        Material = Enum.Material.Glass,
+                        CastShadow = true,
+                        Size = Vector3.new(0.1871, 0.1871, 1.414),
+                    },
+                },
+            },
+        },
+        Meta = {
+            ItemName = "Bronze Gingerscope",
+            ItemType = "Gun",
+            Rarity = "Unique",
+        },
+    },
+    ["Gingerscythe_Silver"] = {
+        Complete = true,
+        Model =
+        {
+            Class = "MeshPart",
+            Id = 1,
+            Name = "KnifeDisplay",
+            Tags = { "WeaponDisplay" },
+            Props = {
+                Reflectance = 0,
+                CanCollide = false,
+                Color = Color3.fromRGB(143, 34, 34),
+                MeshId = "rbxassetid://15397282571",
+                RelCF = CFrame.new(0, 0, 0, 1, 2.98e-08, 0, 2.98e-08, 1, 0, 0, 0, 1),
+                Transparency = 0,
+                TextureID = "rbxassetid://110584978259893",
+                Material = Enum.Material.Brick,
+                CastShadow = true,
+                Size = Vector3.new(0.2018, 3.482, 0.8914),
+            },
+            Children = {
+                {
+                    Class = "Attachment",
+                    Id = 2,
+                    Name = "Attachment",
+                    Props = {
+                        RelCF = CFrame.new(0, 0, 0, 1, 2.98e-08, 0, 2.98e-08, 1, 0, 0, 0, 1),
+                    },
+                },
+            },
+        },
+        Meta = {
+            ItemName = "Silver Gingerscythe",
+            ItemType = "Knife",
+            Rarity = "Unique",
+        },
+    },
+    ["BronzeSugar"] = {
+        Complete = true,
+        Model =
+        {
+            Class = "Part",
+            Id = 1,
+            Name = "GunDisplay",
+            Tags = { "WeaponDisplay" },
+            Props = {
+                Reflectance = 0,
+                CanCollide = false,
+                Color = Color3.fromRGB(196, 40, 28),
+                RelCF = CFrame.new(0, 0, 0, 1, 2.98e-08, -2.98e-08, 2.98e-08, 1, 2.98e-08, -2.98e-08, 2.98e-08, 1),
+                Transparency = 0,
+                Shape = Enum.PartType.Block,
+                Material = Enum.Material.Plastic,
+                CastShadow = true,
+                Size = Vector3.new(1.4, 1.4, 3.111),
+            },
+            Children = {
+                {
+                    Class = "SpecialMesh",
+                    Id = 2,
+                    Name = "Mesh",
+                    Props = {
+                        Offset = Vector3.new(0, 0, 0),
+                        VertexColor = Vector3.new(1, 1, 1),
+                        MeshType = Enum.MeshType.FileMesh,
+                        Scale = Vector3.new(0.5, 0.5, 0.5),
+                        MeshId = "http://www.roblox.com/asset/?id=101086719",
+                        TextureId = "http://www.roblox.com/asset/?id=6958436959",
+                    },
+                },
+                {
+                    Class = "Attachment",
+                    Id = 3,
+                    Name = "CustomAttachment",
+                    Props = {
+                        RelCF = CFrame.new(-0.1, 0.2823, 0.3072, -1, 2.98e-08, -5.96e-08, -2.98e-08, -0.08713, -0.9962, 2.98e-08, -0.9962, 0.08713),
+                    },
+                },
+            },
+        },
+        Meta = {
+            ItemName = "Bronze Sugar",
+            ItemType = "Gun",
+            Rarity = "Unique",
+        },
+    },
+    ["MintyGold"] = {
+        Complete = true,
+        Model =
+        {
+            Class = "MeshPart",
+            Id = 1,
+            Name = "GunDisplay",
+            Tags = { "WeaponDisplay" },
+            Props = {
+                Reflectance = 0,
+                CanCollide = false,
+                Color = Color3.fromRGB(17, 17, 17),
+                MeshId = "rbxassetid://4528424409",
+                RelCF = CFrame.new(0, 0, 0, 1, -2.98e-08, -1.49e-08, -2.98e-08, 1, -1.49e-08, -1.49e-08, -1.49e-08, 1),
+                Transparency = 0,
+                TextureID = "rbxassetid://133580134365239",
+                Material = Enum.Material.Brick,
+                CastShadow = true,
+                Size = Vector3.new(0.3335, 1.35, 1.88),
+            },
+            Children = {
+                {
+                    Class = "Attachment",
+                    Id = 2,
+                    Name = "CustomAttachment",
+                    Props = {
+                        RelCF = CFrame.new(-0.05, -0.07256, 0.2393, -1, 1.49e-08, 2.98e-08, 2.98e-08, 1.49e-08, -1, 1.49e-08, -1, 1.49e-08),
+                    },
+                },
+            },
+        },
+        Meta = {
+            ItemName = "Gold Minty",
+            ItemType = "Gun",
+            Rarity = "Unique",
+        },
+    },
+    ["SilverCandy"] = {
+        Complete = true,
+        Model =
+        {
+            Class = "Part",
+            Id = 1,
+            Name = "KnifeDisplay",
+            Tags = { "WeaponDisplay" },
+            Props = {
+                Reflectance = 0.01,
+                CanCollide = false,
+                Color = Color3.fromRGB(17, 17, 17),
+                RelCF = CFrame.new(0, 0, 0, 1, 5.96e-08, 5.96e-08, 5.96e-08, 1, -7.451e-08, 5.96e-08, -7.451e-08, 1),
+                Transparency = 0,
+                Shape = Enum.PartType.Block,
+                Material = Enum.Material.DiamondPlate,
+                CastShadow = true,
+                Size = Vector3.new(0.4, 4, 0.8),
+            },
+            Children = {
+                {
+                    Class = "SpecialMesh",
+                    Id = 2,
+                    Name = "Mesh",
+                    Props = {
+                        Offset = Vector3.new(0, 0, 0),
+                        VertexColor = Vector3.new(1, 1, 1),
+                        MeshType = Enum.MeshType.FileMesh,
+                        Scale = Vector3.new(1.1, 1.4, 1.1),
+                        MeshId = "http://www.roblox.com/asset/?id=19040337",
+                        TextureId = "rbxassetid://2551861250",
+                    },
+                },
+                {
+                    Class = "Attachment",
+                    Id = 3,
+                    Name = "Attachment",
+                    Props = {
+                        RelCF = CFrame.new(0, 0, 0, 1, 5.96e-08, 5.96e-08, 5.96e-08, 1, -7.451e-08, 5.96e-08, -7.451e-08, 1),
+                    },
+                },
+            },
+        },
+        Meta = {
+            ItemName = "Silver Candy",
+            ItemType = "Knife",
+            Rarity = "Unique",
+        },
+    },
+    ["TravelerAxeBronze"] = {
+        Complete = true,
+        Model =
+        {
+            Class = "MeshPart",
+            Id = 1,
+            Name = "KnifeDisplay",
+            Tags = { "WeaponDisplay" },
+            Props = {
+                Reflectance = 0,
+                CanCollide = false,
+                Color = Color3.fromRGB(17, 17, 17),
+                MeshId = "rbxassetid://15057341638",
+                RelCF = CFrame.new(0, 0, 0, 1, 2.98e-08, 5.96e-08, 2.98e-08, 1, 0, 5.96e-08, 0, 1),
+                Transparency = 0,
+                TextureID = "rbxassetid://15522323347",
+                Material = Enum.Material.Brick,
+                CastShadow = true,
+                Size = Vector3.new(0.6044, 3.406, 2.187),
+            },
+            Children = {
+                {
+                    Class = "Attachment",
+                    Id = 2,
+                    Name = "Attachment",
+                    Props = {
+                        RelCF = CFrame.new(0, 0, 0, 1, 2.98e-08, 5.96e-08, 2.98e-08, 1, 0, 5.96e-08, 0, 1),
+                    },
+                },
+            },
+        },
+        Meta = {
+            ItemName = "Bronze Traveler's",
+            ItemType = "Knife",
+            Rarity = "Unique",
+        },
+    },
+    ["IcepiercerSilver"] = {
+        Complete = true,
+        Model =
+        {
+            Class = "MeshPart",
+            Id = 1,
+            Name = "GunDisplay",
+            Tags = { "WeaponDisplay" },
+            Props = {
+                Reflectance = 0,
+                CanCollide = false,
+                Color = Color3.fromRGB(163, 162, 165),
+                MeshId = "rbxassetid://11868991644",
+                RelCF = CFrame.new(0, 0, 0, 1, 0, 2.98e-08, 0, 1, 0, 2.98e-08, 0, 1),
+                Transparency = 0,
+                TextureID = "rbxassetid://14782380139",
+                Material = Enum.Material.Plastic,
+                CastShadow = true,
+                Size = Vector3.new(2.469, 0.7526, 2.738),
+            },
+            Children = {
+                {
+                    Class = "Beam",
+                    Id = 2,
+                    Name = "CustomBeam",
+                    Props = {
+                        FaceCamera = false,
+                        Width0 = 0.2,
+                        CurveSize1 = 0,
+                        Color = ColorSequence.new({ ColorSequenceKeypoint.new(0, Color3.fromRGB(0, 229, 255)), ColorSequenceKeypoint.new(1, Color3.fromRGB(0, 229, 255)) }),
+                        TextureSpeed = 1,
+                        ZOffset = 0,
+                        Transparency = NumberSequence.new({ NumberSequenceKeypoint.new(0, 0.5, 0), NumberSequenceKeypoint.new(1, 0.5, 0) }),
+                        LightInfluence = 0,
+                        CurveSize0 = 0,
+                        Segments = 10,
+                        Width1 = 0.2,
+                        LightEmission = 0.5,
+                        TextureLength = 1,
+                        TextureMode = Enum.TextureMode.Stretch,
+                        Texture = "",
+                    },
+                },
+                {
+                    Class = "Attachment",
+                    Id = 3,
+                    Name = "CustomAttachment",
+                    Props = {
+                        RelCF = CFrame.new(0.1299, 1.907e-06, 0.07495, 2.053e-05, -0.5, -0.866, 1, -4.05e-05, 4.721e-05, -5.859e-05, -0.866, 0.5),
+                    },
+                },
+            },
+        },
+        Meta = {
+            ItemName = "Silver Icepiercer",
+            ItemType = "Gun",
+            Rarity = "Unique",
+        },
+    },
+    ["BronzeHarvester"] = {
+        Complete = true,
+        Model =
+        {
+            Class = "MeshPart",
+            Id = 1,
+            Name = "GunDisplay",
+            Tags = { "WeaponDisplay" },
+            Props = {
+                Reflectance = 0,
+                CanCollide = false,
+                Color = Color3.fromRGB(17, 17, 17),
+                MeshId = "rbxassetid://7775027413",
+                RelCF = CFrame.new(0, 0, 0, 1, 0, 4.47e-08, 0, 1, 2.98e-08, 4.47e-08, 2.98e-08, 1),
+                Transparency = 0,
+                TextureID = "http://www.roblox.com/asset/?id=8266617019",
+                Material = Enum.Material.Brick,
+                CastShadow = true,
+                Size = Vector3.new(2.245, 0.6549, 2.88),
+            },
+            Children = {
+                {
+                    Class = "Beam",
+                    Id = 2,
+                    Name = "CustomBeam",
+                    Props = {
+                        FaceCamera = false,
+                        Width0 = 0.2,
+                        CurveSize1 = 0,
+                        Color = ColorSequence.new({ ColorSequenceKeypoint.new(0, Color3.fromRGB(0, 255, 0)), ColorSequenceKeypoint.new(1, Color3.fromRGB(0, 255, 0)) }),
+                        TextureSpeed = 1,
+                        ZOffset = 0,
+                        Transparency = NumberSequence.new({ NumberSequenceKeypoint.new(0, 0.5, 0), NumberSequenceKeypoint.new(1, 0.5, 0) }),
+                        LightInfluence = 0,
+                        CurveSize0 = 0,
+                        Segments = 10,
+                        Width1 = 0.2,
+                        LightEmission = 0.5,
+                        TextureLength = 1,
+                        TextureMode = Enum.TextureMode.Stretch,
+                        Texture = "",
+                    },
+                },
+                {
+                    Class = "Attachment",
+                    Id = 3,
+                    Name = "CustomAttachment",
+                    Props = {
+                        RelCF = CFrame.new(0.1299, 0, 0.07501, 2.056e-05, -0.5, -0.866, 1, -4.05e-05, 4.715e-05, -5.859e-05, -0.866, 0.5),
+                    },
+                },
+            },
+        },
+        Meta = {
+            ItemName = "Bronze Harvester",
+            ItemType = "Gun",
+            Rarity = "Unique",
+        },
+    },
+    ["IcepiercerBronze"] = {
+        Complete = true,
+        Model =
+        {
+            Class = "MeshPart",
+            Id = 1,
+            Name = "GunDisplay",
+            Tags = { "WeaponDisplay" },
+            Props = {
+                Reflectance = 0,
+                CanCollide = false,
+                Color = Color3.fromRGB(163, 162, 165),
+                MeshId = "rbxassetid://11868991644",
+                RelCF = CFrame.new(0, 0, 0, 1, 2.98e-08, 2.98e-08, 2.98e-08, 1, -2.98e-08, 2.98e-08, -2.98e-08, 1),
+                Transparency = 0,
+                TextureID = "rbxassetid://14782403964",
+                Material = Enum.Material.Plastic,
+                CastShadow = true,
+                Size = Vector3.new(2.469, 0.7526, 2.738),
+            },
+            Children = {
+                {
+                    Class = "Beam",
+                    Id = 2,
+                    Name = "CustomBeam",
+                    Props = {
+                        FaceCamera = false,
+                        Width0 = 0.2,
+                        CurveSize1 = 0,
+                        Color = ColorSequence.new({ ColorSequenceKeypoint.new(0, Color3.fromRGB(0, 229, 255)), ColorSequenceKeypoint.new(1, Color3.fromRGB(0, 229, 255)) }),
+                        TextureSpeed = 1,
+                        ZOffset = 0,
+                        Transparency = NumberSequence.new({ NumberSequenceKeypoint.new(0, 0.5, 0), NumberSequenceKeypoint.new(1, 0.5, 0) }),
+                        LightInfluence = 0,
+                        CurveSize0 = 0,
+                        Segments = 10,
+                        Width1 = 0.2,
+                        LightEmission = 0.5,
+                        TextureLength = 1,
+                        TextureMode = Enum.TextureMode.Stretch,
+                        Texture = "",
+                    },
+                },
+                {
+                    Class = "Attachment",
+                    Id = 3,
+                    Name = "CustomAttachment",
+                    Props = {
+                        RelCF = CFrame.new(0.1299, 2.861e-06, 0.07501, 2.059e-05, -0.5, -0.866, 1, -4.05e-05, 4.706e-05, -5.862e-05, -0.866, 0.5),
+                    },
+                },
+            },
+        },
+        Meta = {
+            ItemName = "Bronze Icepiercer",
+            ItemType = "Gun",
+            Rarity = "Unique",
+        },
+    },
+    ["IceHammerGold"] = {
+        Complete = true,
+        Model =
+        {
+            Class = "MeshPart",
+            Id = 1,
+            Name = "KnifeDisplay",
+            Tags = { "WeaponDisplay" },
+            Props = {
+                Reflectance = 0,
+                CanCollide = false,
+                Color = Color3.fromRGB(163, 162, 165),
+                MeshId = "rbxassetid://11848711686",
+                RelCF = CFrame.new(0, 0, 0, 1, -2.98e-08, 0, -2.98e-08, 1, 1.341e-07, 0, 1.341e-07, 1),
+                Transparency = 0,
+                TextureID = "rbxassetid://14782352619",
+                Material = Enum.Material.Plastic,
+                CastShadow = false,
+                Size = Vector3.new(1.025, 3.681, 2.41),
+            },
+            Children = {
+                {
+                    Class = "Attachment",
+                    Id = 2,
+                    Name = "Attachment",
+                    Props = {
+                        RelCF = CFrame.new(0, 0, 0, 1, -2.98e-08, 0, -2.98e-08, 1, 1.341e-07, 0, 1.341e-07, 1),
+                    },
+                },
+            },
+        },
+        Meta = {
+            ItemName = "Gold Icecrusher",
+            ItemType = "Knife",
+            Rarity = "Unique",
+        },
+    },
+    ["GoldIceblaster"] = {
+        Complete = true,
+        Model =
+        {
+            Class = "MeshPart",
+            Id = 1,
+            Name = "GunDisplay",
+            Tags = { "WeaponDisplay" },
+            Props = {
+                Reflectance = 0,
+                CanCollide = false,
+                Color = Color3.fromRGB(17, 17, 17),
+                MeshId = "rbxassetid://6125828567",
+                RelCF = CFrame.new(0, 0, 0, 1, 0, 2.98e-08, 0, 1, 3.725e-08, 2.98e-08, 3.725e-08, 1),
+                Transparency = 0,
+                TextureID = "rbxassetid://6246949956",
+                Material = Enum.Material.Brick,
+                CastShadow = true,
+                Size = Vector3.new(0.4432, 1.93, 1.024),
+            },
+            Children = {
+                {
+                    Class = "Attachment",
+                    Id = 2,
+                    Name = "Forward",
+                    Props = {
+                        RelCF = CFrame.new(1.907e-06, 1, 1.526e-05, 1, 0, 2.98e-08, 0, 1, 3.725e-08, 2.98e-08, 3.725e-08, 1),
+                    },
+                },
+                {
+                    Class = "Attachment",
+                    Id = 3,
+                    Name = "Up",
+                    Props = {
+                        RelCF = CFrame.new(1.907e-06, 0, 1, 1, 0, 2.98e-08, 0, 1, 3.725e-08, 2.98e-08, 3.725e-08, 1),
+                    },
+                },
+                {
+                    Class = "Attachment",
+                    Id = 4,
+                    Name = "Attachment",
+                    Props = {
+                        RelCF = CFrame.new(0, 0, 0, 1, 0, 2.98e-08, 0, 1, 3.725e-08, 2.98e-08, 3.725e-08, 1),
+                    },
+                },
+            },
+        },
+        Meta = {
+            ItemName = "Gold Iceblaster",
+            ItemType = "Gun",
+            Rarity = "Unique",
+        },
+    },
+    ["SwirlyGunSilver"] = {
+        Complete = true,
+        Model =
+        {
+            Class = "MeshPart",
+            Id = 1,
+            Name = "GunDisplay",
+            Tags = { "WeaponDisplay" },
+            Props = {
+                Reflectance = 0,
+                CanCollide = false,
+                Color = Color3.fromRGB(163, 162, 165),
+                MeshId = "rbxassetid://8310911339",
+                RelCF = CFrame.new(0, 0, 0, 1, -1.49e-08, 0, -1.49e-08, 1, -2.235e-08, 0, -2.235e-08, 1),
+                Transparency = 0,
+                TextureID = "rbxassetid://10784874058",
+                Material = Enum.Material.Plastic,
+                CastShadow = true,
+                Size = Vector3.new(0.469, 2.539, 1.151),
+            },
+            Children = {
+                {
+                    Class = "Attachment",
+                    Id = 2,
+                    Name = "Attachment",
+                    Props = {
+                        RelCF = CFrame.new(0, 0, 0, 1, -1.49e-08, 0, -1.49e-08, 1, -2.235e-08, 0, -2.235e-08, 1),
+                    },
+                },
+            },
+        },
+        Meta = {
+            ItemName = "Silver Swirly",
+            ItemType = "Gun",
+            Rarity = "Unique",
+        },
+    },
+    ["GoldSugar"] = {
+        Complete = true,
+        Model =
+        {
+            Class = "Part",
+            Id = 1,
+            Name = "GunDisplay",
+            Tags = { "WeaponDisplay" },
+            Props = {
+                Reflectance = 0,
+                CanCollide = false,
+                Color = Color3.fromRGB(196, 40, 28),
+                RelCF = CFrame.new(0, 0, 0, 1, 0, -1.49e-08, 0, 1, 0, -1.49e-08, 0, 1),
+                Transparency = 0,
+                Shape = Enum.PartType.Block,
+                Material = Enum.Material.Plastic,
+                CastShadow = true,
+                Size = Vector3.new(1.4, 1.4, 3.111),
+            },
+            Children = {
+                {
+                    Class = "SpecialMesh",
+                    Id = 2,
+                    Name = "Mesh",
+                    Props = {
+                        Offset = Vector3.new(0, 0, 0),
+                        VertexColor = Vector3.new(1, 1, 1),
+                        MeshType = Enum.MeshType.FileMesh,
+                        Scale = Vector3.new(0.5, 0.5, 0.5),
+                        MeshId = "http://www.roblox.com/asset/?id=101086719",
+                        TextureId = "http://www.roblox.com/asset/?id=3241872587",
+                    },
+                },
+                {
+                    Class = "Attachment",
+                    Id = 3,
+                    Name = "CustomAttachment",
+                    Props = {
+                        RelCF = CFrame.new(-0.1, 0.2823, 0.3072, -1, 0, 2.98e-08, 0, -0.08713, -0.9962, 1.49e-08, -0.9962, 0.08713),
+                    },
+                },
+            },
+        },
+        Meta = {
+            ItemName = "Gold Sugar",
+            ItemType = "Gun",
+            Rarity = "Unique",
+        },
+    },
+    ["GoldVampiresEdge"] = {
+        Complete = true,
+        Model =
+        {
+            Class = "MeshPart",
+            Id = 1,
+            Name = "KnifeDisplay",
+            Tags = { "WeaponDisplay" },
+            Props = {
+                Reflectance = 0,
+                CanCollide = false,
+                Color = Color3.fromRGB(17, 17, 17),
+                MeshId = "rbxassetid://5841895234",
+                RelCF = CFrame.new(0, 0, 0, 1, 0, 0, 0, 1, -5.96e-08, 0, -5.96e-08, 1),
+                Transparency = 0,
+                TextureID = "http://www.roblox.com/asset/?id=112865642898558",
+                Material = Enum.Material.Brick,
+                CastShadow = true,
+                Size = Vector3.new(0.3955, 3.351, 1.014),
+            },
+            Children = {
+                {
+                    Class = "Attachment",
+                    Id = 2,
+                    Name = "Attachment",
+                    Props = {
+                        RelCF = CFrame.new(0, 0, 0, 1, 0, 0, 0, 1, -5.96e-08, 0, -5.96e-08, 1),
+                    },
+                },
+            },
+        },
+        Meta = {
+            ItemName = "Gold Vamp's Edge",
+            ItemType = "Knife",
+            Rarity = "Unique",
+        },
+    },
+    ["TravelerAxeSilver"] = {
+        Complete = true,
+        Model =
+        {
+            Class = "MeshPart",
+            Id = 1,
+            Name = "KnifeDisplay",
+            Tags = { "WeaponDisplay" },
+            Props = {
+                Reflectance = 0,
+                CanCollide = false,
+                Color = Color3.fromRGB(17, 17, 17),
+                MeshId = "rbxassetid://15057341638",
+                RelCF = CFrame.new(0, 0, 0, 1, 8.941e-08, 0, 8.941e-08, 1, -4.47e-08, 0, -4.47e-08, 1),
+                Transparency = 0,
+                TextureID = "rbxassetid://15522322637",
+                Material = Enum.Material.Brick,
+                CastShadow = true,
+                Size = Vector3.new(0.6044, 3.406, 2.187),
+            },
+            Children = {
+                {
+                    Class = "Attachment",
+                    Id = 2,
+                    Name = "Attachment",
+                    Props = {
+                        RelCF = CFrame.new(0, 0, 0, 1, 8.941e-08, 0, 8.941e-08, 1, -4.47e-08, 0, -4.47e-08, 1),
+                    },
+                },
+            },
+        },
+        Meta = {
+            ItemName = "Silver Traveler's",
+            ItemType = "Knife",
+            Rarity = "Unique",
+        },
+    },
+    ["ElderwoodKnifeSilver"] = {
+        Complete = true,
+        Model =
+        {
+            Class = "Part",
+            Id = 1,
+            Name = "KnifeDisplay",
+            Tags = { "WeaponDisplay" },
+            Props = {
+                Reflectance = 0,
+                CanCollide = false,
+                Color = Color3.fromRGB(163, 162, 165),
+                RelCF = CFrame.new(0, 0, 0, 1, 5.96e-08, 0, 5.96e-08, 1, -8.941e-08, 0, -8.941e-08, 1),
+                Transparency = 0,
+                Shape = Enum.PartType.Block,
+                Material = Enum.Material.Plastic,
+                CastShadow = true,
+                Size = Vector3.new(0.276, 3.531, 1.041),
+            },
+            Children = {
+                {
+                    Class = "SpecialMesh",
+                    Id = 2,
+                    Name = "Mesh",
+                    Props = {
+                        Offset = Vector3.new(0, 0, 0),
+                        VertexColor = Vector3.new(1, 1, 1),
+                        MeshType = Enum.MeshType.FileMesh,
+                        Scale = Vector3.new(0.07, 0.07, 0.07),
+                        MeshId = "rbxassetid://11238166013",
+                        TextureId = "rbxassetid://15166762658",
+                    },
+                },
+                {
+                    Class = "Attachment",
+                    Id = 3,
+                    Name = "Attachment",
+                    Props = {
+                        RelCF = CFrame.new(0, 0, 0, 1, 5.96e-08, 0, 5.96e-08, 1, -8.941e-08, 0, -8.941e-08, 1),
+                    },
+                },
+            },
+        },
+        Meta = {
+            ItemName = "Silver Elderwood",
+            ItemType = "Knife",
+            Rarity = "Unique",
+        },
+    },
+    ["Constellation_Red"] = {
+        Complete = true,
+        Model =
+        {
+            Class = "MeshPart",
+            Id = 1,
+            Name = "GunDisplay",
+            Tags = { "WeaponDisplay" },
+            Props = {
+                Reflectance = 0,
+                CanCollide = false,
+                Color = Color3.fromRGB(163, 162, 165),
+                MeshId = "rbxassetid://124598402927958",
+                RelCF = CFrame.new(0, 0, 0, 1, 2.98e-08, 0, 2.98e-08, 1, -2.98e-08, 0, -2.98e-08, 1),
+                Transparency = 0,
+                TextureID = "rbxassetid://109738756958257",
+                Material = Enum.Material.Plastic,
+                CastShadow = true,
+                Size = Vector3.new(0.5372, 1.583, 2.367),
+            },
+            Children = {
+                {
+                    Class = "Attachment",
+                    Id = 2,
+                    Name = "CustomAttachment",
+                    Props = {
+                        RelCF = CFrame.new(1.907e-06, -0.2, 0.08987, 1, 0, 0, 2.98e-08, 0.6428, 0.7661, 0, -0.7661, 0.6428),
+                    },
+                },
+            },
+        },
+        Meta = {
+            ItemName = "Red Constellation",
+            ItemType = "Gun",
+            Rarity = "Unique",
+        },
+    },
+    ["MintyBlue"] = {
+        Complete = true,
+        Model =
+        {
+            Class = "MeshPart",
+            Id = 1,
+            Name = "GunDisplay",
+            Tags = { "WeaponDisplay" },
+            Props = {
+                Reflectance = 0,
+                CanCollide = false,
+                Color = Color3.fromRGB(17, 17, 17),
+                MeshId = "rbxassetid://4528424409",
+                RelCF = CFrame.new(0, 0, 0, 1, -5.96e-08, -1.49e-08, -5.96e-08, 1, -7.451e-09, -1.49e-08, -7.451e-09, 1),
+                Transparency = 0,
+                TextureID = "rbxassetid://4753313914",
+                Material = Enum.Material.Brick,
+                CastShadow = true,
+                Size = Vector3.new(0.3335, 1.35, 1.88),
+            },
+            Children = {
+                {
+                    Class = "Attachment",
+                    Id = 2,
+                    Name = "CustomAttachment",
+                    Props = {
+                        RelCF = CFrame.new(-0.05, -0.07256, 0.2393, -1, 1.49e-08, 5.96e-08, 5.96e-08, 7.451e-09, -1, 1.49e-08, -1, 7.451e-09),
+                    },
+                },
+            },
+        },
+        Meta = {
+            ItemName = "Blue Minty",
+            ItemType = "Gun",
+            Rarity = "Unique",
+        },
+    },
+    ["SwirlyAxeGold"] = {
+        Complete = true,
+        Model =
+        {
+            Class = "Part",
+            Id = 1,
+            Name = "KnifeDisplay",
+            Tags = { "WeaponDisplay" },
+            Props = {
+                Reflectance = 0,
+                CanCollide = false,
+                Color = Color3.fromRGB(248, 248, 248),
+                RelCF = CFrame.new(0, 0, 0, 1, 0, 0, 0, 1, -4.47e-08, 0, -4.47e-08, 1),
+                Transparency = 0,
+                Shape = Enum.PartType.Block,
+                Material = Enum.Material.Plastic,
+                CastShadow = true,
+                Size = Vector3.new(4, 1, 2),
+            },
+            Children = {
+                {
+                    Class = "SpecialMesh",
+                    Id = 2,
+                    Name = "Mesh",
+                    Props = {
+                        Offset = Vector3.new(0, 0, 0),
+                        VertexColor = Vector3.new(1, 1, 1),
+                        MeshType = Enum.MeshType.FileMesh,
+                        Scale = Vector3.new(0.055, 0.055, 0.055),
+                        MeshId = "rbxassetid://8293463844",
+                        TextureId = "rbxassetid://10784768608",
+                    },
+                },
+                {
+                    Class = "Attachment",
+                    Id = 3,
+                    Name = "Attachment",
+                    Props = {
+                        RelCF = CFrame.new(0, 0, 0, 1, 0, 0, 0, 1, -4.47e-08, 0, -4.47e-08, 1),
+                    },
+                },
+            },
+        },
+        Meta = {
+            ItemName = "Gold Swirly",
+            ItemType = "Knife",
+            Rarity = "Unique",
+        },
+    },
+    ["GoldHarvester"] = {
+        Complete = true,
+        Model =
+        {
+            Class = "MeshPart",
+            Id = 1,
+            Name = "GunDisplay",
+            Tags = { "WeaponDisplay" },
+            Props = {
+                Reflectance = 0,
+                CanCollide = false,
+                Color = Color3.fromRGB(17, 17, 17),
+                MeshId = "rbxassetid://7775027413",
+                RelCF = CFrame.new(0, 0, 0, 1, -5.96e-08, 5.96e-08, -5.96e-08, 1, 0, 5.96e-08, 0, 1),
+                Transparency = 0,
+                TextureID = "http://www.roblox.com/asset/?id=8266613473",
+                Material = Enum.Material.Brick,
+                CastShadow = true,
+                Size = Vector3.new(2.245, 0.6549, 2.88),
+            },
+            Children = {
+                {
+                    Class = "Beam",
+                    Id = 2,
+                    Name = "CustomBeam",
+                    Props = {
+                        FaceCamera = false,
+                        Width0 = 0.2,
+                        CurveSize1 = 0,
+                        Color = ColorSequence.new({ ColorSequenceKeypoint.new(0, Color3.fromRGB(0, 255, 0)), ColorSequenceKeypoint.new(1, Color3.fromRGB(0, 255, 0)) }),
+                        TextureSpeed = 1,
+                        ZOffset = 0,
+                        Transparency = NumberSequence.new({ NumberSequenceKeypoint.new(0, 0.5, 0), NumberSequenceKeypoint.new(1, 0.5, 0) }),
+                        LightInfluence = 0,
+                        CurveSize0 = 0,
+                        Segments = 10,
+                        Width1 = 0.2,
+                        LightEmission = 0.5,
+                        TextureLength = 1,
+                        TextureMode = Enum.TextureMode.Stretch,
+                        Texture = "",
+                    },
+                },
+                {
+                    Class = "Attachment",
+                    Id = 3,
+                    Name = "CustomAttachment",
+                    Props = {
+                        RelCF = CFrame.new(0.1299, 0, 0.07504, 2.05e-05, -0.5, -0.866, 1, -4.046e-05, 4.718e-05, -5.859e-05, -0.866, 0.5),
+                    },
+                },
+            },
+        },
+        Meta = {
+            ItemName = "Gold Harvester",
+            ItemType = "Gun",
+            Rarity = "Unique",
+        },
+    },
+    ["SilverVampiresEdge"] = {
+        Complete = true,
+        Model =
+        {
+            Class = "MeshPart",
+            Id = 1,
+            Name = "KnifeDisplay",
+            Tags = { "WeaponDisplay" },
+            Props = {
+                Reflectance = 0,
+                CanCollide = false,
+                Color = Color3.fromRGB(17, 17, 17),
+                MeshId = "rbxassetid://5841895234",
+                RelCF = CFrame.new(0, 0, 0, 1, -1.192e-07, -2.98e-08, -1.192e-07, 1, -2.98e-08, -2.98e-08, -2.98e-08, 1),
+                Transparency = 0,
+                TextureID = "http://www.roblox.com/asset/?id=127814640080661",
+                Material = Enum.Material.Brick,
+                CastShadow = true,
+                Size = Vector3.new(0.3955, 3.351, 1.014),
+            },
+            Children = {
+                {
+                    Class = "Attachment",
+                    Id = 2,
+                    Name = "Attachment",
+                    Props = {
+                        RelCF = CFrame.new(0, 0, 0, 1, -1.192e-07, -2.98e-08, -1.192e-07, 1, -2.98e-08, -2.98e-08, -2.98e-08, 1),
+                    },
+                },
+            },
+        },
+        Meta = {
+            ItemName = "Silver Vamp's Edge",
+            ItemType = "Knife",
+            Rarity = "Unique",
+        },
+    },
+    ["SwirlyGunGold"] = {
+        Complete = true,
+        Model =
+        {
+            Class = "MeshPart",
+            Id = 1,
+            Name = "GunDisplay",
+            Tags = { "WeaponDisplay" },
+            Props = {
+                Reflectance = 0,
+                CanCollide = false,
+                Color = Color3.fromRGB(163, 162, 165),
+                MeshId = "rbxassetid://8310911339",
+                RelCF = CFrame.new(0, 0, 0, 1, 2.98e-08, -2.98e-08, 2.98e-08, 1, -7.451e-09, -2.98e-08, -7.451e-09, 1),
+                Transparency = 0,
+                TextureID = "rbxassetid://10784861380",
+                Material = Enum.Material.Plastic,
+                CastShadow = true,
+                Size = Vector3.new(0.469, 2.539, 1.151),
+            },
+            Children = {
+                {
+                    Class = "Attachment",
+                    Id = 2,
+                    Name = "Attachment",
+                    Props = {
+                        RelCF = CFrame.new(0, 0, 0, 1, 2.98e-08, -2.98e-08, 2.98e-08, 1, -7.451e-09, -2.98e-08, -7.451e-09, 1),
+                    },
+                },
+            },
+        },
+        Meta = {
+            ItemName = "Gold Swirly",
+            ItemType = "Gun",
+            Rarity = "Unique",
+        },
+    },
+    ["SwirlyAxeBlue"] = {
+        Complete = true,
+        Model =
+        {
+            Class = "Part",
+            Id = 1,
+            Name = "KnifeDisplay",
+            Tags = { "WeaponDisplay" },
+            Props = {
+                Reflectance = 0,
+                CanCollide = false,
+                Color = Color3.fromRGB(248, 248, 248),
+                RelCF = CFrame.new(0, 0, 0, 1, 0, 0, 0, 1, -1.043e-07, 0, -1.043e-07, 1),
+                Transparency = 0,
+                Shape = Enum.PartType.Block,
+                Material = Enum.Material.Plastic,
+                CastShadow = true,
+                Size = Vector3.new(4, 1, 2),
+            },
+            Children = {
+                {
+                    Class = "SpecialMesh",
+                    Id = 2,
+                    Name = "Mesh",
+                    Props = {
+                        Offset = Vector3.new(0, 0, 0),
+                        VertexColor = Vector3.new(1, 1, 1),
+                        MeshType = Enum.MeshType.FileMesh,
+                        Scale = Vector3.new(0.055, 0.055, 0.055),
+                        MeshId = "rbxassetid://8293463844",
+                        TextureId = "rbxassetid://10784764016",
+                    },
+                },
+                {
+                    Class = "Attachment",
+                    Id = 3,
+                    Name = "Attachment",
+                    Props = {
+                        RelCF = CFrame.new(0, 0, 0, 1, 0, 0, 0, 1, -1.043e-07, 0, -1.043e-07, 1),
+                    },
+                },
+            },
+        },
+        Meta = {
+            ItemName = "Blue Swirly",
+            ItemType = "Knife",
+            Rarity = "Unique",
+        },
+    },
+    ["SilverHarvester"] = {
+        Complete = true,
+        Model =
+        {
+            Class = "MeshPart",
+            Id = 1,
+            Name = "GunDisplay",
+            Tags = { "WeaponDisplay" },
+            Props = {
+                Reflectance = 0,
+                CanCollide = false,
+                Color = Color3.fromRGB(17, 17, 17),
+                MeshId = "rbxassetid://7775027413",
+                RelCF = CFrame.new(0, 0, 0, 1, 0, 8.941e-08, 0, 1, 0, 8.941e-08, 0, 1),
+                Transparency = 0,
+                TextureID = "http://www.roblox.com/asset/?id=8266615645",
+                Material = Enum.Material.Brick,
+                CastShadow = true,
+                Size = Vector3.new(2.245, 0.6549, 2.88),
+            },
+            Children = {
+                {
+                    Class = "Beam",
+                    Id = 2,
+                    Name = "CustomBeam",
+                    Props = {
+                        FaceCamera = false,
+                        Width0 = 0.2,
+                        CurveSize1 = 0,
+                        Color = ColorSequence.new({ ColorSequenceKeypoint.new(0, Color3.fromRGB(0, 255, 0)), ColorSequenceKeypoint.new(1, Color3.fromRGB(0, 255, 0)) }),
+                        TextureSpeed = 1,
+                        ZOffset = 0,
+                        Transparency = NumberSequence.new({ NumberSequenceKeypoint.new(0, 0.5, 0), NumberSequenceKeypoint.new(1, 0.5, 0) }),
+                        LightInfluence = 0,
+                        CurveSize0 = 0,
+                        Segments = 10,
+                        Width1 = 0.2,
+                        LightEmission = 0.5,
+                        TextureLength = 1,
+                        TextureMode = Enum.TextureMode.Stretch,
+                        Texture = "",
+                    },
+                },
+                {
+                    Class = "Attachment",
+                    Id = 3,
+                    Name = "CustomAttachment",
+                    Props = {
+                        RelCF = CFrame.new(0.1299, 0, 0.07498, 2.056e-05, -0.5, -0.866, 1, -4.05e-05, 4.712e-05, -5.862e-05, -0.866, 0.5),
+                    },
+                },
+            },
+        },
+        Meta = {
+            ItemName = "Silver Harvester",
+            ItemType = "Gun",
+            Rarity = "Unique",
+        },
+    },
+    ["SilverIcebreaker"] = {
+        Complete = true,
+        Model =
+        {
+            Class = "MeshPart",
+            Id = 1,
+            Name = "KnifeDisplay",
+            Tags = { "WeaponDisplay" },
+            Props = {
+                Reflectance = 0,
+                CanCollide = false,
+                Color = Color3.fromRGB(17, 17, 17),
+                MeshId = "rbxassetid://6124173614",
+                RelCF = CFrame.new(0, 0, 0, 1, 0, 5.96e-08, 0, 1, -7.451e-08, 5.96e-08, -7.451e-08, 1),
+                Transparency = 0,
+                TextureID = "rbxassetid://6237992602",
+                Material = Enum.Material.Brick,
+                CastShadow = true,
+                Size = Vector3.new(0.4106, 3.074, 1.955),
+            },
+            Children = {
+                {
+                    Class = "Attachment",
+                    Id = 2,
+                    Name = "Attachment",
+                    Props = {
+                        RelCF = CFrame.new(0, 0, 0, 1, 0, 5.96e-08, 0, 1, -7.451e-08, 5.96e-08, -7.451e-08, 1),
+                    },
+                },
+            },
+        },
+        Meta = {
+            ItemName = "Silver Icebreaker",
+            ItemType = "Knife",
+            Rarity = "Unique",
+        },
+    },
+    ["SharkSeeker"] = {
+        Complete = true,
+        Model =
+        {
+            Class = "MeshPart",
+            Id = 1,
+            Name = "GunDisplay",
+            Tags = { "WeaponDisplay" },
+            Props = {
+                Reflectance = 0,
+                CanCollide = false,
+                Color = Color3.fromRGB(189, 189, 189),
+                MeshId = "rbxassetid://6967743598",
+                RelCF = CFrame.new(0, 0, 0, 1, 0, 0, 0, 1, -5.96e-08, 0, -5.96e-08, 1),
+                Transparency = 0,
+                TextureID = "rbxassetid://6967743637",
+                Material = Enum.Material.SmoothPlastic,
+                CastShadow = true,
+                Size = Vector3.new(1.142, 2.664, 1.198),
+            },
+            Children = {
+                {
+                    Class = "Attachment",
+                    Id = 2,
+                    Name = "CustomAttachment",
+                    Props = {
+                        RelCF = CFrame.new(0.15, -0.1326, -0.2597, 1, -9.03e-06, -8.589e-05, -9.03e-06, 0.9782, -0.2078, 8.583e-05, 0.2078, 0.9782),
+                    },
+                },
+            },
+        },
+        Meta = {
+            ItemName = "SharkSeeker",
+            ItemType = "Gun",
+            Rarity = "Unique",
+        },
+    },
+    ["SilverIceblaster"] = {
+        Complete = true,
+        Model =
+        {
+            Class = "MeshPart",
+            Id = 1,
+            Name = "GunDisplay",
+            Tags = { "WeaponDisplay" },
+            Props = {
+                Reflectance = 0,
+                CanCollide = false,
+                Color = Color3.fromRGB(17, 17, 17),
+                MeshId = "rbxassetid://6125828567",
+                RelCF = CFrame.new(0, 0, 0, 1, -1.49e-08, 5.96e-08, -1.49e-08, 1, 2.98e-08, 5.96e-08, 2.98e-08, 1),
+                Transparency = 0,
+                TextureID = "rbxassetid://6246950589",
+                Material = Enum.Material.Brick,
+                CastShadow = true,
+                Size = Vector3.new(0.4432, 1.93, 1.024),
+            },
+            Children = {
+                {
+                    Class = "Attachment",
+                    Id = 2,
+                    Name = "Forward",
+                    Props = {
+                        RelCF = CFrame.new(-1.907e-06, 1, 0, 1, -1.49e-08, 5.96e-08, -1.49e-08, 1, 2.98e-08, 5.96e-08, 2.98e-08, 1),
+                    },
+                },
+                {
+                    Class = "Attachment",
+                    Id = 3,
+                    Name = "Up",
+                    Props = {
+                        RelCF = CFrame.new(-1.907e-06, -3.052e-05, 1, 1, -1.49e-08, 5.96e-08, -1.49e-08, 1, 2.98e-08, 5.96e-08, 2.98e-08, 1),
+                    },
+                },
+                {
+                    Class = "Attachment",
+                    Id = 4,
+                    Name = "Attachment",
+                    Props = {
+                        RelCF = CFrame.new(0, 0, 0, 1, -1.49e-08, 5.96e-08, -1.49e-08, 1, 2.98e-08, 5.96e-08, 2.98e-08, 1),
+                    },
+                },
+            },
+        },
+        Meta = {
+            ItemName = "Silver Iceblaster",
+            ItemType = "Gun",
+            Rarity = "Unique",
+        },
+    },
+    ["ElderwoodKnifeBronze"] = {
+        Complete = true,
+        Model =
+        {
+            Class = "Part",
+            Id = 1,
+            Name = "KnifeDisplay",
+            Tags = { "WeaponDisplay" },
+            Props = {
+                Reflectance = 0,
+                CanCollide = false,
+                Color = Color3.fromRGB(163, 162, 165),
+                RelCF = CFrame.new(0, 0, 0, 1, 5.96e-08, 2.98e-08, 5.96e-08, 1, -4.47e-08, 2.98e-08, -4.47e-08, 1),
+                Transparency = 0,
+                Shape = Enum.PartType.Block,
+                Material = Enum.Material.Plastic,
+                CastShadow = true,
+                Size = Vector3.new(0.276, 3.531, 1.041),
+            },
+            Children = {
+                {
+                    Class = "SpecialMesh",
+                    Id = 2,
+                    Name = "Mesh",
+                    Props = {
+                        Offset = Vector3.new(0, 0, 0),
+                        VertexColor = Vector3.new(1, 1, 1),
+                        MeshType = Enum.MeshType.FileMesh,
+                        Scale = Vector3.new(0.07, 0.07, 0.07),
+                        MeshId = "rbxassetid://11238166013",
+                        TextureId = "rbxassetid://15166758793",
+                    },
+                },
+                {
+                    Class = "Attachment",
+                    Id = 3,
+                    Name = "Attachment",
+                    Props = {
+                        RelCF = CFrame.new(0, 0, 0, 1, 5.96e-08, 2.98e-08, 5.96e-08, 1, -4.47e-08, 2.98e-08, -4.47e-08, 1),
+                    },
+                },
+            },
+        },
+        Meta = {
+            ItemName = "Bronze Elderwood",
+            ItemType = "Knife",
+            Rarity = "Unique",
+        },
+    },
+    ["BlueVampiresEdge"] = {
+        Complete = true,
+        Model =
+        {
+            Class = "MeshPart",
+            Id = 1,
+            Name = "KnifeDisplay",
+            Tags = { "WeaponDisplay" },
+            Props = {
+                Reflectance = 0,
+                CanCollide = false,
+                Color = Color3.fromRGB(17, 17, 17),
+                MeshId = "rbxassetid://5841895234",
+                RelCF = CFrame.new(0, 0, 0, 1, 5.96e-08, 0, 5.96e-08, 1, -5.96e-08, 0, -5.96e-08, 1),
+                Transparency = 0,
+                TextureID = "http://www.roblox.com/asset/?id=124217037184197",
+                Material = Enum.Material.Brick,
+                CastShadow = true,
+                Size = Vector3.new(0.3955, 3.351, 1.014),
+            },
+            Children = {
+                {
+                    Class = "Attachment",
+                    Id = 2,
+                    Name = "Attachment",
+                    Props = {
+                        RelCF = CFrame.new(0, 0, 0, 1, 5.96e-08, 0, 5.96e-08, 1, -5.96e-08, 0, -5.96e-08, 1),
+                    },
+                },
+            },
+        },
+        Meta = {
+            ItemName = "Blue Vamp's Edge",
+            ItemType = "Knife",
+            Rarity = "Unique",
+        },
+    },
+    ["MintySilver"] = {
+        Complete = true,
+        Model =
+        {
+            Class = "MeshPart",
+            Id = 1,
+            Name = "GunDisplay",
+            Tags = { "WeaponDisplay" },
+            Props = {
+                Reflectance = 0,
+                CanCollide = false,
+                Color = Color3.fromRGB(17, 17, 17),
+                MeshId = "rbxassetid://4528424409",
+                RelCF = CFrame.new(0, 0, 0, 1, -2.98e-08, 0, -2.98e-08, 1, 4.47e-08, 0, 4.47e-08, 1),
+                Transparency = 0,
+                TextureID = "rbxassetid://90324993702879",
+                Material = Enum.Material.Brick,
+                CastShadow = true,
+                Size = Vector3.new(0.3335, 1.35, 1.88),
+            },
+            Children = {
+                {
+                    Class = "Attachment",
+                    Id = 2,
+                    Name = "CustomAttachment",
+                    Props = {
+                        RelCF = CFrame.new(-0.05, -0.07259, 0.2392, -1, 0, 2.98e-08, 2.98e-08, -4.47e-08, -1, 0, -1, -4.47e-08),
+                    },
+                },
+            },
+        },
+        Meta = {
+            ItemName = "Silver Minty",
+            ItemType = "Gun",
+            Rarity = "Unique",
+        },
+    },
+    ["RedIceblaster"] = {
+        Complete = true,
+        Model =
+        {
+            Class = "MeshPart",
+            Id = 1,
+            Name = "GunDisplay",
+            Tags = { "WeaponDisplay" },
+            Props = {
+                Reflectance = 0,
+                CanCollide = false,
+                Color = Color3.fromRGB(17, 17, 17),
+                MeshId = "rbxassetid://6125828567",
+                RelCF = CFrame.new(0, 0, 0, 1, 0, 5.96e-08, 0, 1, -1.49e-08, 5.96e-08, -1.49e-08, 1),
+                Transparency = 0,
+                TextureID = "rbxassetid://6246951385",
+                Material = Enum.Material.Brick,
+                CastShadow = true,
+                Size = Vector3.new(0.4432, 1.93, 1.024),
+            },
+            Children = {
+                {
+                    Class = "Attachment",
+                    Id = 2,
+                    Name = "Forward",
+                    Props = {
+                        RelCF = CFrame.new(-1.907e-06, 1, 1.526e-05, 1, 0, 5.96e-08, 0, 1, -1.49e-08, 5.96e-08, -1.49e-08, 1),
+                    },
+                },
+                {
+                    Class = "Attachment",
+                    Id = 3,
+                    Name = "Up",
+                    Props = {
+                        RelCF = CFrame.new(1.907e-06, 3.052e-05, 1, 1, 0, 5.96e-08, 0, 1, -1.49e-08, 5.96e-08, -1.49e-08, 1),
+                    },
+                },
+                {
+                    Class = "Attachment",
+                    Id = 4,
+                    Name = "Attachment",
+                    Props = {
+                        RelCF = CFrame.new(0, 0, 0, 1, 0, 5.96e-08, 0, 1, -1.49e-08, 5.96e-08, -1.49e-08, 1),
+                    },
+                },
+            },
+        },
+        Meta = {
+            ItemName = "Red Iceblaster",
+            ItemType = "Gun",
+            Rarity = "Unique",
+        },
+    },
+    ["Synthwave_Gold"] = {
+        Complete = true,
+        Model =
+        {
+            Class = "Part",
+            Id = 1,
+            Name = "KnifeDisplay",
+            Tags = { "WeaponDisplay" },
+            Props = {
+                Reflectance = 0,
+                CanCollide = false,
+                Color = Color3.fromRGB(163, 162, 165),
+                RelCF = CFrame.new(0, 0, 0, 1, -5.96e-08, -8.941e-08, -5.96e-08, 1, -2.98e-08, -8.941e-08, -2.98e-08, 1),
+                Transparency = 0,
+                Shape = Enum.PartType.Block,
+                Material = Enum.Material.Glass,
+                CastShadow = true,
+                Size = Vector3.new(0.8, 4.2, 3.6),
+            },
+            Children = {
+                {
+                    Class = "SpecialMesh",
+                    Id = 2,
+                    Name = "Mesh",
+                    Props = {
+                        Offset = Vector3.new(0, 0, 0),
+                        VertexColor = Vector3.new(1, 1, 1),
+                        MeshType = Enum.MeshType.FileMesh,
+                        Scale = Vector3.new(0.08539, 0.08539, 0.08539),
+                        MeshId = "rbxassetid://108638551470204",
+                        TextureId = "rbxassetid://127774079336454",
+                    },
+                },
+                {
+                    Class = "Part",
+                    Id = 3,
+                    Name = "Detailing",
+                    Props = {
+                        Reflectance = 0,
+                        CanCollide = false,
+                        Color = Color3.fromRGB(163, 162, 165),
+                        RelCF = CFrame.new(-0.01026, 4.578e-05, 0.146, 1, -5.96e-08, -8.941e-08, -5.96e-08, 1, -2.98e-08, -8.941e-08, -2.98e-08, 1),
+                        Transparency = 0,
+                        Shape = Enum.PartType.Block,
+                        Material = Enum.Material.Plastic,
+                        CastShadow = true,
+                        Size = Vector3.new(0.8, 4.2, 3.6),
+                    },
+                    Children = {
+                        {
+                            Class = "SpecialMesh",
+                            Id = 4,
+                            Name = "Mesh",
+                            Props = {
+                                Offset = Vector3.new(0, 0, 0),
+                                VertexColor = Vector3.new(1, 1, 1),
+                                MeshType = Enum.MeshType.FileMesh,
+                                Scale = Vector3.new(0.08539, 0.08539, 0.08539),
+                                MeshId = "rbxassetid://81344146777937",
+                                TextureId = "rbxassetid://127774079336454",
+                            },
+                        },
+                        {
+                            Class = "Decal",
+                            Id = 5,
+                            Name = "Pink",
+                            Props = {
+                                Transparency = 1,
+                                Face = Enum.NormalId.Left,
+                                Color3 = Color3.fromRGB(1002, 0, 2555),
+                                Texture = "rbxassetid://74726114882932",
+                            },
+                        },
+                        {
+                            Class = "Decal",
+                            Id = 6,
+                            Name = "Cyan",
+                            Props = {
+                                Transparency = 1,
+                                Face = Enum.NormalId.Left,
+                                Color3 = Color3.fromRGB(0, 17444, 25555),
+                                Texture = "rbxassetid://104477416334286",
+                            },
+                        },
+                    },
+                },
+                {
+                    Class = "Attachment",
+                    Id = 7,
+                    Name = "Attachment",
+                    Props = {
+                        RelCF = CFrame.new(0, 0, 0, 1, -5.96e-08, -8.941e-08, -5.96e-08, 1, -2.98e-08, -8.941e-08, -2.98e-08, 1),
+                    },
+                },
+            },
+        },
+        Meta = {
+            ItemName = "Gold Synthwave",
+            ItemType = "Knife",
+            Rarity = "Unique",
+        },
+    },
+    ["ElderwoodGunBronze"] = {
+        Complete = true,
+        Model =
+        {
+            Class = "MeshPart",
+            Id = 1,
+            Name = "GunDisplay",
+            Tags = { "WeaponDisplay" },
+            Props = {
+                Reflectance = 0,
+                CanCollide = false,
+                Color = Color3.fromRGB(17, 17, 17),
+                MeshId = "rbxassetid://4210029922",
+                RelCF = CFrame.new(0, 0, 0, 1, 5.96e-08, -1.49e-08, 5.96e-08, 1, -2.98e-08, -1.49e-08, -2.98e-08, 1),
+                Transparency = 0,
+                TextureID = "rbxassetid://5355144249",
+                Material = Enum.Material.Brick,
+                CastShadow = true,
+                Size = Vector3.new(1.49, 1.132, 0.3587),
+            },
+            Children = {
+                {
+                    Class = "Attachment",
+                    Id = 2,
+                    Name = "CustomAttachment",
+                    Props = {
+                        RelCF = CFrame.new(-0.2299, 0.09821, 0.1, 6.229e-06, 0.9848, -0.1736, -5.484e-06, 0.1736, 0.9848, 1, -5.215e-06, 6.497e-06),
+                    },
+                },
+            },
+        },
+        Meta = {
+            ItemName = "Bronze Elderwood",
+            ItemType = "Gun",
+            Rarity = "Unique",
+        },
+    },
+    ["GoldCandy"] = {
+        Complete = true,
+        Model =
+        {
+            Class = "Part",
+            Id = 1,
+            Name = "KnifeDisplay",
+            Tags = { "WeaponDisplay" },
+            Props = {
+                Reflectance = 0.01,
+                CanCollide = false,
+                Color = Color3.fromRGB(17, 17, 17),
+                RelCF = CFrame.new(0, 0, 0, 1, -2.98e-08, 2.98e-08, -2.98e-08, 1, 4.47e-08, 2.98e-08, 4.47e-08, 1),
+                Transparency = 0,
+                Shape = Enum.PartType.Block,
+                Material = Enum.Material.DiamondPlate,
+                CastShadow = true,
+                Size = Vector3.new(0.4, 4, 0.8),
+            },
+            Children = {
+                {
+                    Class = "SpecialMesh",
+                    Id = 2,
+                    Name = "Mesh",
+                    Props = {
+                        Offset = Vector3.new(0, 0, 0),
+                        VertexColor = Vector3.new(1, 1, 1),
+                        MeshType = Enum.MeshType.FileMesh,
+                        Scale = Vector3.new(1.1, 1.4, 1.1),
+                        MeshId = "http://www.roblox.com/asset/?id=19040337",
+                        TextureId = "rbxassetid://2885942815",
+                    },
+                },
+                {
+                    Class = "Attachment",
+                    Id = 3,
+                    Name = "Attachment",
+                    Props = {
+                        RelCF = CFrame.new(0, 0, 0, 1, -2.98e-08, 2.98e-08, -2.98e-08, 1, 4.47e-08, 2.98e-08, 4.47e-08, 1),
+                    },
+                },
+            },
+        },
+        Meta = {
+            ItemName = "Gold Candy",
+            ItemType = "Knife",
+            Rarity = "Unique",
+        },
+    },
+    ["Celestial_Gold"] = {
+        Complete = true,
+        Model =
+        {
+            Class = "MeshPart",
+            Id = 1,
+            Name = "KnifeDisplay",
+            Tags = { "WeaponDisplay" },
+            Props = {
+                Reflectance = 0,
+                CanCollide = false,
+                Color = Color3.fromRGB(163, 162, 165),
+                MeshId = "rbxassetid://109711282082830",
+                RelCF = CFrame.new(0, 0, 0, 1, -2.98e-08, -5.96e-08, -2.98e-08, 1, -1.49e-08, -5.96e-08, -1.49e-08, 1),
+                Transparency = 0,
+                TextureID = "http://www.roblox.com/asset/?id=112105869970849",
+                Material = Enum.Material.Plastic,
+                CastShadow = true,
+                Size = Vector3.new(0.3976, 2.665, 2.364),
+            },
+            Children = {
+                {
+                    Class = "Attachment",
+                    Id = 2,
+                    Name = "Attachment",
+                    Props = {
+                        RelCF = CFrame.new(0, 0, 0, 1, -2.98e-08, -5.96e-08, -2.98e-08, 1, -1.49e-08, -5.96e-08, -1.49e-08, 1),
+                    },
+                },
+            },
+        },
+        Meta = {
+            ItemName = "Gold Celestial",
+            ItemType = "Knife",
+            Rarity = "Unique",
+        },
+    },
+    ["TravelerAxeGold"] = {
+        Complete = true,
+        Model =
+        {
+            Class = "MeshPart",
+            Id = 1,
+            Name = "KnifeDisplay",
+            Tags = { "WeaponDisplay" },
+            Props = {
+                Reflectance = 0,
+                CanCollide = false,
+                Color = Color3.fromRGB(17, 17, 17),
+                MeshId = "rbxassetid://15057341638",
+                RelCF = CFrame.new(0, 0, 0, 1, -2.98e-08, 0, -2.98e-08, 1, -2.98e-08, 0, -2.98e-08, 1),
+                Transparency = 0,
+                TextureID = "rbxassetid://15522323049",
+                Material = Enum.Material.Brick,
+                CastShadow = true,
+                Size = Vector3.new(0.6044, 3.406, 2.187),
+            },
+            Children = {
+                {
+                    Class = "Attachment",
+                    Id = 2,
+                    Name = "Attachment",
+                    Props = {
+                        RelCF = CFrame.new(0, 0, 0, 1, -2.98e-08, 0, -2.98e-08, 1, -2.98e-08, 0, -2.98e-08, 1),
+                    },
+                },
+            },
+        },
+        Meta = {
+            ItemName = "Gold Traveler's",
+            ItemType = "Knife",
+            Rarity = "Unique",
+        },
+    },
+    ["Gingerscythe_Gold"] = {
+        Complete = true,
+        Model =
+        {
+            Class = "MeshPart",
+            Id = 1,
+            Name = "KnifeDisplay",
+            Tags = { "WeaponDisplay" },
+            Props = {
+                Reflectance = 0,
+                CanCollide = false,
+                Color = Color3.fromRGB(143, 34, 34),
+                MeshId = "rbxassetid://15397282571",
+                RelCF = CFrame.new(0, 0, 0, 1, 0, 0, 0, 1, -4.47e-08, 0, -4.47e-08, 1),
+                Transparency = 0,
+                TextureID = "rbxassetid://139677587292594",
+                Material = Enum.Material.Brick,
+                CastShadow = true,
+                Size = Vector3.new(0.2018, 3.482, 0.8914),
+            },
+            Children = {
+                {
+                    Class = "Attachment",
+                    Id = 2,
+                    Name = "Attachment",
+                    Props = {
+                        RelCF = CFrame.new(0, 0, 0, 1, 0, 0, 0, 1, -4.47e-08, 0, -4.47e-08, 1),
+                    },
+                },
+            },
+        },
+        Meta = {
+            ItemName = "Gold Gingerscythe",
+            ItemType = "Knife",
+            Rarity = "Unique",
+        },
+    },
 }
 
 -- merge: FULL data (has .Model tree, e.g. Evergun/Evergreen/Gingerscope with
