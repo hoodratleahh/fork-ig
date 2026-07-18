@@ -38,7 +38,7 @@ local MESHES_OLD =
     Props = {
     Color = ColorSequence.new({ ColorSequenceKeypoint.new(0, Color3.fromRGB(255, 255, 255)), ColorSequenceKeypoint.new(1, Color3.fromRGB(255, 255, 255)) }),
     LightEmission = 1,
-    Texture = "rbxassetid://15374653796",
+    Texture = "rbxassetid://16221396385",
     TextureLength = 1.5,
     Transparency = NumberSequence.new({ NumberSequenceKeypoint.new(0, 0, 0), NumberSequenceKeypoint.new(1, 0, 0) }),
     Width0 = 1,
@@ -33098,7 +33098,7 @@ local MESHES_FULL =
     LightEmission = 1,
     LightInfluence = 0,
     Segments = 10,
-    Texture = "rbxassetid://15374653796",
+    Texture = "rbxassetid://16221396385",
     TextureLength = 1.5,
     TextureMode = Enum.TextureMode.Wrap,
     TextureSpeed = 0,
@@ -45978,7 +45978,7 @@ local MESHES_FULL =
                         LightEmission = 1,
                         TextureLength = 1.5,
                         TextureMode = Enum.TextureMode.Wrap,
-                        Texture = "rbxassetid://15374653796",
+                        Texture = "rbxassetid://16221396385",
                     },
                 },
                 {
