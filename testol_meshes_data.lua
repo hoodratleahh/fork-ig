@@ -48701,6 +48701,7 @@ local MESHES_NEW =
         },
         MeshCount = 1,
         Meta = {
+            Image = "http://www.roblox.com/Thumbs/Asset.ashx?format=png&width=250&height=250&assetId=16964462231",
             Event = "Christmas",
             ItemID = 16964462231,
             ItemName = "Gingerscope_Blue",
@@ -48778,6 +48779,7 @@ local MESHES_NEW =
         },
         MeshCount = 1,
         Meta = {
+            Image = "rbxassetid://71343872350555",
             ItemID = 16964471890,
             ItemName = "Gingerscope_Purple",
             ItemType = "Gun",
@@ -48853,6 +48855,7 @@ local MESHES_NEW =
         },
         MeshCount = 1,
         Meta = {
+            Image = "rbxassetid://79601705709737",
             Event = "Christmas",
             ItemID = 71041925940777,
             ItemName = "BlackGingerscope",
@@ -48930,6 +48933,7 @@ local MESHES_NEW =
         },
         MeshCount = 1,
         Meta = {
+            Image = "http://www.roblox.com/asset/?id=120253087642585",
             ItemID = 132894831127335,
             ItemName = "Matrixscope",
             ItemType = "Gun",
@@ -49008,6 +49012,7 @@ local MESHES_NEW =
         },
         MeshCount = 1,
         Meta = {
+            Image = "http://www.roblox.com/Thumbs/Asset.ashx?format=png&width=250&height=250&assetId=125339620981359",
             Event = "Halloween",
             ItemID = 74521815947636,
             ItemName = "TravelersSniper",
@@ -49085,6 +49090,7 @@ local MESHES_NEW =
         },
         MeshCount = 1,
         Meta = {
+            Image = "http://www.roblox.com/Thumbs/Asset.ashx?format=png&width=250&height=250&assetId=88459706741085",
             ItemID = 82981561196924,
             ItemName = "uh_myerSCOPE",
             ItemType = "Gun",
@@ -49149,6 +49155,7 @@ local MESHES_NEW =
         },
         MeshCount = 1,
         Meta = {
+            Image = "http://www.roblox.com/Thumbs/Asset.ashx?format=png&width=250&height=250&assetId=8194219645",
             Event = "Halloween",
             ItemID = 8194219645,
             ItemName = "BlueHarvester",
@@ -49215,6 +49222,7 @@ local MESHES_NEW =
         },
         MeshCount = 1,
         Meta = {
+            Image = "rbxassetid://130002606768289",
             ItemID = 8194219645,
             ItemName = "HarvesterPink",
             ItemType = "Gun",
