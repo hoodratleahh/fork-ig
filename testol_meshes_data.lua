@@ -12189,6 +12189,62 @@ local MESHES_OLD =
     Year = "2020",
 },
     },
+    -- NOTE: key is a best-match guess following the exact same naming
+    -- convention confirmed live for BeachyChroma/SandsChroma ("Icecream" ->
+    -- "IcecreamChroma") — MCP client was disconnected when this was added, so
+    -- the key itself was NOT verified against Sync.Weapons like the other two
+    -- were. Mesh/decal data below IS real, pulled directly from the .rbxmx
+    -- export. Double-check the key resolves once reconnected.
+    ["IcecreamChroma"] = {
+        Complete = true,
+        Display = {
+    {
+    Class = "Part",
+    Name = "KnifeDisplay",
+    Path = "(root)",
+    Props = {
+    CanCollide = false,
+    Color = Color3.fromRGB(163, 162, 165),
+    Material = Enum.Material.Plastic,
+    Reflectance = 0,
+    Shape = Enum.PartType.Block,
+    Size = Vector3.new(0.5003, 1.4208, 2.1545),
+    Transparency = 0,
+},
+},
+    {
+    Class = "SpecialMesh",
+    Name = "Mesh",
+    Props = {
+    MeshId = "rbxassetid://82044527712515",
+    MeshType = Enum.MeshType.FileMesh,
+    Offset = Vector3.new(0, 0, 0),
+    Scale = Vector3.new(0.696, 0.696, 0.696),
+    TextureId = "rbxassetid://133533169721039",
+    VertexColor = Vector3.new(1, 1, 1),
+},
+},
+    {
+    Class = "Decal",
+    Name = "Chroma",
+    Props = {
+    Color3 = Color3.fromRGB(255, 0, 228),
+    Face = Enum.NormalId.Left,
+    Texture = "rbxassetid://98918130519475",
+    Transparency = 0,
+},
+},
+},
+        MeshCount = 1,
+        Meta = {
+    Chroma = true,
+    Event = "Summer",
+    ItemName = "Icecream",
+    ItemType = "Knife",
+    Rarity = "Godly",
+    Year = 2026,
+},
+    },
     ["Icewing"] = {
         Complete = true,
         Display = {
@@ -48209,6 +48265,7 @@ local GRIPS = {
     ["Icebeam"] = CFrame.new(0.0000,-0.7000,-0.3000, 1.000,-0.000,0.000,0.000,0.000,-1.000,0.000,1.000,0.000),
     ["Iceblaster"] = CFrame.new(0.0000,-0.7000,-0.3000, 1.000,-0.000,0.000,0.000,0.000,-1.000,0.000,1.000,0.000),
     ["Icebreaker"] = CFrame.new(0.0000,-1.0000,-0.1000),
+    ["IcecreamChroma"] = CFrame.new(0.0000,-1.0000,-0.1000),
     ["Icecracker_K_2020"] = CFrame.new(0.0000,-1.0000,-0.1000),
     ["Icedriller_G_2020"] = CFrame.new(0.0000,-0.7000,-0.3000, 1.000,-0.000,0.000,0.000,0.000,-1.000,0.000,1.000,0.000),
     ["Iceflake"] = CFrame.new(0.0000,-1.0000,-0.1000),
