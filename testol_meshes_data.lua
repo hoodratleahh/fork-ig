@@ -16857,6 +16857,58 @@ local MESHES_OLD =
     Season = 1,
 },
     },
+    ["BeachyChroma"] = {
+        Complete = true,
+        Display = {
+    {
+    Class = "Part",
+    Name = "KnifeDisplay",
+    Path = "(root)",
+    Props = {
+    CanCollide = false,
+    Color = Color3.fromRGB(163, 162, 165),
+    Material = Enum.Material.Plastic,
+    Reflectance = 0,
+    Shape = Enum.PartType.Block,
+    Size = Vector3.new(0.7188, 2.0414, 3.0955),
+    Transparency = 0,
+},
+},
+    {
+    Class = "SpecialMesh",
+    Name = "Mesh",
+    Props = {
+    MeshId = "rbxassetid://88652423673547",
+    MeshType = Enum.MeshType.FileMesh,
+    Offset = Vector3.new(0, 0, 0),
+    Scale = Vector3.new(0.0699, 0.0699, 0.0699),
+    TextureId = "rbxassetid://128146857850145",
+    VertexColor = Vector3.new(1, 1, 1),
+},
+},
+    {
+    Class = "Decal",
+    Name = "Chroma",
+    Props = {
+    Color3 = Color3.fromRGB(115, 255, 0),
+    Face = Enum.NormalId.Left,
+    Texture = "rbxassetid://73559105239250",
+    Transparency = 0,
+},
+},
+},
+        MeshCount = 1,
+        Meta = {
+    Chroma = true,
+    Event = "Summer",
+    Image = "rbxthumb://type=Asset&w=150&h=150&id=138227810343325",
+    ItemID = 120888453565511,
+    ItemName = "Beachy",
+    ItemType = "Knife",
+    Rarity = "Godly",
+    Year = 2026,
+},
+    },
     ["EliteBlue"] = {
         Complete = true,
         Display = {
@@ -47721,6 +47773,7 @@ local GRIPS = {
     ["BaubleKnife"] = CFrame.new(0.0000,-1.1500,0.0000),
     ["Bauble"] = CFrame.new(0.0000,-0.5000,0.5000, 1.000,-0.009,-0.009,0.009,1.000,-0.000,0.009,-0.000,1.000),
     ["Beach_K_2023"] = CFrame.new(0.0000,-1.0000,-0.1000),
+    ["BeachyChroma"] = CFrame.new(0.0000,-1.0000,-0.1000),
     ["Bells_K_2023"] = CFrame.new(0.0000,-1.0000,-0.1000),
     ["BigKill"] = CFrame.new(0.0000,-0.7000,-0.3000, 1.000,-0.000,0.000,0.000,0.000,-1.000,0.000,1.000,0.000),
     ["Bio_K_2023"] = CFrame.new(0.0000,-1.0000,-0.1000),
