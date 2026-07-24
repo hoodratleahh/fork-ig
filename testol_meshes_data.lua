@@ -10573,6 +10573,58 @@ local MESHES_OLD =
     Season = 1,
 },
     },
+    ["SandsChroma"] = {
+        Complete = true,
+        Display = {
+    {
+    Class = "Part",
+    Name = "GunDisplay",
+    Path = "(root)",
+    Props = {
+    CanCollide = false,
+    Color = Color3.fromRGB(163, 162, 165),
+    Material = Enum.Material.Plastic,
+    Reflectance = 0,
+    Shape = Enum.PartType.Block,
+    Size = Vector3.new(0.3899, 1.1073, 1.6791),
+    Transparency = 0,
+},
+},
+    {
+    Class = "SpecialMesh",
+    Name = "Mesh",
+    Props = {
+    MeshId = "rbxassetid://104658283027428",
+    MeshType = Enum.MeshType.FileMesh,
+    Offset = Vector3.new(0, 0, 0),
+    Scale = Vector3.new(0.0379, 0.0379, 0.0379),
+    TextureId = "rbxassetid://138720590976364",
+    VertexColor = Vector3.new(1, 1, 1),
+},
+},
+    {
+    Class = "Decal",
+    Name = "Chroma",
+    Props = {
+    Color3 = Color3.fromRGB(152, 0, 255),
+    Face = Enum.NormalId.Left,
+    Texture = "rbxassetid://92831262223446",
+    Transparency = 0,
+},
+},
+},
+        MeshCount = 1,
+        Meta = {
+    Chroma = true,
+    Event = "Summer",
+    Image = "rbxthumb://type=Asset&w=150&h=150&id=127178026948456",
+    ItemID = 119213058412452,
+    ItemName = "Sands",
+    ItemType = "Gun",
+    Rarity = "Godly",
+    Year = 2026,
+},
+    },
     ["SantaGun"] = {
         Complete = true,
         Display = {
@@ -48368,6 +48420,7 @@ local GRIPS = {
     ["Sakura_K"] = CFrame.new(0.0000,-1.0000,-0.1000),
     ["Sandy_G_2024"] = CFrame.new(0.0000,-0.7000,-0.3000, 1.000,-0.000,0.000,0.000,0.000,-1.000,0.000,1.000,0.000),
     ["Sandy"] = CFrame.new(0.0000,-1.0000,-0.1000),
+    ["SandsChroma"] = CFrame.new(0.0000,-0.7000,-0.3000, 1.000,-0.000,0.000,0.000,0.000,-1.000,0.000,1.000,0.000),
     ["Santa2017"] = CFrame.new(0.0000,-1.0000,-0.1000),
     ["SantaGun"] = CFrame.new(0.0000,-0.7000,-0.3000, 1.000,-0.000,0.000,0.000,0.000,-1.000,0.000,1.000,0.000),
     ["Santa_G_2018"] = CFrame.new(0.0000,-0.7000,-0.3000, 1.000,-0.000,0.000,0.000,0.000,-1.000,0.000,1.000,0.000),
