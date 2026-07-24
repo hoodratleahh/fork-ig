@@ -12189,12 +12189,6 @@ local MESHES_OLD =
     Year = "2020",
 },
     },
-    -- NOTE: key is a best-match guess following the exact same naming
-    -- convention confirmed live for BeachyChroma/SandsChroma ("Icecream" ->
-    -- "IcecreamChroma") — MCP client was disconnected when this was added, so
-    -- the key itself was NOT verified against Sync.Weapons like the other two
-    -- were. Mesh/decal data below IS real, pulled directly from the .rbxmx
-    -- export. Double-check the key resolves once reconnected.
     ["IcecreamChroma"] = {
         Complete = true,
         Display = {
@@ -12239,6 +12233,8 @@ local MESHES_OLD =
         Meta = {
     Chroma = true,
     Event = "Summer",
+    Image = "rbxassetid://130283073474456",
+    ItemID = 87189663191639,
     ItemName = "Icecream",
     ItemType = "Knife",
     Rarity = "Godly",
