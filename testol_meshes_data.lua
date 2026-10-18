@@ -47895,6 +47895,134 @@ local MESHES_FULL =
             Rarity = "Unique",
         },
     },
+    ["Mortal"] = {
+        Complete = true,
+        Display = {
+    {
+    Class = "Part",
+    Name = "KnifeDisplay",
+    Path = "(root)",
+    Props = {
+    CanCollide = false,
+    Color = Color3.fromRGB(163, 162, 165),
+    Material = Enum.Material.Plastic,
+    Reflectance = 0,
+    Shape = Enum.PartType.Block,
+    Size = Vector3.new(0.4, 3.1, 0.8),
+    Transparency = 0,
+},
+},
+    {
+    Class = "SpecialMesh",
+    Name = "Mesh",
+    Props = {
+    MeshId = "rbxassetid://128484002922643",
+    MeshType = Enum.MeshType.FileMesh,
+    Offset = Vector3.new(0, 0, 0),
+    Scale = Vector3.new(1, 1, 1),
+    TextureId = "rbxassetid://108227522964186",
+    VertexColor = Vector3.new(1, 1, 1),
+},
+},
+},
+        MeshCount = 1,
+        Meta = {
+    Event = "Halloween",
+    ItemName = "Mortal",
+    ItemType = "Knife",
+    Rarity = "Godly",
+    Year = "2026",
+},
+    },
+    ["Immortal"] = {
+        Complete = true,
+        Display = {
+    {
+    Class = "Part",
+    Name = "GunDisplay",
+    Path = "(root)",
+    Props = {
+    CanCollide = false,
+    Color = Color3.fromRGB(163, 162, 165),
+    Material = Enum.Material.Plastic,
+    Reflectance = 0,
+    Shape = Enum.PartType.Block,
+    Size = Vector3.new(0.4842, 1.3751, 2.0852),
+    Transparency = 0,
+},
+},
+    {
+    Class = "SpecialMesh",
+    Name = "Mesh",
+    Props = {
+    MeshId = "rbxassetid://96613044791092",
+    MeshType = Enum.MeshType.FileMesh,
+    Offset = Vector3.new(0, 0, 0),
+    Scale = Vector3.new(0.006719, 0.006719, 0.006719),
+    TextureId = "rbxassetid://112915438278890",
+    VertexColor = Vector3.new(1, 1, 1),
+},
+},
+},
+        MeshCount = 1,
+        Meta = {
+    Event = "Halloween",
+    ItemName = "Immortal",
+    ItemType = "Gun",
+    Rarity = "Godly",
+    Year = "2026",
+},
+    },
+    ["ImmortalChroma"] = {
+        Complete = true,
+        Display = {
+    {
+    Class = "Part",
+    Name = "GunDisplay",
+    Path = "(root)",
+    Props = {
+    CanCollide = false,
+    Color = Color3.fromRGB(163, 162, 165),
+    Material = Enum.Material.Plastic,
+    Reflectance = 0,
+    Shape = Enum.PartType.Block,
+    Size = Vector3.new(0.4842, 1.3751, 2.0852),
+    Transparency = 0,
+},
+},
+    {
+    Class = "SpecialMesh",
+    Name = "Mesh",
+    Props = {
+    MeshId = "rbxassetid://96613044791092",
+    MeshType = Enum.MeshType.FileMesh,
+    Offset = Vector3.new(0, 0, 0),
+    Scale = Vector3.new(0.006719, 0.006719, 0.006719),
+    TextureId = "rbxassetid://106514423382736",
+    VertexColor = Vector3.new(1, 1, 1),
+},
+},
+    {
+    Class = "Decal",
+    Name = "Chroma",
+    Props = {
+    Color3 = Color3.fromRGB(255, 255, 255),
+    Face = Enum.NormalId.Left,
+    Texture = "rbxassetid://84487528630470",
+    Transparency = 0,
+},
+},
+},
+        MeshCount = 1,
+        Meta = {
+    Chroma = true,
+    Event = "Halloween",
+    ItemName = "Immortal",
+    ItemType = "Gun",
+    Rarity = "Godly",
+    Year = "2026",
+},
+    },
 }
 
 -- merge: FULL data (has .Model tree, e.g. Evergun/Evergreen/Gingerscope with
