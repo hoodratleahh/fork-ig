@@ -47969,14 +47969,6 @@ local MESHES_FULL =
     Transparency = 0,
 },
 },
-    {
-    Class = "SurfaceAppearance",
-    Name = "SurfaceAppearance",
-    Props = {
-    ColorMap = "rbxassetid://92177651942393",
-    TexturePack = "rbxassetid://93637713983950",
-},
-},
 },
         MeshCount = 1,
         Meta = {
@@ -48055,14 +48047,6 @@ local MESHES_FULL =
     Transparency = 0,
 },
 },
-    {
-    Class = "SurfaceAppearance",
-    Name = "SurfaceAppearance",
-    Props = {
-    ColorMap = "rbxassetid://83124120120344",
-    TexturePack = "rbxassetid://100812821259735",
-},
-},
 },
         MeshCount = 1,
         Meta = {
@@ -48088,14 +48072,6 @@ local MESHES_FULL =
     Reflectance = 0,
     Size = Vector3.new(0.6727, 3.3301, 1.6073),
     Transparency = 0,
-},
-},
-    {
-    Class = "SurfaceAppearance",
-    Name = "SurfaceAppearance",
-    Props = {
-    ColorMap = "rbxassetid://73129929254630",
-    TexturePack = "rbxassetid://111116392708329",
 },
 },
     {
