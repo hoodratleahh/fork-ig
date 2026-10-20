@@ -48057,6 +48057,43 @@ local MESHES_FULL =
     Year = "2026",
 },
     },
+    ["Embersickle"] = {
+        Complete = true,
+        Display = {
+    {
+    Class = "MeshPart",
+    Name = "KnifeDisplay",
+    Path = "(root)",
+    Props = {
+    CanCollide = false,
+    Color = Color3.fromRGB(163, 162, 165),
+    Material = Enum.Material.Plastic,
+    MeshId = "rbxassetid://139203710266613",
+    Reflectance = 0,
+    Size = Vector3.new(0.6727, 3.3301, 1.6073),
+    Transparency = 0,
+},
+},
+    {
+    Class = "Fire",
+    Name = "Fire",
+    Props = {
+    Color = Color3.fromRGB(111, 0, 130),
+    Heat = 7,
+    SecondaryColor = Color3.fromRGB(0, 0, 0),
+    Size = 2,
+},
+},
+},
+        MeshCount = 1,
+        Meta = {
+    Event = "Halloween",
+    ItemName = "Embersickle",
+    ItemType = "Knife",
+    Rarity = "Godly",
+    Year = "2026",
+},
+    },
     ["ImmortalChroma"] = {
         Complete = true,
         Display = {
