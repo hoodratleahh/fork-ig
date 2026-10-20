@@ -47951,7 +47951,7 @@ local MESHES_FULL =
     Year = "2026",
 },
     },
-    ["Ambersight"] = {
+    ["Emberscythe"] = {
         Complete = true,
         Display = {
     {
@@ -47973,13 +47973,13 @@ local MESHES_FULL =
         MeshCount = 1,
         Meta = {
     Event = "Halloween",
-    ItemName = "Ambersight",
+    ItemName = "Emberscythe",
     ItemType = "Knife",
     Rarity = "Godly",
     Year = "2026",
 },
     },
-    ["AmbersightChroma"] = {
+    ["EmberscytheChroma"] = {
         Complete = true,
         Display = {
     {
@@ -48023,7 +48023,7 @@ local MESHES_FULL =
         Meta = {
     Chroma = true,
     Event = "Halloween",
-    ItemName = "Ambersight",
+    ItemName = "Emberscythe",
     ItemType = "Knife",
     Rarity = "Godly",
     Year = "2026",
