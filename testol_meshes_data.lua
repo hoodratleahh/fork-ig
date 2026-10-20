@@ -47969,6 +47969,14 @@ local MESHES_FULL =
     Transparency = 0,
 },
 },
+{
+    Class = "SurfaceAppearance",
+    Path = "SurfaceAppearance",
+    Props = {
+    ColorMap = "rbxassetid://92177651942393",
+    TexturePack = "rbxassetid://93637713983950",
+},
+},
 },
         MeshCount = 1,
         Meta = {
@@ -48047,6 +48055,14 @@ local MESHES_FULL =
     Transparency = 0,
 },
 },
+{
+    Class = "SurfaceAppearance",
+    Path = "SurfaceAppearance",
+    Props = {
+    ColorMap = "rbxassetid://83124120120344",
+    TexturePack = "rbxassetid://100812821259735",
+},
+},
 },
         MeshCount = 1,
         Meta = {
@@ -48082,6 +48098,14 @@ local MESHES_FULL =
     Heat = 7,
     SecondaryColor = Color3.fromRGB(0, 0, 0),
     Size = 2,
+},
+},
+{
+    Class = "SurfaceAppearance",
+    Path = "SurfaceAppearance",
+    Props = {
+    ColorMap = "rbxassetid://73129929254630",
+    TexturePack = "rbxassetid://111116392708329",
 },
 },
 },
