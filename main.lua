@@ -13667,6 +13667,19 @@ return shown and UDim2.new(0.5,0,1,-(H+14))or UDim2.new(0.5,0,1,60)
 end
 return shown and UDim2.new(0.5,0,1,C.Offset)or UDim2.new(0.5,0,1,-(H-C.Peek))
 end
+local function aDockSfx(kind)
+local C=au.DockConfig
+local id=C[kind.."Sound"]
+if not id then return end
+pcall(function()
+local s=Instance.new("Sound")
+s.SoundId=id
+s.Volume=C[kind.."Volume"]or 0.3
+s.PlaybackSpeed=C[kind.."Pitch"]or 1
+game:GetService("SoundService"):PlayLocalSound(s)
+task.delay(4,function()s:Destroy()end)
+end)
+end
 local function aDockLabelHide()
 if not aDockLabel then return end
 an(aDockLabel,0.12,{ImageTransparency=1}):Play()
@@ -13679,6 +13692,7 @@ aDockHideAt=nil
 aDock.ZIndex=au.IsFullscreen and 98 or 0
 if instant then aDock.Position=aDockPos(true)else
 an(aDock,0.32,{Position=aDockPos(true)},Enum.EasingStyle.Quint,Enum.EasingDirection.Out):Play()
+aDockSfx("Reveal")
 end
 an(aDock.Grip,0.2,{BackgroundTransparency=1}):Play()
 an(aDock.Shadow,0.3,{ImageTransparency=0.5}):Play()
@@ -13894,6 +13908,7 @@ local entry={Visual=vis,Slot=slot,Index=tab.Index,Selected=false,Tab=tab}
 aDockTiles[#aDockTiles+1]=entry
 local hit=vis.Hit
 al.AddSignal(hit.MouseEnter,function()
+aDockSfx("Hover")
 an(vis.HoverScale,0.18,{Scale=1.2},Enum.EasingStyle.Back,Enum.EasingDirection.Out):Play()
 an(vis,0.12,{ImageTransparency=0}):Play()
 an(vis.Glyph,0.12,{ImageTransparency=0}):Play()
@@ -13921,6 +13936,7 @@ end
 aDockLabelHide()
 end)
 al.AddSignal(hit.MouseButton1Click,function()
+aDockSfx("Click")
 an(vis.HoverScale,0.08,{Scale=1.05}):Play()
 task.delay(0.08,function()if vis.Parent then an(vis.HoverScale,0.15,{Scale=1.2},Enum.EasingStyle.Back,Enum.EasingDirection.Out):Play()end end)
 B:SelectTab(tab.Index)
