@@ -274,7 +274,7 @@ TabBackgroundHoverTransparency=.97,
 TabBackgroundActive="Hover",
 TabBackgroundActiveTransparency=0.93,
 TabText="Text",
-TabTextTransparency=0.3,
+TabTextTransparency=0.18,
 TabTextTransparencyActive=0,
 TabTitle="Text",
 TabIcon="Icon",
@@ -5655,6 +5655,10 @@ end
 
 local ap=CreateText(ag.Title,"Title")
 local aq=CreateText(ag.Desc,"Desc")
+if af.Window and af.Window.CompactDesc and af.Tab and af.Tab.Columns==2 then
+aq.TextTruncate="AtEnd"
+ab("UISizeConstraint",{MaxSize=Vector2.new(math.huge,af.Window.CompactDescHeight or 38),Parent=aq})
+end
 if not ag.Title or ag.Title==""then
 aq.Visible=false
 end
@@ -5903,6 +5907,39 @@ PaddingBottom=UDim.new(0,ag.UIPadding),
 
 ag.UIElements.Main=f
 ag.UIElements.Locked=au
+
+if af.Window and af.Window.ShineHover then
+local aSh
+aa.AddSignal(f.MouseEnter,function()
+if not aSh then
+aSh=ab("Frame",{
+Name="Shine",
+Size=UDim2.new(1,0,1,0),
+BackgroundColor3=Color3.new(1,1,1),
+BackgroundTransparency=0.35,
+BorderSizePixel=0,
+ZIndex=40,
+Parent=f,
+},{
+ab("UICorner",{CornerRadius=UDim.new(0,ag.UICorner)}),
+ab("UIGradient",{
+Name="Band",
+Rotation=25,
+Transparency=NumberSequence.new{
+NumberSequenceKeypoint.new(0,1),
+NumberSequenceKeypoint.new(0.44,1),
+NumberSequenceKeypoint.new(0.5,0.72),
+NumberSequenceKeypoint.new(0.56,1),
+NumberSequenceKeypoint.new(1,1),
+},
+Offset=Vector2.new(-1,0),
+}),
+})
+end
+local aB=aSh:FindFirstChild("Band")
+if aB then aB.Offset=Vector2.new(-1,0)ad(aB,0.5,{Offset=Vector2.new(1,0)},Enum.EasingStyle.Sine,Enum.EasingDirection.Out):Play()end
+end)
+end
 
 if ag.Hover then
 aa.AddSignal(f.MouseEnter,function()
@@ -6403,10 +6440,17 @@ Name="ToggleFrame",
 ab.NewRoundFrame(an,"Squircle",{
 Size=UDim2.new(1,0,1,0),
 Name="Layer",
-ThemeTag={
+ThemeTag=(not(al and al.Window and al.Window.ToggleGradient))and{
 ImageColor3="Toggle",
-},
+}or nil,
+ImageColor3=(al and al.Window and al.Window.ToggleGradient)and Color3.new(1,1,1)or nil,
 ImageTransparency=1,
+},{
+(al and al.Window and al.Window.ToggleGradient)and ac("UIGradient",{
+Name="EmberGradient",
+Rotation=0,
+Color=al.Window.ToggleGradient,
+})or nil,
 }),
 ab.NewRoundFrame(an,"SquircleOutline",{
 Size=UDim2.new(1,0,1,0),
@@ -6505,7 +6549,17 @@ Position=UDim2.new(0.5,0,0.5,0),
 AnchorPoint=Vector2.new(0.5,0.5),
 Name="Hitbox",
 Text="",
-})
+}),
+(al and al.Window and al.Window.ToggleGradient)and ac("UICorner",{
+CornerRadius=UDim.new(0,an),
+})or nil,
+(al and al.Window and al.Window.ToggleGradient)and ac("UIStroke",{
+Name="EmberRim",
+Thickness=1.5,
+Color=al.Window.ToggleGradient.Keypoints[1].Value,
+Transparency=1,
+ApplyStrokeMode=Enum.ApplyStrokeMode.Border,
+})or nil,
 })
 
 local ar
@@ -6541,6 +6595,13 @@ if aw then
 ad(aq.Layer,0.1,{
 ImageTransparency=0,
 }):Play()
+local aRim=aq:FindFirstChild("EmberRim")
+if aRim then ad(aRim,0.2,{Transparency=0.35}):Play()end
+local aGr=aq.Layer:FindFirstChild("EmberGradient")
+if aGr then
+aGr.Offset=Vector2.new(-1,0)
+ad(aGr,0.45,{Offset=Vector2.new(0,0)},Enum.EasingStyle.Quint,Enum.EasingDirection.Out):Play()
+end
 ab.SetThemeTag(aq.Frame.Bar.Highlight.Glass,{ImageColor3="Toggle"},0.1)
 ad(aq.Frame.Bar.Highlight.Glass,0.1,{ImageTransparency=0},Enum.EasingStyle.Quint,Enum.EasingDirection.Out):Play()
 
@@ -6559,6 +6620,8 @@ else
 ad(aq.Layer,0.1,{
 ImageTransparency=1,
 }):Play()
+local aRim=aq:FindFirstChild("EmberRim")
+if aRim then ad(aRim,0.2,{Transparency=1}):Play()end
 ab.SetThemeTag(aq.Frame.Bar.Highlight.Glass,{ImageColor3="Text"},0.1)
 ad(aq.Frame.Bar.Highlight.Glass,0.1,{ImageTransparency=0.85},Enum.EasingStyle.Quint,Enum.EasingDirection.Out):Play()
 
@@ -6911,7 +6974,9 @@ Width=ak.Width or 130,
 TextBoxWidth=ak.Window.NewElements and 40 or 30,
 ThumbSize=13,
 IconSize=26,
+Stacked=(ak.Stacked==nil)and(ak.Tab and ak.Tab.Columns==2 or false)or ak.Stacked,
 }
+if al.Title==nil then al.Stacked=false end
 if al.Icons=={}then
 al.Icons={
 From="sfsymbols:sunMinFill",
@@ -6982,7 +7047,7 @@ al.SliderFrame=a.load'B'{
 Title=al.Title,
 Desc=al.Desc,
 Parent=ak.Parent,
-TextOffset=al.Width,
+TextOffset=al.Stacked and 0 or al.Width,
 Hover=false,
 Tab=ak.Tab,
 Index=ak.Index,
@@ -6994,7 +7059,7 @@ ParentConfig=ak,
 
 al.UIElements.SliderIcon=ae.NewRoundFrame(99,"Squircle",{
 ImageTransparency=.95,
-Size=UDim2.new(1,not al.IsTextbox and-aw or(-al.TextBoxWidth-8),0,4),
+Size=al.Stacked and UDim2.new(1,-(aw-32)-16,0,4)or UDim2.new(1,not al.IsTextbox and-aw or(-al.TextBoxWidth-8),0,4),
 AnchorPoint=Vector2.new(0.5,0.5),
 Position=UDim2.new(0.5,0,0.5,0),
 Name="Frame",
@@ -7043,13 +7108,30 @@ ImageTransparency=.6,
 })
 })
 
-al.UIElements.SliderContainer=af("Frame",{
-Size=UDim2.new(al.Title==nil and 1 or 0,al.Title==nil and 0 or al.Width,0,0),
+al.UIElements.ValueBox=af("TextBox",{
+Size=UDim2.new(0,al.Stacked and(al.TextBoxWidth+10)or al.TextBoxWidth,0,0),
+TextXAlignment=al.Stacked and"Right"or"Left",
+Text=FormatValue(ap),
+ThemeTag={
+TextColor3="Text"
+},
+TextTransparency=al.Stacked and .1 or .4,
 AutomaticSize="Y",
-Position=UDim2.new(1,al.IsTextbox and(ak.Window.NewElements and-16 or 0)or 0,0.5,0),
-AnchorPoint=Vector2.new(1,0.5),
+TextSize=al.Stacked and 16 or 15,
+FontFace=Font.new(ae.Font,al.Stacked and Enum.FontWeight.SemiBold or Enum.FontWeight.Medium),
 BackgroundTransparency=1,
-Parent=al.SliderFrame.UIElements.Main,
+LayoutOrder=al.Stacked and 5 or-1,
+Visible=al.IsTextbox,
+Name="TextBox",
+})
+al.UIElements.SliderContainer=af("Frame",{
+Size=al.Stacked and UDim2.new(1,0,0,al.ThumbSize+10)or UDim2.new(al.Title==nil and 1 or 0,al.Title==nil and 0 or al.Width,0,0),
+AutomaticSize=al.Stacked and"None"or"Y",
+Position=al.Stacked and UDim2.new(0,0,0,0)or UDim2.new(1,al.IsTextbox and(ak.Window.NewElements and-16 or 0)or 0,0.5,0),
+AnchorPoint=al.Stacked and Vector2.new(0,0)or Vector2.new(1,0.5),
+BackgroundTransparency=1,
+LayoutOrder=10,
+Parent=al.Stacked and al.SliderFrame.UIElements.Container or al.SliderFrame.UIElements.Main,
 },{
 af("UIListLayout",{
 Padding=UDim.new(0,al.Title~=nil and 8 or 12),
@@ -7060,22 +7142,14 @@ HorizontalAlignment=al.Icons and(al.Icons.From and(al.Icons.To and"Center"or"Lef
 au,
 al.UIElements.SliderIcon,
 av,
-af("TextBox",{
-Size=UDim2.new(0,al.TextBoxWidth,0,0),
-TextXAlignment="Left",
-Text=FormatValue(ap),
-ThemeTag={
-TextColor3="Text"
-},
-TextTransparency=.4,
-AutomaticSize="Y",
-TextSize=15,
-FontFace=Font.new(ae.Font,Enum.FontWeight.Medium),
-BackgroundTransparency=1,
-LayoutOrder=-1,
-Visible=al.IsTextbox,
+(not al.Stacked)and al.UIElements.ValueBox or nil,
 })
-})
+if al.Stacked then
+local aTF=al.SliderFrame.UIElements.Container:FindFirstChild("TitleFrame")
+local aIn=aTF and aTF:FindFirstChild("TitleFrame")
+if aIn then aIn.Size=UDim2.new(1,aIn.Size.X.Offset-(al.TextBoxWidth+10+ak.Window.ElementConfig.UIPadding),1,0)end
+if aTF then al.UIElements.ValueBox.Parent=aTF end
+end
 
 local ax
 if al.IsTooltip then
@@ -7117,7 +7191,7 @@ aA=math.clamp(aA,al.Value.Min or 0,al.Value.Max or 100)
 
 if aA~=aq then
 ag(al.UIElements.SliderIcon.Frame,0.05,{Size=UDim2.new(d,0,1,0)}):Play()
-al.UIElements.SliderContainer.TextBox.Text=FormatValue(aA)
+al.UIElements.ValueBox.Text=FormatValue(aA)
 if ax then ax.TitleFrame.Text=FormatValue(aA)end
 al.Value.Default=FormatValue(aA)
 aq=aA
@@ -7131,7 +7205,7 @@ aA=CalculateValue(al.Value.Min+g*(al.Value.Max-al.Value.Min))
 
 if aA~=aq then
 ag(al.UIElements.SliderIcon.Frame,0.05,{Size=UDim2.new(g,0,1,0)}):Play()
-al.UIElements.SliderContainer.TextBox.Text=FormatValue(aA)
+al.UIElements.ValueBox.Text=FormatValue(aA)
 if ax then ax.TitleFrame.Text=FormatValue(aA)end
 al.Value.Default=FormatValue(aA)
 aq=aA
@@ -7161,7 +7235,7 @@ aA=CalculateValue(al.Value.Min+b*(al.Value.Max-al.Value.Min))
 
 if aA~=aq then
 ag(al.UIElements.SliderIcon.Frame,0.05,{Size=UDim2.new(b,0,1,0)}):Play()
-al.UIElements.SliderContainer.TextBox.Text=FormatValue(aA)
+al.UIElements.ValueBox.Text=FormatValue(aA)
 if ax then ax.TitleFrame.Text=FormatValue(aA)end
 al.Value.Default=FormatValue(aA)
 aq=aA
@@ -7196,13 +7270,13 @@ ag(al.UIElements.SliderIcon.Frame,0.1,{Size=UDim2.new(b,0,1,0)}):Play()
 end
 end
 
-ae.AddSignal(al.UIElements.SliderContainer.TextBox.FocusLost,function(az)
+ae.AddSignal(al.UIElements.ValueBox.FocusLost,function(az)
 if az then
-local aA=tonumber(al.UIElements.SliderContainer.TextBox.Text)
+local aA=tonumber(al.UIElements.ValueBox.Text)
 if aA then
 al:Set(aA)
 else
-al.UIElements.SliderContainer.TextBox.Text=FormatValue(aq)
+al.UIElements.ValueBox.Text=FormatValue(aq)
 if ax then ax.TitleFrame.Text=FormatValue(aq)end
 end
 end
@@ -7419,6 +7493,7 @@ ClearTextOnFocus=ai.ClearTextOnFocus or false,
 UIElements={},
 
 Width=150,
+Stacked=(ai.Tab and ai.Tab.Columns==2 and(ai.Type or"Input")=="Input")or false,
 }
 
 local ak=true
@@ -7427,7 +7502,7 @@ aj.InputFrame=a.load'B'{
 Title=aj.Title,
 Desc=aj.Desc,
 Parent=ai.Parent,
-TextOffset=aj.Width,
+TextOffset=aj.Stacked and 0 or aj.Width,
 Hover=false,
 Tab=ai.Tab,
 Index=ai.Index,
@@ -7453,6 +7528,13 @@ if aj.Type=="Input"then
 al.Size=UDim2.new(0,aj.Width,0,36)
 al.Position=UDim2.new(1,0,ai.Window.NewElements and 0 or 0.5,0)
 al.AnchorPoint=Vector2.new(1,ai.Window.NewElements and 0 or 0.5)
+if aj.Stacked then
+al.Size=UDim2.new(1,0,0,36)
+al.Position=UDim2.new(0,0,0,0)
+al.AnchorPoint=Vector2.new(0,0)
+al.LayoutOrder=10
+al.Parent=aj.InputFrame.UIElements.Container
+end
 else
 al.Size=UDim2.new(1,0,0,148)
 end
@@ -8231,6 +8313,7 @@ Opened=false,
 Tabs={},
 
 Width=150,
+Stacked=(an.Tab and an.Tab.Columns==2 and an.Callback~=nil)or false,
 }
 
 if ao.Multi and not ao.Value then
@@ -8246,7 +8329,7 @@ ao.DropdownFrame=a.load'B'{
 Title=ao.Title,
 Desc=ao.Desc,
 Parent=an.Parent,
-TextOffset=ao.Callback and ao.Width or 20,
+TextOffset=ao.Stacked and 0 or(ao.Callback and ao.Width or 20),
 Hover=not ao.Callback and true or false,
 Tab=an.Tab,
 Index=an.Index,
@@ -8266,6 +8349,13 @@ UDim2.new(1,ao.UIElements.Dropdown.Frame.Frame.TextLabel.Size.X.Offset-18-12-12,
 ao.UIElements.Dropdown.Size=UDim2.new(0,ao.Width,0,36)
 ao.UIElements.Dropdown.Position=UDim2.new(1,0,an.Window.NewElements and 0 or 0.5,0)
 ao.UIElements.Dropdown.AnchorPoint=Vector2.new(1,an.Window.NewElements and 0 or 0.5)
+if ao.Stacked then
+ao.UIElements.Dropdown.Size=UDim2.new(1,0,0,36)
+ao.UIElements.Dropdown.Position=UDim2.new(0,0,0,0)
+ao.UIElements.Dropdown.AnchorPoint=Vector2.new(0,0)
+ao.UIElements.Dropdown.LayoutOrder=10
+ao.UIElements.Dropdown.Parent=ao.DropdownFrame.UIElements.Container
+end
 
 
 
@@ -10198,6 +10288,12 @@ ar.ParentTable=aa
 ar.Index=#aa.Elements+1
 ar.GlobalIndex=#ah.AllElements+1
 ar.Parent=ae
+local aPin=ar.Side
+if aa.UIElements and aa.UIElements.ColumnFrames then
+local aCF=aa.UIElements.ColumnFrames
+ar.Side=ar.Side or((ar.Index%2==1)and"Left"or"Right")
+ar.Parent=aCF[ar.Side]or aCF.Left
+end
 ar.Window=ah
 ar.WindUI=aj
 ar.UIScale=am
@@ -10271,6 +10367,12 @@ table.remove(aa.Elements,ar.Index)
 table.remove(an.Elements,ar.Index)
 aa:UpdateAllElementShapes(aa)
 end
+end
+
+if aa.UIElements and aa.UIElements.ColumnFrames and typeof(at.ElementFrame)=="Instance"then
+at.ElementFrame:SetAttribute("TabOrder",ar.Order or ar.Index)
+if aPin then at.ElementFrame:SetAttribute("PinnedSide",aPin)end
+if aa.ScheduleBalance then aa:ScheduleBalance()end
 end
 
 ah.AllElements[ar.Index]=at
@@ -10365,6 +10467,7 @@ TabTitleAlign=an.TabTitleAlign or"Left",
 CustomEmptyPage=(an.CustomEmptyPage and next(an.CustomEmptyPage)~=nil)and an.CustomEmptyPage
 or{Icon="lucide:frown",IconSize=48,Title="This tab is Empty",Desc=nil},
 Border=an.Border,
+Columns=an.Columns or 1,
 Selected=false,
 Index=nil,
 Parent=an.Parent,
@@ -10504,56 +10607,108 @@ as.ImageLabel.ImageTransparency=not ap.Locked and 0 or 0.7
 ar=-18-(Window.UIPadding/2)
 ap.UIElements.Main.Frame.TextLabel.Size=UDim2.new(1,ar,0,0)
 elseif ap.IconColor then
-ah.NewRoundFrame(
-ap.IconShape~="Circle"and(ap.UICorner+5-(2+(Window.UIPadding/4)))or 9999,
+local aTS=Window.TabTileSize or 26
+local aTR=ap.IconShape~="Circle"and(ap.UICorner+5-(2+(Window.UIPadding/4)))or 9999
+local aTile=ah.NewRoundFrame(
+aTR,
 "Squircle",
 {
-Size=UDim2.new(0,26,0,26),
+Size=UDim2.new(0,aTS,0,aTS),
 ImageColor3=ap.IconColor,
 Parent=ap.UIElements.Main.Frame,
+Name="Tile",
 },
 {
 as,
 ah.NewRoundFrame(
-ap.IconShape~="Circle"and(ap.UICorner+5-(2+(Window.UIPadding/4)))or 9999,
+aTR,
 "Glass-1.4",
 {
 Size=UDim2.new(1,0,1,0),
 ThemeTag={
 ImageColor3="White",
 },
-ImageTransparency=0,
+ImageTransparency=Window.TabTileFlat and 1 or 0,
 Name="Outline",
 },
 {
-
-
-
-
-
-
-
-
-
-
-
-
-
 }
 ),
+Window.TabTileGloss and aj("UIGradient",{
+Rotation=90,
+Color=ColorSequence.new{
+ColorSequenceKeypoint.new(0,Color3.new(1,1,1)),
+ColorSequenceKeypoint.new(1,Color3.fromRGB(205,205,205)),
+},
+})or nil,
+Window.TabTileGloss and aj("UICorner",{CornerRadius=UDim.new(0,math.min(aTR,math.floor(aTS/2)))})or nil,
+Window.TabTileGloss and aj("UIStroke",{
+Name="TileGlow",
+Thickness=2,
+Color=ap.IconColor,
+Transparency=0.35,
+ApplyStrokeMode=Enum.ApplyStrokeMode.Border,
+})or nil,
+Window.ShineHover and aj("TextLabel",{
+Name="Spark",
+Text="✦",
+TextSize=13,
+TextColor3=Color3.new(1,1,1),
+TextTransparency=1,
+BackgroundTransparency=1,
+Size=UDim2.new(0,14,0,14),
+AnchorPoint=Vector2.new(0.5,0.5),
+Position=UDim2.new(1,-1,0,1),
+ZIndex=20,
+FontFace=Font.new(ah.Font,Enum.FontWeight.Bold),
+})or nil,
 }
 )
+ap.UIElements.Tile=aTile
+aj("UIScale",{Scale=1,Name="HoverScale",Parent=as})
+if Window.ShineHover then
+ap.UIElements.Shine=aj("Frame",{
+Name="Shine",
+Size=UDim2.new(1,0,1,0),
+BackgroundColor3=Color3.new(1,1,1),
+BackgroundTransparency=0.25,
+BorderSizePixel=0,
+ZIndex=30,
+Parent=ap.UIElements.Main,
+},{
+aj("UICorner",{CornerRadius=UDim.new(0,ap.UICorner)}),
+aj("UIGradient",{
+Name="Band",
+Rotation=25,
+Transparency=NumberSequence.new{
+NumberSequenceKeypoint.new(0,1),
+NumberSequenceKeypoint.new(0.42,1),
+NumberSequenceKeypoint.new(0.5,0.55),
+NumberSequenceKeypoint.new(0.58,1),
+NumberSequenceKeypoint.new(1,1),
+},
+Offset=Vector2.new(-1,0),
+}),
+})
+end
 as.AnchorPoint=Vector2.new(0.5,0.5)
 as.Position=UDim2.new(0.5,0,0.5,0)
+as.Size=UDim2.new(0,aTS>=30 and 18 or 16,0,aTS>=30 and 18 or 16)
 as.ImageLabel.ImageTransparency=0
+if Window.TabTileFlat then
+local _,_,aV=ap.IconColor:ToHSV()
+local _,aS=ap.IconColor:ToHSV()
+as.ImageLabel.ImageColor3=(aV>0.85 and aS<0.45)and Color3.fromRGB(28,22,26)or Color3.new(1,1,1)
+else
 as.ImageLabel.ImageColor3=ah.GetTextColorForHSB(ap.IconColor,0.68)
-ar=-28-(Window.UIPadding/2)
+end
+ar=-(aTS+2)-(Window.UIPadding/2)
 ap.UIElements.Main.Frame.TextLabel.Size=UDim2.new(1,ar,0,0)
 end
 
 at=
 ah.Image(ap.Icon,ap.Icon..":"..ap.Title,0,Window.Folder,ap.__type,true,ap.IconThemed)
-at.Size=UDim2.new(0,16,0,16)
+at.Size=UDim2.new(0,ap.Desc and 22 or 16,0,ap.Desc and 22 or 16)
 at.ImageLabel.ImageTransparency=not ap.Locked and 0 or 0.7
 ar=-30
 
@@ -10562,8 +10717,10 @@ ar=-30
 
 end
 
+local aTH=ap.ShowTabTitle and((Window.UIPadding*2.4)+12+(ap.Desc and 18 or 0))or 0
+ap.TabTitleHeight=aTH
 ap.UIElements.ContainerFrame=aj("ScrollingFrame",{
-Size=UDim2.new(1,0,1,ap.ShowTabTitle and-((Window.UIPadding*2.4)+12)or 0),
+Size=UDim2.new(1,0,1,-aTH),
 BackgroundTransparency=1,
 ScrollBarThickness=0,
 ElasticBehavior="Never",
@@ -10582,10 +10739,56 @@ PaddingBottom=UDim.new(0,not Window.HidePanelBackground and 20 or 10),
 }),
 aj("UIListLayout",{
 SortOrder="LayoutOrder",
+Padding=UDim.new(0,ap.Columns==2 and 10 or ap.Gap),
+HorizontalAlignment=ap.Columns==2 and"Left"or"Center",
+FillDirection=ap.Columns==2 and"Horizontal"or"Vertical",
+VerticalAlignment="Top",
+}),
+})
+if ap.Columns==2 then
+ap.UIElements.ColumnFrames={}
+for aCI,aCS in ipairs({"Left","Right"})do
+ap.UIElements.ColumnFrames[aCS]=aj("Frame",{
+Name="Column"..aCS,
+BackgroundTransparency=1,
+Size=UDim2.new(0.5,-5,0,0),
+AutomaticSize="Y",
+LayoutOrder=aCI,
+Parent=ap.UIElements.ContainerFrame,
+},{
+aj("UIListLayout",{
+SortOrder="LayoutOrder",
 Padding=UDim.new(0,ap.Gap),
 HorizontalAlignment="Center",
 }),
 })
+end
+function ap.BalanceColumns(aZ)
+local aL,aR=ap.UIElements.ColumnFrames.Left,ap.UIElements.ColumnFrames.Right
+if not aL or not aR then return end
+local aItems={}
+for _,c in ipairs(aL:GetChildren())do if c:IsA("GuiObject")then table.insert(aItems,c)end end
+for _,c in ipairs(aR:GetChildren())do if c:IsA("GuiObject")then table.insert(aItems,c)end end
+table.sort(aItems,function(x,y)return(x:GetAttribute("TabOrder")or 0)<(y:GetAttribute("TabOrder")or 0)end)
+local hL,hR=0,0
+for _,c in ipairs(aItems)do
+local aPin=c:GetAttribute("PinnedSide")
+local h=c.AbsoluteSize.Y
+local aSide=aPin or((hL<=hR)and"Left"or"Right")
+c.LayoutOrder=c:GetAttribute("TabOrder")or c.LayoutOrder
+if c.Parent~=ap.UIElements.ColumnFrames[aSide]then c.Parent=ap.UIElements.ColumnFrames[aSide]end
+if aSide=="Left"then hL=hL+h else hR=hR+h end
+end
+end
+function ap.ScheduleBalance(aZ,aDelay)
+if ap._balPending then return end
+ap._balPending=true
+task.delay(aDelay or 0.6,function()
+ap._balPending=false
+pcall(ap.BalanceColumns,ap)
+end)
+end
+end
 
 
 
@@ -10600,12 +10803,25 @@ ZIndex=5,
 },{
 ap.UIElements.ContainerFrame,
 aj("Frame",{
-Size=UDim2.new(1,0,0,((Window.UIPadding*2.4)+12)),
+Size=UDim2.new(1,0,0,aTH),
 BackgroundTransparency=1,
 Visible=ap.ShowTabTitle or false,
 Name="TabTitle",
 },{
 at,
+aj("Frame",{
+BackgroundTransparency=1,
+AutomaticSize="XY",
+Size=UDim2.new(0,0,0,0),
+LayoutOrder=2,
+Name="Text",
+},{
+aj("UIListLayout",{
+SortOrder="LayoutOrder",
+Padding=UDim.new(0,0),
+FillDirection="Vertical",
+HorizontalAlignment=ap.TabTitleAlign,
+}),
 aj("TextLabel",{
 Text=ap.Title,
 ThemeTag={
@@ -10613,20 +10829,37 @@ TextColor3="Text",
 },
 TextSize=20,
 TextTransparency=0.1,
-Size=UDim2.new(0,0,1,0),
+Size=UDim2.new(0,0,0,0),
 FontFace=Font.new(ah.Font,Enum.FontWeight.SemiBold),
-
+RichText=true,
+LayoutOrder=1,
+TextXAlignment="Left",
+BackgroundTransparency=1,
+AutomaticSize="XY",
+Name="Title",
+}),
+ap.Desc and aj("TextLabel",{
+Text=ap.Desc,
+ThemeTag={
+TextColor3="Text",
+},
+TextSize=14,
+TextTransparency=0.55,
+Size=UDim2.new(0,0,0,0),
+FontFace=Font.new(ah.Font,Enum.FontWeight.Medium),
 RichText=true,
 LayoutOrder=2,
 TextXAlignment="Left",
 BackgroundTransparency=1,
-AutomaticSize="X",
+AutomaticSize="XY",
+Name="Desc",
+})or nil,
 }),
 aj("UIPadding",{
-PaddingTop=UDim.new(0,20),
+PaddingTop=UDim.new(0,ap.Desc and 14 or 20),
 PaddingLeft=UDim.new(0,20),
 PaddingRight=UDim.new(0,20),
-PaddingBottom=UDim.new(0,20),
+PaddingBottom=UDim.new(0,ap.Desc and 12 or 20),
 }),
 aj("UIListLayout",{
 SortOrder="LayoutOrder",
@@ -10642,7 +10875,7 @@ BackgroundTransparency=0.9,
 ThemeTag={
 BackgroundColor3="Text",
 },
-Position=UDim2.new(0,0,0,((Window.UIPadding*2.4)+12)),
+Position=UDim2.new(0,0,0,aTH),
 Visible=ap.ShowTabTitle or false,
 }),
 })
@@ -10668,7 +10901,7 @@ local aw
 local ax=false
 
 
-if ap.Desc then
+if ap.Desc and not ap.ShowTabTitle then
 ah.AddSignal(ap.UIElements.Main.InputBegan,function()
 ax=true
 av=task.spawn(function()
@@ -10697,10 +10930,25 @@ ah.SetThemeTag(ap.UIElements.Main.Frame,{
 ImageTransparency="TabBackgroundHoverTransparency",
 ImageColor3="TabBackgroundHover",
 },0.1)
+local aT=ap.UIElements.Tile
+if aT then
+if ap.IconColor then ah.Tween(aT,0.15,{ImageColor3=ap.IconColor:Lerp(Color3.new(1,1,1),0.22)}):Play()end
+local aHS=as and as:FindFirstChild("HoverScale")
+if aHS then ah.Tween(aHS,0.18,{Scale=1.18},Enum.EasingStyle.Back,Enum.EasingDirection.Out):Play()end
+local aSp=aT:FindFirstChild("Spark")
+if aSp then
+aSp.TextTransparency=1 aSp.Rotation=-30
+ah.Tween(aSp,0.16,{TextTransparency=0,Rotation=20}):Play()
+task.delay(0.3,function()if aSp.Parent then ah.Tween(aSp,0.25,{TextTransparency=1,Rotation=70}):Play()end end)
+end
+end
+if ap.UIElements.Shine then
+local aB=ap.UIElements.Shine:FindFirstChild("Band")
+if aB then aB.Offset=Vector2.new(-1,0)ah.Tween(aB,0.55,{Offset=Vector2.new(1,0)},Enum.EasingStyle.Sine,Enum.EasingDirection.Out):Play()end
+end
 end
 end)
-ah.AddSignal(ap.UIElements.Main.InputEnded,function()
-if ap.Desc then
+local function aCloseTip()
 ax=false
 if av then
 task.cancel(av)
@@ -10714,6 +10962,19 @@ if au then
 au:Close()
 au=nil
 end
+end
+ah.AddSignal(ap.UIElements.Main.MouseLeave,function()
+if ap.Desc then aCloseTip()end
+local aT=ap.UIElements.Tile
+if aT then
+if ap.IconColor then ah.Tween(aT,0.2,{ImageColor3=ap.Selected and ap.IconColor:Lerp(Color3.new(1,1,1),0.12)or ap.IconColor}):Play()end
+local aHS=as and as:FindFirstChild("HoverScale")
+if aHS then ah.Tween(aHS,0.2,{Scale=1}):Play()end
+end
+end)
+ah.AddSignal(ap.UIElements.Main.InputEnded,function()
+if ap.Desc then
+aCloseTip()
 end
 
 if not ap.Locked then
@@ -10818,6 +11079,7 @@ local aA=aj("Frame",{
 BackgroundTransparency=1,
 Size=UDim2.new(1,0,1,-Window.UIElements.Main.Main.Topbar.AbsoluteSize.Y),
 Parent=ap.UIElements.ContainerFrame,
+LayoutOrder=99,
 },{
 aj("UIListLayout",{
 Padding=UDim.new(0,8),
@@ -10871,7 +11133,7 @@ or nil,
 
 
 local aB
-aB=ah.AddSignal(ap.UIElements.ContainerFrame.ChildAdded,function()
+aB=ah.AddSignal(ap.Columns==2 and ap.UIElements.ContainerFrame.DescendantAdded or ap.UIElements.ContainerFrame.ChildAdded,function()
 aA.Visible=false
 aB:Disconnect()
 end)
@@ -10906,6 +11168,9 @@ ah.SetThemeTag(aq.UIElements.Icon.ImageLabel,{
 ImageTransparency="TabIconTransparency",
 },0.15)
 end
+if aq.UIElements.Tile and aq.IconColor and not Window.TabTileGloss then
+ah.Tween(aq.UIElements.Tile,0.15,{ImageColor3=aq.IconColor}):Play()
+end
 aq.Selected=false
 end
 end
@@ -10926,11 +11191,19 @@ ImageTransparency="TabIconTransparencyActive",
 },0.15)
 end
 am.Tabs[ao].Selected=true
+if am.Tabs[ao].UIElements.Tile and am.Tabs[ao].IconColor and not Window.TabTileGloss then
+ah.Tween(am.Tabs[ao].UIElements.Tile,0.2,{ImageColor3=am.Tabs[ao].IconColor:Lerp(Color3.new(1,1,1),0.12)}):Play()
+end
 
 task.spawn(function()
 for ap,aq in next,am.Containers do
 aq.AnchorPoint=Vector2.new(0,0.05)
 aq.Visible=false
+end
+local aTb=am.Tabs[ao]
+if aTb and aTb.BalanceColumns and not aTb._balancedOnce then
+aTb._balancedOnce=true
+pcall(aTb.BalanceColumns,aTb)
 end
 am.Containers[ao].Visible=true
 local ap=game:GetService"TweenService"
@@ -10963,8 +11236,9 @@ Title=ak.Title or"Section",
 Icon=ak.Icon,
 IconThemed=ak.IconThemed,
 Opened=ak.Opened or false,
+NoArrow=ak.NoArrow or false,
 
-HeaderSize=42,
+HeaderSize=ak.HeaderSize or 42,
 IconSize=18,
 
 Expandable=false,
@@ -11032,9 +11306,9 @@ ThemeTag={
 TextColor3="Text",
 },
 FontFace=Font.new(ae.Font,Enum.FontWeight.SemiBold),
-TextSize=14,
+TextSize=13,
 BackgroundTransparency=1,
-TextTransparency=.7,
+TextTransparency=.55,
 
 TextWrapped=true
 }),
@@ -11069,7 +11343,7 @@ VerticalAlignment="Bottom",
 function ap.Tab(at,au)
 if not ap.Expandable then
 ap.Expandable=true
-ar.Visible=true
+ar.Visible=not ap.NoArrow
 end
 au.Parent=as.Content
 return aj.New(au,an)
