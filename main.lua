@@ -589,7 +589,9 @@ end
 function p.UpdateFont(r)
 p.Font=r
 for u,v in next,p.FontObjects do
+if not v:GetAttribute("FontLock")then
 v.FontFace=Font.new(r,v.FontFace.Weight,v.FontFace.Style)
+end
 end
 end
 
@@ -10468,6 +10470,7 @@ CustomEmptyPage=(an.CustomEmptyPage and next(an.CustomEmptyPage)~=nil)and an.Cus
 or{Icon="lucide:frown",IconSize=48,Title="This tab is Empty",Desc=nil},
 Border=an.Border,
 Columns=an.Columns or 1,
+NavGroup=an.NavGroup,
 Selected=false,
 Index=nil,
 Parent=an.Parent,
@@ -11346,6 +11349,7 @@ ap.Expandable=true
 ar.Visible=not ap.NoArrow
 end
 au.Parent=as.Content
+au.NavGroup=ap
 return aj.New(au,an)
 end
 
@@ -12395,6 +12399,7 @@ PaddingRight=UDim.new(0,au.UIPadding/2),
 
 function au.User.Enable(b)
 au.User.Enabled=true
+if au.Nav=="Dock"then if aB then aB.Visible=false end return end
 an(
 au.UIElements.SideBarContainer,
 0.25,
@@ -12406,6 +12411,7 @@ aB.Visible=true
 end
 function au.User.Disable(b)
 au.User.Enabled=false
+if au.Nav=="Dock"then if aB then aB.Visible=false end return end
 an(
 au.UIElements.SideBarContainer,
 0.25,
@@ -13633,6 +13639,414 @@ au.Folder,
 at.WindUI.UIScale,
 au
 )
+end
+
+-- ═══ Patch 20: floating dock navigation ═══
+-- Window:SetNav("Dock"|"Sidebar", opts). In Dock mode the sidebar collapses to 0 and a floating tray of
+-- colour tiles (one per tab, dividers between sidebar groups) sits tucked behind the window's bottom edge,
+-- peeking out a few px. Hovering the bottom edge / the peek slides it out; clicking a tile selects the tab.
+-- Touch devices (or AutoHide=false) keep the dock out permanently. opts: Size (window size for this mode),
+-- TileSize, Gap, Pad, Peek, Offset, Radius, AutoHide, HideDelay.
+au.Nav="Sidebar"
+au.DockConfig={TileSize=40,Glyph=20,Gap=6,Pad=8,Peek=12,Offset=12,Radius=18,AutoHide=true,HideDelay=0.7}
+local aDock,aDockTiles,aDockLabel=nil,{},nil
+local aDockHidden=true
+local aDockPoll
+local aDockHideAt
+local function aDockH()local C=au.DockConfig return C.TileSize+C.Pad*2 end
+local function aDockIcon(name)
+local ok,r=pcall(function()return al.Icon(name)end)
+if ok and type(r)=="table"and r[1]and r[2]then return r end
+return nil
+end
+local function aDockPos(shown)
+local C=au.DockConfig
+local H=aDockH()
+if au.IsFullscreen then
+return shown and UDim2.new(0.5,0,1,-(H+14))or UDim2.new(0.5,0,1,60)
+end
+return shown and UDim2.new(0.5,0,1,C.Offset)or UDim2.new(0.5,0,1,-(H-C.Peek))
+end
+local function aDockLabelHide()
+if not aDockLabel then return end
+an(aDockLabel,0.12,{ImageTransparency=1}):Play()
+an(aDockLabel.TextLabel,0.12,{TextTransparency=1}):Play()
+end
+local function aDockShow(instant)
+if not aDock then return end
+aDockHidden=false
+aDockHideAt=nil
+aDock.ZIndex=au.IsFullscreen and 98 or 0
+if instant then aDock.Position=aDockPos(true)else
+an(aDock,0.32,{Position=aDockPos(true)},Enum.EasingStyle.Quint,Enum.EasingDirection.Out):Play()
+end
+an(aDock.Grip,0.2,{BackgroundTransparency=1}):Play()
+an(aDock.Shadow,0.3,{ImageTransparency=0.5}):Play()
+if not instant then
+for i,t in ipairs(aDockTiles)do
+local sc=t.Visual:FindFirstChild("HoverScale")
+if sc then
+sc.Scale=0.82
+task.delay(0.018*i,function()
+if sc.Parent then an(sc,0.3,{Scale=1},Enum.EasingStyle.Back,Enum.EasingDirection.Out):Play()end
+end)
+end
+end
+end
+end
+local function aDockHide(instant)
+if not aDock then return end
+aDockHidden=true
+aDockHideAt=nil
+aDockLabelHide()
+if instant then aDock.Position=aDockPos(false)else
+an(aDock,0.3,{Position=aDockPos(false)},Enum.EasingStyle.Quint,Enum.EasingDirection.Out):Play()
+end
+an(aDock.Grip,0.25,{BackgroundTransparency=0.65}):Play()
+an(aDock.Shadow,0.3,{ImageTransparency=0.8}):Play()
+end
+local function aDockSelect(idx)
+for i,t in ipairs(aDockTiles)do
+local sel=(t.Index==idx)
+t.Selected=sel
+an(t.Visual,0.18,{ImageTransparency=sel and 0 or 0.42}):Play()
+an(t.Visual.Glyph,0.18,{ImageTransparency=sel and 0 or 0.3}):Play()
+an(t.Visual.Dot,0.18,{BackgroundTransparency=sel and 0 or 1}):Play()
+end
+end
+local function aDockBuild()
+if aDock then aDock:Destroy()aDock=nil end
+aDockTiles={}
+local C=au.DockConfig
+local H=aDockH()
+local tabs={}
+for i,t in pairs(B.Tabs)do tabs[#tabs+1]=t end
+table.sort(tabs,function(x,y)return(x.Index or 0)<(y.Index or 0)end)
+local n=#tabs
+local dividers=0
+for i=2,n do if tabs[i].NavGroup~=tabs[i-1].NavGroup then dividers=dividers+1 end end
+local W=C.Pad*2+n*C.TileSize+math.max(n-1,0)*C.Gap+dividers*(1+C.Gap)
+aDockLabel=al.NewRoundFrame(8,"Squircle",{
+Name="Label",
+Size=UDim2.new(0,0,0,24),
+AutomaticSize="X",
+AnchorPoint=Vector2.new(0.5,0),
+Position=UDim2.new(0.5,0,1,8),
+ImageColor3=Color3.fromRGB(255,255,255),
+ImageTransparency=1,
+ZIndex=6,
+},{
+am("TextLabel",{
+Text="",
+TextSize=13,
+FontFace=Font.new(al.Font,Enum.FontWeight.SemiBold),
+TextColor3=Color3.new(1,1,1),
+TextTransparency=1,
+BackgroundTransparency=1,
+AutomaticSize="X",
+Size=UDim2.new(0,0,1,0),
+ZIndex=7,
+},{
+am("UIPadding",{PaddingLeft=UDim.new(0,10),PaddingRight=UDim.new(0,10)}),
+}),
+})
+aDock=am("Frame",{
+Name="Dock",
+BackgroundTransparency=1,
+AnchorPoint=Vector2.new(0.5,0),
+Position=aDockPos(false),
+Size=UDim2.new(0,W,0,H),
+ZIndex=0,
+Visible=false,
+Parent=au.UIElements.Main,
+},{
+am("ImageLabel",{
+Name="Shadow",
+Image="rbxassetid://8992230677",
+ThemeTag={ImageColor3="WindowShadow"},
+ImageTransparency=0.8,
+Size=UDim2.new(1,70,1,70),
+Position=UDim2.new(0,-35,0,-35),
+ScaleType="Slice",
+SliceCenter=Rect.new(99,99,99,99),
+BackgroundTransparency=1,
+ZIndex=0,
+}),
+al.NewRoundFrame(C.Radius,"Squircle",{
+Name="Bg",
+Size=UDim2.new(1,0,1,0),
+ThemeTag={ImageColor3="WindowBackground"},
+ZIndex=1,
+}),
+al.NewRoundFrame(C.Radius,"Glass-1.4",{
+Name="Rim",
+Size=UDim2.new(1,0,1,0),
+ThemeTag={ImageColor3="TabBorder"},
+ImageTransparency=0.55,
+ZIndex=2,
+}),
+am("Frame",{
+Name="Tiles",
+BackgroundTransparency=1,
+Size=UDim2.new(1,0,1,0),
+ZIndex=3,
+},{
+am("UIListLayout",{
+FillDirection="Horizontal",
+VerticalAlignment="Center",
+HorizontalAlignment="Center",
+Padding=UDim.new(0,C.Gap),
+SortOrder="LayoutOrder",
+}),
+}),
+am("Frame",{
+Name="Grip",
+Size=UDim2.new(0,34,0,4),
+AnchorPoint=Vector2.new(0.5,1),
+Position=UDim2.new(0.5,0,1,-4),
+ThemeTag={BackgroundColor3="Text"},
+BackgroundTransparency=0.65,
+ZIndex=4,
+},{am("UICorner",{CornerRadius=UDim.new(1,0)})}),
+aDockLabel,
+})
+local order=0
+for i,tab in ipairs(tabs)do
+if i>1 and tab.NavGroup~=tabs[i-1].NavGroup then
+order=order+1
+am("Frame",{
+Name="Div",
+Size=UDim2.new(0,1,0,math.floor(C.TileSize*0.5)),
+ThemeTag={BackgroundColor3="Text"},
+BackgroundTransparency=0.82,
+LayoutOrder=order,
+ZIndex=3,
+Parent=aDock.Tiles,
+})
+end
+order=order+1
+local col=tab.IconColor or Color3.fromRGB(120,124,140)
+local _,s,v=col:ToHSV()
+local glyphCol=(v>0.85 and s<0.45)and Color3.fromRGB(28,22,26)or Color3.new(1,1,1)
+local ic=tab.Icon and aDockIcon(tab.Icon)
+local slot=am("Frame",{
+Name="Slot"..tostring(tab.Index),
+Size=UDim2.new(0,C.TileSize,0,C.TileSize),
+BackgroundTransparency=1,
+LayoutOrder=order,
+ZIndex=3,
+Parent=aDock.Tiles,
+})
+local vis=al.NewRoundFrame(11,"Squircle",{
+Name="Visual",
+Size=UDim2.new(1,0,1,0),
+AnchorPoint=Vector2.new(0.5,0.5),
+Position=UDim2.new(0.5,0,0.5,0),
+ImageColor3=col,
+ImageTransparency=0.42,
+ZIndex=3,
+Parent=slot,
+},{
+am("UIScale",{Scale=1,Name="HoverScale"}),
+am("ImageLabel",{
+Name="Glyph",
+Size=UDim2.new(0,C.Glyph,0,C.Glyph),
+AnchorPoint=Vector2.new(0.5,0.5),
+Position=UDim2.new(0.5,0,0.5,0),
+BackgroundTransparency=1,
+Image=ic and ic[1]or"",
+ImageRectOffset=ic and ic[2].ImageRectPosition or Vector2.new(0,0),
+ImageRectSize=ic and ic[2].ImageRectSize or Vector2.new(0,0),
+ImageColor3=glyphCol,
+ImageTransparency=0.3,
+ZIndex=4,
+}),
+am("Frame",{
+Name="Dot",
+Size=UDim2.new(0,5,0,5),
+AnchorPoint=Vector2.new(0.5,0),
+Position=UDim2.new(0.5,0,1,2),
+BackgroundColor3=col:Lerp(Color3.new(1,1,1),0.35),
+BackgroundTransparency=1,
+ZIndex=4,
+},{am("UICorner",{CornerRadius=UDim.new(1,0)})}),
+am("TextLabel",{
+Name="Spark",
+Text="✦",
+TextSize=11,
+TextColor3=Color3.new(1,1,1),
+TextTransparency=1,
+BackgroundTransparency=1,
+Size=UDim2.new(0,12,0,12),
+AnchorPoint=Vector2.new(0.5,0.5),
+Position=UDim2.new(1,-5,0,5),
+ZIndex=5,
+}),
+am("TextButton",{
+Name="Hit",
+Size=UDim2.new(1,0,1,0),
+BackgroundTransparency=1,
+Text="",
+ZIndex=5,
+}),
+})
+local entry={Visual=vis,Slot=slot,Index=tab.Index,Selected=false,Tab=tab}
+aDockTiles[#aDockTiles+1]=entry
+local hit=vis.Hit
+al.AddSignal(hit.MouseEnter,function()
+an(vis.HoverScale,0.18,{Scale=1.2},Enum.EasingStyle.Back,Enum.EasingDirection.Out):Play()
+an(vis,0.12,{ImageTransparency=0}):Play()
+an(vis.Glyph,0.12,{ImageTransparency=0}):Play()
+vis.Spark.Rotation=-30
+vis.Spark.TextTransparency=1
+an(vis.Spark,0.16,{TextTransparency=0,Rotation=20}):Play()
+task.delay(0.22,function()if vis.Parent then an(vis.Spark,0.25,{TextTransparency=1}):Play()end end)
+if aDockLabel then
+aDockLabel.TextLabel.Text=tab.Title
+aDockLabel.ImageColor3=col
+aDockLabel.TextLabel.TextColor3=glyphCol
+local sc=at.WindUI.UIScale or 1
+local sx=(slot.AbsolutePosition.X+slot.AbsoluteSize.X/2-aDock.AbsolutePosition.X)/sc
+aDockLabel.Position=UDim2.new(0,sx,1,12)
+an(aDockLabel,0.14,{ImageTransparency=0.06,Position=UDim2.new(0,sx,1,8)},Enum.EasingStyle.Quint,Enum.EasingDirection.Out):Play()
+an(aDockLabel.TextLabel,0.14,{TextTransparency=0}):Play()
+end
+end)
+al.AddSignal(hit.MouseLeave,function()
+an(vis.HoverScale,0.2,{Scale=1},Enum.EasingStyle.Quint,Enum.EasingDirection.Out):Play()
+if not entry.Selected then
+an(vis,0.18,{ImageTransparency=0.42}):Play()
+an(vis.Glyph,0.18,{ImageTransparency=0.3}):Play()
+end
+aDockLabelHide()
+end)
+al.AddSignal(hit.MouseButton1Click,function()
+an(vis.HoverScale,0.08,{Scale=1.05}):Play()
+task.delay(0.08,function()if vis.Parent then an(vis.HoverScale,0.15,{Scale=1.2},Enum.EasingStyle.Back,Enum.EasingDirection.Out):Play()end end)
+B:SelectTab(tab.Index)
+end)
+end
+aDockSelect(B.SelectedTab)
+end
+local function aDockInside(p,x,y,w,h)return p.X>=x and p.X<=x+w and p.Y>=y and p.Y<=y+h end
+local function aDockStartPoll()
+if aDockPoll then return end
+aDockPoll=af.RenderStepped:Connect(function()
+if not aDock or au.Nav~="Dock"or au.Closed then return end
+local C=au.DockConfig
+if not C.AutoHide or not ae.MouseEnabled then
+if aDockHidden then aDockShow()end
+return
+end
+local m=ae:GetMouseLocation()
+local M=au.UIElements.Main
+local mp,ms=M.AbsolutePosition,M.AbsoluteSize
+local bottom=mp.Y+ms.Y
+local hot
+if aDockHidden then
+if au.IsFullscreen then
+hot=aDockInside(m,mp.X,bottom-30,ms.X,30)
+else
+hot=aDockInside(m,mp.X,bottom-14,ms.X,14+C.Peek+10)
+end
+else
+local dp,ds=aDock.AbsolutePosition,aDock.AbsoluteSize
+if au.IsFullscreen then
+hot=aDockInside(m,dp.X-30,dp.Y-24,ds.X+60,(bottom-dp.Y)+24)
+else
+hot=aDockInside(m,dp.X-30,bottom-18,ds.X+60,(dp.Y+ds.Y+44)-(bottom-18))
+end
+end
+if hot then
+aDockHideAt=nil
+if aDockHidden then aDockShow()end
+elseif not aDockHidden then
+aDockHideAt=aDockHideAt or(os.clock()+C.HideDelay)
+if os.clock()>=aDockHideAt then aDockHide()end
+end
+end)
+end
+local function aDockStopPoll()if aDockPoll then aDockPoll:Disconnect()aDockPoll=nil end end
+function au.SetNav(z,mode,opts)
+mode=(mode=="Dock")and"Dock"or"Sidebar"
+if type(opts)=="table"then for k,v in pairs(opts)do if k~="Size"then au.DockConfig[k]=v end end end
+local SBC=au.UIElements.SideBarContainer
+local MB=au.UIElements.MainBar
+local Q,O=Enum.EasingStyle.Quint,Enum.EasingDirection.Out
+if type(opts)=="table"and typeof(opts.Size)=="UDim2"and not au.IsFullscreen then
+au.Size=opts.Size
+an(au.UIElements.Main,0.35,{Size=opts.Size},Q,O):Play()
+end
+au.Nav=mode
+if mode=="Dock"then
+if not aDock then aDockBuild()end
+SBC.Visible=true
+an(SBC,0.3,{Size=UDim2.new(0,0,1,SBC.Size.Y.Offset)},Q,O):Play()
+an(MB,0.3,{Size=UDim2.new(1,0,1,-au.Topbar.Height)},Q,O):Play()
+if aB then aB.Visible=false end
+task.delay(0.32,function()if au.Nav=="Dock"then SBC.Visible=false end end)
+aDock.Visible=not au.Closed
+aDock.Position=aDockPos(false)
+aDockHidden=true
+aDockSelect(B.SelectedTab)
+aDockStartPoll()
+if not ae.MouseEnabled or not au.DockConfig.AutoHide then
+task.delay(0.35,function()if au.Nav=="Dock"and not au.Closed then aDockShow()end end)
+end
+else
+aDockStopPoll()
+SBC.Visible=true
+an(SBC,0.3,{Size=UDim2.new(0,au.SideBarWidth,1,SBC.Size.Y.Offset)},Q,O):Play()
+an(MB,0.3,{Size=UDim2.new(1,-au.SideBarWidth,1,-au.Topbar.Height)},Q,O):Play()
+if aB then aB.Visible=au.User.Enabled or false end
+if aDock then
+aDockHide()
+task.delay(0.32,function()if aDock and au.Nav=="Sidebar"then aDock.Visible=false end end)
+end
+end
+task.delay(0.42,function()
+for _,t in pairs(B.Tabs)do if t.BalanceColumns then pcall(t.BalanceColumns,t)end end
+end)
+end
+function au.GetNav(z)return au.Nav end
+function au.DockShow(z)aDockShow()end
+function au.DockHide(z)aDockHide()end
+function au.RebuildDock(z)if au.Nav=="Dock"then aDockBuild()aDock.Visible=not au.Closed aDock.Position=aDockPos(aDockHidden==false)end end
+B:OnChange(function(C)
+au.CurrentTab=C
+if aDock and au.Nav=="Dock"then aDockSelect(C)end
+end)
+local aOpen0,aClose0,aFS0=au.Open,au.Close,au.ToggleFullscreen
+function au.Open(z)
+local r=aOpen0(z)
+if aDock and au.Nav=="Dock"then
+aDock.Position=aDockPos(false)
+aDockHidden=true
+aDock.Visible=true
+if not ae.MouseEnabled or not au.DockConfig.AutoHide then
+task.delay(0.4,function()if not au.Closed and au.Nav=="Dock"then aDockShow()end end)
+end
+end
+return r
+end
+function au.Close(z)
+if aDock and au.Nav=="Dock"then
+aDockHide()
+task.delay(0.4,function()if au.Closed and aDock then aDock.Visible=false end end)
+end
+return aClose0(z)
+end
+function au.ToggleFullscreen(z)
+local r=aFS0(z)
+if aDock and au.Nav=="Dock"then
+aDock.ZIndex=au.IsFullscreen and 98 or 0
+task.delay(0.05,function()
+if not aDock then return end
+if aDockHidden then aDock.Position=aDockPos(false)
+else an(aDock,0.45,{Position=aDockPos(true)},Enum.EasingStyle.Quint,Enum.EasingDirection.Out):Play()end
+end)
+end
+return r
 end
 
 function au.IsResizable(C,F)
