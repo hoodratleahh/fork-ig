@@ -583,7 +583,11 @@ end
 
 function p.AddFontObject(r)
 table.insert(p.FontObjects,r)
-p.UpdateFont(p.Font)
+-- Patch 21: only font the NEW object. Stock WindUI re-ran UpdateFont over every registered label here, which is
+-- O(n²) during a build (≈1300 labels → ~850k FontFace writes) and was a large part of the load-time freeze.
+if not r:GetAttribute("FontLock")then
+r.FontFace=Font.new(p.Font,r.FontFace.Weight,r.FontFace.Style)
+end
 end
 
 function p.UpdateFont(r)
@@ -10381,6 +10385,12 @@ ah.AllElements[ar.Index]=at
 aa.Elements[ar.Index]=at
 if an then
 an.Elements[ar.Index]=at
+end
+-- Patch 21: while the host script is building (Window.Building=true), yield one frame every
+-- Window.BuildYieldEvery elements so a big hub spreads its construction over many frames instead of freezing.
+if ah.Building and ah.BuildYieldEvery then
+ah._buildCount=(ah._buildCount or 0)+1
+if ah._buildCount%ah.BuildYieldEvery==0 then task.wait()end
 end
 
 if ah.NewElements then
